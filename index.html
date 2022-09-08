@@ -20,71 +20,50 @@
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div id="calc" class="container mt-5">
         <nav class="navbar navbar-expand-lg d-flex justify-content-between">
             <div class="logo"><a href="https://creators.llc/" target="_blank"><img src="assets/logo.png" alt="Logo da Creators"></a></div>
             
             <div class="button-hiring"><button>Contrate Creators</button></div>
         </nav>
 
-        <div class="container">
-            <div class="row mt-5 ">
+        <div  class="container">
+            <div class="row mt-5">
                 <div class="col-md-8 ">
                     <h1>Calculadora de Creators</h1>
                     <h2>Calcule o preço de publicidade baseado nas <br> principais métricas de influência.</h2>
                     <img class="influencers" src="assets/influencer.png" alt="influencers-box">
                 </div>
                 <div class="col-md-4">
-                    <div class="container text-center calculator">
+                    <div class="container calculator">
                         <p class="text-start">Selecione a plataforma do criador</p>
                         <div class="row g-0">
-                            <div class="col">
-                                <div class=" social-card selected">
+
+                            <div class="col" v-for="rede in redes">
+                                <div class="social-card text-center" :class="{selected: rede.selected}" @click="rede.selected = !rede.selected">
                                     <div class="youtube-card">
-                                        <i class="fa-brands fa-youtube"></i>
-                                        <p class="align-center">YouTube</p>
+                                        <i class="fa-brands" :class="rede.icon"></i>
+                                        <p class="align-center">{{ rede.name }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="social-card selected">
-                                    <div class="youtube-card">
-                                        <i class="fa-brands fa-instagram"></i>
-                                        <p class="align-center">Instagram</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md hide show"></div>
-                            <div class="col">
-                                <div class=" social-card selected">
-                                    <div class="youtube-card">
-                                        <i class="fa-brands fa-tiktok"></i>
-                                        <p class="align-center">TikTok</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class=" social-card selected">
-                                    <div class="youtube-card">
-                                        <i class="fa-brands fa-twitter"></i>
-                                        <p class="align-center">Twitter</p>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
 
                         <div class="container">
                             <p class="text-start mt-5 text-calculator">Tamanho do canal</p>
                             <div class="range-wrap">
-                                <div class="range-value" id="rangeV"></div>
-                                <input id="range" type="range" min="0" max="500000" value="10000" step="50000">
+                                <!-- <div class="range-value" id="rangeV"></div> -->
+                                <input id="range" type="range" min="0" max="12" step="1" v-model="size">
+                                <div class="description" :style="{marginLeft: 4 + (size * 7.66) + '%' }">{{ descriptions[size] }}</div>
                             </div>
+                            
                         </div>
                         
                         <div class="container">
-                            <p class="text-start mt-4">Número de postagens</p>
+                            <p class="text-start mt-4">Número de postagens por rede</p>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="27" />
+                                <input type="text" class="form-control" placeholder="27" v-model="posts" />
                             </div>
                         </div>
 
@@ -100,6 +79,7 @@
                 </div>
             </div>
         </div>
+
         <div class="container">
             <div class="row">
                 <h2>Invista no match perfeito</h2>
@@ -129,7 +109,10 @@
                                         <div class="col align-right">
                                             <img src="assets/engrenagem.png" alt="">
                                             <p>Investimento estimado</p>
-                                            <h5>$12.505 a 17.599</h5>
+                                            <h5>
+                                                {{ (estimate * 0.5).toLocaleString('pt-BR', { style: 'currency',  currency: 'BRL', }) }} a
+                                                {{ (estimate * 1.5).toLocaleString('pt-BR', { style: 'currency',  currency: 'BRL', }) }}
+                                            </h5>
                                         </div>
                                         <div class="col-md-4 align">
                                             <div class="position">
@@ -236,8 +219,9 @@
                     </div>
         </footer>
     </section>
-</body>
 
+    <script src="all.js"></script>
+
+</body>
 </html>
 
-<script src="all.js"></script>

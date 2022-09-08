@@ -184,41 +184,36 @@ body {
 
         }
 
-        .range-value {
-            position: absolute;
-            top: -36%;
-
-        }
-
-        .range-value span {
-            width: 40px;
+        .description {
+            width: auto;
+            min-width: 80px;
             height: 25px;
-            line-height: 24px;
             text-align: center;
-            background: #343538;
+            background: #555;
             color: #fff;
             font-size: 12px;
-            display: block;
-            position: absolute;
+            display: inline-block;
             font-weight: 500;
             transform: translate(-50%, 0);
             border-radius: 6px;
-
+            padding: 4px 8px;
         }
 
-        .range-value span:before {
+        .description:before {
             content: "";
             position: absolute;
             width: 0;
             height: 0;
-            border-top: 10px solid #343538;
+            border-bottom: 10px solid #555;
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
-            top: 100%;
+            bottom: 100%;
             left: 50%;
             margin-left: -5px;
             margin-top: -1px;
         }
+
+        
     }
 
     .line {

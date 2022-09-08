@@ -104,7 +104,7 @@ body .calculator input[type=range] {
   -webkit-appearance: none;
   margin: 20px 0;
   width: 100%;
-  background: rgb(39, 42, 51);
+  background: #272a33;
   border-radius: 12px;
 }
 body .calculator input[type=range]:focus {
@@ -126,7 +126,7 @@ body .calculator input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -6px;
-  border: 5px solid rgb(51, 48, 48);
+  border: 5px solid #333030;
 }
 body .calculator input[type=range]:focus::-webkit-slider-runnable-track {
   background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
@@ -137,33 +137,29 @@ body .calculator .range-wrap {
   border-radius: 12px;
   padding: 0px 10px;
 }
-body .calculator .range-value {
-  position: absolute;
-  top: -36%;
-}
-body .calculator .range-value span {
-  width: 40px;
+body .calculator .description {
+  width: auto;
+  min-width: 80px;
   height: 25px;
-  line-height: 24px;
   text-align: center;
-  background: #343538;
+  background: #555;
   color: #fff;
   font-size: 12px;
-  display: block;
-  position: absolute;
+  display: inline-block;
   font-weight: 500;
   transform: translate(-50%, 0);
   border-radius: 6px;
+  padding: 4px 8px;
 }
-body .calculator .range-value span:before {
+body .calculator .description:before {
   content: "";
   position: absolute;
   width: 0;
   height: 0;
-  border-top: 10px solid #343538;
+  border-bottom: 10px solid #555;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  top: 100%;
+  bottom: 100%;
   left: 50%;
   margin-left: -5px;
   margin-top: -1px;
@@ -202,7 +198,7 @@ body .card input[type=range] {
   -webkit-appearance: none;
   margin: 20px 0;
   width: 100%;
-  background: rgb(39, 42, 51);
+  background: #272a33;
   border-radius: 12px;
 }
 body .card input[type=range]:focus {
@@ -371,7 +367,7 @@ body footer a a:hover {
 body footer ul li i {
   font-size: 20px;
   margin-left: 1px;
-  background: rgb(141, 141, 141);
+  background: #8d8d8d;
   padding: 11px;
   border-radius: 50%;
   color: white;
