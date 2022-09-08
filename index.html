@@ -22,12 +22,13 @@
 <body>
     <div id="calc" class="container mt-5">
         <nav class="navbar navbar-expand-lg d-flex justify-content-between">
-            <div class="logo"><a href="https://creators.llc/" target="_blank"><img src="assets/logo.png" alt="Logo da Creators"></a></div>
-            
+            <div class="logo"><a href="https://creators.llc/" target="_blank"><img src="assets/logo.png"
+                        alt="Logo da Creators"></a></div>
+
             <div class="button-hiring"><button>Contrate Creators</button></div>
         </nav>
 
-        <div  class="container">
+        <div class="container">
             <div class="row mt-5">
                 <div class="col-md-8 ">
                     <h1>Calculadora de Creators</h1>
@@ -40,7 +41,8 @@
                         <div class="row g-0">
 
                             <div class="col" v-for="rede in redes">
-                                <div class="social-card text-center" :class="{selected: rede.selected}" @click="rede.selected = !rede.selected">
+                                <div class="social-card text-center" :class="{selected: rede.selected}"
+                                    @click="rede.selected = !rede.selected">
                                     <div class="youtube-card">
                                         <i class="fa-brands" :class="rede.icon"></i>
                                         <p class="align-center">{{ rede.name }}</p>
@@ -55,11 +57,12 @@
                             <div class="range-wrap">
                                 <!-- <div class="range-value" id="rangeV"></div> -->
                                 <input id="range" type="range" min="0" max="12" step="1" v-model="size">
-                                <div class="description" :style="{marginLeft: 4 + (size * 7.66) + '%' }">{{ descriptions[size] }}</div>
+                                <div class="description" :style="{marginLeft: 4 + (size * 7.66) + '%' }">{{
+                                    descriptions[size] }}</div>
                             </div>
-                            
+
                         </div>
-                        
+
                         <div class="container">
                             <p class="text-start mt-4">Número de postagens por rede</p>
                             <div class="input-group mb-3">
@@ -110,8 +113,10 @@
                                             <img src="assets/engrenagem.png" alt="">
                                             <p>Investimento estimado</p>
                                             <h5>
-                                                {{ (estimate * 0.5).toLocaleString('pt-BR', { style: 'currency',  currency: 'BRL', }) }} a
-                                                {{ (estimate * 1.5).toLocaleString('pt-BR', { style: 'currency',  currency: 'BRL', }) }}
+                                                {{ (estimate * 0.5).toLocaleString('pt-BR', { style: 'currency',
+                                                currency: 'BRL', }) }} a
+                                                {{ (estimate * 1.5).toLocaleString('pt-BR', { style: 'currency',
+                                                currency: 'BRL', }) }}
                                             </h5>
                                         </div>
                                         <div class="col-md-4 align">
@@ -182,16 +187,19 @@
                 <div class="row footer">
                     <div class="col-md-6">
                         <a href="https://creators.llc/" target="_blank"><img src="assets/logo.png" class="py-5" alt="">
-                        <h3>POWERFUL INFLUENCE <br>
-                            MARKETING PLATFORM</h3></a>
+                            <h3>POWERFUL INFLUENCE <br>
+                                MARKETING PLATFORM</h3>
+                        </a>
                         <div class="list-terms">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md">
-                                        <a href="https://creators.llc/documents/Termos_de_Uso_Creators.pdf">Termos e condições</a>
+                                        <a href="https://creators.llc/documents/Termos_de_Uso_Creators.pdf">Termos e
+                                            condições</a>
                                     </div>
                                     <div class="col-md">
-                                        <a href="https://creators.llc/documents/Politica_de_privacidade.pdf">Política de privacidade</a>
+                                        <a href="https://creators.llc/documents/Politica_de_privacidade.pdf">Política de
+                                            privacidade</a>
                                     </div>
                                     <div class="col-md">
                                         <a href="mailto:hello@creators.llc">hello@creators.llc</a>
@@ -223,5 +231,5 @@
     <script src="all.js"></script>
 
 </body>
-</html>
 
+</html>
