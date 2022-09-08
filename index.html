@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora </title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e99973526a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+            <div class="logo"><a href="https://creators.llc/" target="_blank"><img src="assets/logo.png" alt="Logo da Creators"></a></div>
+            
+            <div class="button-hiring"><button>Contrate Creators</button></div>
+        </nav>
+
+        <div class="container">
+            <div class="row mt-5 ">
+                <div class="col-md-8 ">
+                    <h1>Calculadora de Creators</h1>
+                    <h2>Calcule o preço de publicidade baseado nas <br> principais métricas de influência.</h2>
+                    <img class="influencers" src="assets/influencer.png" alt="influencers-box">
+                </div>
+                <div class="col-md-4">
+                    <div class="container text-center calculator">
+                        <p class="text-start">Selecione a plataforma do criador</p>
+                        <div class="row g-0">
+                            <div class="col">
+                                <div class=" social-card selected">
+                                    <div class="youtube-card">
+                                        <i class="fa-brands fa-youtube"></i>
+                                        <p class="align-center">YouTube</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="social-card selected">
+                                    <div class="youtube-card">
+                                        <i class="fa-brands fa-instagram"></i>
+                                        <p class="align-center">Instagram</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md hide show"></div>
+                            <div class="col">
+                                <div class=" social-card selected">
+                                    <div class="youtube-card">
+                                        <i class="fa-brands fa-tiktok"></i>
+                                        <p class="align-center">TikTok</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class=" social-card selected">
+                                    <div class="youtube-card">
+                                        <i class="fa-brands fa-twitter"></i>
+                                        <p class="align-center">Twitter</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <p class="text-start mt-5 text-calculator">Tamanho do canal</p>
+                            <div class="range-wrap">
+                                <div class="range-value" id="rangeV"></div>
+                                <input id="range" type="range" min="0" max="500000" value="10000" step="50000">
+                            </div>
+                        </div>
+                        
+                        <div class="container">
+                            <p class="text-start mt-4">Número de postagens</p>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="27" />
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="btn-investment">
+                                    <button onclick="showCreatorCalculator()" class="mt-4 py-3">Calcule seu
+                                        investimento</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <h2>Invista no match perfeito</h2>
+                <div class="carousel mt-5" data-flickity='{ "contain": true }'>
+                    <div class="carousel-cell"><img src="assets/profile/ale.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="assets/profile/aline.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="assets/profile/fabiano.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="assets/profile/ale.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="assets/profile/aline.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="assets/profile/ale.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="assets/profile/aline.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="assets/profile/ale.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="assets/profile/aline.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="assets/profile/fabiano.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="container calculadora" id="calculator-show">
+                <div class="little-gap">
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="internal">
+                                    <div class="row justify-content-between">
+                                        <div class="col align-right">
+                                            <img src="assets/engrenagem.png" alt="">
+                                            <p>Investimento estimado</p>
+                                            <h5>$12.505 a 17.599</h5>
+                                        </div>
+                                        <div class="col-md-4 align">
+                                            <div class="position">
+                                                <img src="assets/alert-circle.png" alt="">
+                                                <p>Nível de engajamento</p>
+                                            </div>
+                                            <div class="range-wrap">
+                                                <div class="range-value" id="range"></div>
+                                                <input id="range" type="range" min="50" max="100" value="50" step="1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                            <div class="button-div mt-1 internal-btn">
+                                <div class="d-flex">
+                                    <div class="p-2 hide-mobile"><button class="btn btn-primary">Cadastre-se e
+                                            contrate</button></div>
+                                    <div class="p-2"><button class="btn btn-primary">Receba por email</button></div>
+                                    <div class="ms-auto p-2 "><button class="btn btn-primary">Recalcule</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+
+    <div class="container questionary little-gap">
+        <h1 class="col-md-8 offset-md-2 my-4">Com dúvidas?
+            A gente responde</h1>
+
+        <div class="accordion col-md-8 offset-md-2">
+            <button type="button" class="accordion__button container ">O que esta calculadora usa como base para
+                devolver os resultados?</button>
+            <div class="accordion__content container">
+                <hr>
+                <p>Alcance da postagem, impressões de postagens, número de seguidores; Taxa de engajamento do
+                    influenciador versus nossa taxa de engajamento de referência; O preço estimado de postagens
+                    patrocinadas;
+
+                    Essas estimativas são baseadas em dados de histórias, postagens e colaborações com os
+                    influenciadores em nossa plataforma. Como as métricas individuais de um influenciador podem se
+                    desviar da média, a calculadora deve ser usada apenas como um guia.</p>
+            </div>
+        </div>
+
+        <div class="accordion col-md-8 offset-md-2 pb-5 ">
+            <button type="button" class="accordion__button container">Eu sou uma marca, posso usar como estimativa
+                de verba para investimento?</button>
+            <div class="accordion__content container">
+                <hr>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem itaque, quis
+                    consequatur, incidunt alias dicta minima labore numquam ea deleniti inventore, tenetur ratione
+                    magnam fugiat voluptate praesentium officiis unde quibusdam.
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <section>
+        <footer>
+            <div class="container">
+                <div class="row footer">
+                    <div class="col-md-6">
+                        <a href="https://creators.llc/" target="_blank"><img src="assets/logo.png" class="py-5" alt="">
+                        <h3>POWERFUL INFLUENCE <br>
+                            MARKETING PLATFORM</h3></a>
+                        <div class="list-terms">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <a href="https://creators.llc/documents/Termos_de_Uso_Creators.pdf">Termos e condições</a>
+                                    </div>
+                                    <div class="col-md">
+                                        <a href="https://creators.llc/documents/Politica_de_privacidade.pdf">Política de privacidade</a>
+                                    </div>
+                                    <div class="col-md">
+                                        <a href="mailto:hello@creators.llc">hello@creators.llc</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 d-flex align-items-end d-flex flex-column pt-5 social-media  ">
+                        <ul class="d-block p-0 ps-2">
+                            <li class="d-inline-block me-2">
+                                <a href="https://www.instagram.com/creators.llc/" target="_blank"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li class="d-inline-block me-2">
+                                <a href="https://www.linkedin.com/company/creators-llc/" target="_blank"><i
+                                        class="fa-brands fa-linkedin"></i></a>
+                            </li>
+                            <li class="d-inline-block me-2">
+                                <a href="https://www.facebook.com/creators.llc/" target="_blank"><i
+                                        class="fa-brands fa-facebook"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+        </footer>
+    </section>
+</body>
+
+</html>
+
+<script src="all.js"></script>
