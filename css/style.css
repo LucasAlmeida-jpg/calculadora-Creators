@@ -82,6 +82,7 @@ body .calculator .social-card {
 }
 body .calculator .selected {
   outline: 4px solid #B390FF;
+  border-radius: 12px;
 }
 body .calculator i {
   background: rgba(117, 83, 226, 0.1);
