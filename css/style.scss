@@ -12,7 +12,7 @@ $small: 300px;
 $medium: 900px;
 
 body {
-    
+    scroll-behavior: smooth;
     background-color: $background-calculadora;
     overflow-x: hidden;
 
@@ -107,7 +107,7 @@ body {
         .social-card {
             background-color: #272A33;
             border-radius: 12px;
-            padding: 10px 0px 1px 0px;
+            padding: 10px 0px 9px 0px;
             margin: 5px;
             cursor: pointer;
 
@@ -124,7 +124,7 @@ body {
         }
 
         .text-calculator {
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
 
         .input-group {
@@ -213,7 +213,7 @@ body {
             margin-top: -1px;
         }
 
-        
+
     }
 
     .line {
@@ -374,6 +374,46 @@ body {
 
     }
 
+    .card-information {
+        background-color: #1C1E25;
+        border-radius: 15px;
+        max-height: 450px;
+        margin-top: 209px;
+        display: flex;
+        justify-content: center !important;
+
+        .info-img{
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+           width: 500px;
+           height: 400px;
+           margin-top: -100px;
+           border-radius: 20px;
+           object-fit: cover;
+        }
+
+        .card-body {
+            padding: 80px 90px;
+            color: #FFFFFF;
+            
+
+            h5 {
+                font-weight: 700;
+                font-size: 39px;
+                line-height: 38px;
+            }
+
+            p {
+                font-weight: 700;
+                font-size: 22px;
+                line-height: 24px;
+            }
+        }
+    }
+
 
 
     .questionary {
@@ -426,7 +466,7 @@ body {
 
 
     footer {
-        border-top: 1px solid #1e1d1d;
+        border-top: 1px solid #3E465F;
         padding: 0px 0px 20px 0px;
         width: 100%;
         justify-content: space-around;
@@ -446,13 +486,13 @@ body {
                 font-weight: 600;
                 margin-left: -99px;
                 font-size: 13px;
-            color: #8B90A0;
+                color: #8B90A0;
             }
 
         }
 
-        h3{
-           color: #E3E3E3;
+        h3 {
+            color: #E3E3E3;
             position: absolute;
             font-size: 14px;
             margin-top: -43px;
@@ -508,7 +548,7 @@ body {
         }
 
         .calculator {
-            height: 640px;
+            height: 520px;
             margin-bottom: 45px;
 
             button {
@@ -532,7 +572,12 @@ body {
                     margin: 0;
                 }
             }
-
+            #calculator-show{
+                .card-body{
+                    height: 25px;
+                }
+            }
+           
             .internal {
                 padding: 5px;
             }
@@ -542,8 +587,6 @@ body {
             }
 
             .card-body {
-                height: 120px;
-
                 h5 {
                     font-size: 20px;
                     margin-top: -12px;
@@ -565,6 +608,27 @@ body {
             }
         }
 
+        .card-information {
+            .card-title{
+                line-height: .9 !important;
+            }
+            p{
+                line-height: 1.2 !important;
+            }
+           
+                img{
+                    max-width: 330px;
+                    height: 300px;
+                    margin-top: -140px;
+                }
+                .card-body{
+                    padding: 20px;
+                }
+               
+        }
+        .btn-investment{
+            text-align: center;
+        }
         .footer {
             img {
                 display: block;
@@ -572,7 +636,8 @@ body {
                 margin-bottom: 60px;
                 width: 160px;
             }
-            h3{
+
+            h3 {
                 text-align: center;
                 position: relative;
                 margin-top: -102px;
@@ -596,9 +661,10 @@ body {
                 }
 
             }
-            ul{
-                li{
-                    i{
+
+            ul {
+                li {
+                    i {
                         margin: 0px;
                     }
                 }
@@ -608,24 +674,5 @@ body {
         .show {
             display: block;
         }
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

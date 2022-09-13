@@ -1,5 +1,6 @@
 @charset "UTF-8";
 body {
+  scroll-behavior: smooth;
   background-color: black !important;
   overflow-x: hidden;
 }
@@ -75,7 +76,7 @@ body .calculator {
 body .calculator .social-card {
   background-color: #272A33;
   border-radius: 12px;
-  padding: 10px 0px 1px 0px;
+  padding: 10px 0px 9px 0px;
   margin: 5px;
   cursor: pointer;
 }
@@ -88,7 +89,7 @@ body .calculator i {
   border-radius: 50%;
 }
 body .calculator .text-calculator {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 body .calculator .input-group input {
   background: #272A33 !important;
@@ -104,7 +105,7 @@ body .calculator input[type=range] {
   -webkit-appearance: none;
   margin: 20px 0;
   width: 100%;
-  background: #272a33;
+  background: rgb(39, 42, 51);
   border-radius: 12px;
 }
 body .calculator input[type=range]:focus {
@@ -126,7 +127,7 @@ body .calculator input[type=range]::-webkit-slider-thumb {
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -6px;
-  border: 5px solid #333030;
+  border: 5px solid rgb(51, 48, 48);
 }
 body .calculator input[type=range]:focus::-webkit-slider-runnable-track {
   background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
@@ -198,7 +199,7 @@ body .card input[type=range] {
   -webkit-appearance: none;
   margin: 20px 0;
   width: 100%;
-  background: #272a33;
+  background: rgb(39, 42, 51);
   border-radius: 12px;
 }
 body .card input[type=range]:focus {
@@ -288,6 +289,39 @@ body .card .card-body .align img {
   position: absolute;
   margin-top: 3px;
 }
+body .card-information {
+  background-color: #1C1E25;
+  border-radius: 15px;
+  max-height: 450px;
+  margin-top: 209px;
+  display: flex;
+  justify-content: center !important;
+}
+body .card-information .info-img {
+  display: flex;
+  justify-content: center;
+}
+body .card-information img {
+  width: 500px;
+  height: 400px;
+  margin-top: -100px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+body .card-information .card-body {
+  padding: 80px 90px;
+  color: #FFFFFF;
+}
+body .card-information .card-body h5 {
+  font-weight: 700;
+  font-size: 39px;
+  line-height: 38px;
+}
+body .card-information .card-body p {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 24px;
+}
 body .questionary h1 {
   font-size: 35px;
 }
@@ -328,7 +362,7 @@ body .questionary .accordion__content {
   font-weight: 500;
 }
 body footer {
-  border-top: 1px solid #1e1d1d;
+  border-top: 1px solid #3E465F;
   padding: 0px 0px 20px 0px;
   width: 100%;
   justify-content: space-around;
@@ -367,7 +401,7 @@ body footer a a:hover {
 body footer ul li i {
   font-size: 20px;
   margin-left: 1px;
-  background: #8d8d8d;
+  background: rgb(141, 141, 141);
   padding: 11px;
   border-radius: 50%;
   color: white;
@@ -390,7 +424,7 @@ body footer ul li i:hover {
     display: none;
   }
   body .calculator {
-    height: 640px;
+    height: 520px;
     margin-bottom: 45px;
   }
   body .calculator button {
@@ -405,14 +439,14 @@ body footer ul li i:hover {
   body .container .card-calculator input {
     margin: 0;
   }
+  body .container #calculator-show .card-body {
+    height: 25px;
+  }
   body .container .internal {
     padding: 5px;
   }
   body .container .line {
     margin-top: 80px;
-  }
-  body .container .card-body {
-    height: 120px;
   }
   body .container .card-body h5 {
     font-size: 20px;
@@ -428,6 +462,23 @@ body footer ul li i:hover {
   }
   body .container .card-body .position p {
     margin-bottom: -10px;
+  }
+  body .card-information .card-title {
+    line-height: 0.9 !important;
+  }
+  body .card-information p {
+    line-height: 1.2 !important;
+  }
+  body .card-information img {
+    max-width: 330px;
+    height: 300px;
+    margin-top: -140px;
+  }
+  body .card-information .card-body {
+    padding: 20px;
+  }
+  body .btn-investment {
+    text-align: center;
   }
   body .footer img {
     display: block;

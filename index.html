@@ -24,14 +24,13 @@
         <nav class="navbar navbar-expand-lg d-flex justify-content-between">
             <div class="logo"><a href="https://creators.llc/" target="_blank"><img src="assets/logo.png"
                         alt="Logo da Creators"></a></div>
-
             <div class="button-hiring"><button>Contrate Creators</button></div>
         </nav>
 
         <div class="container">
             <div class="row mt-5">
                 <div class="col-md-8 ">
-                    <h1>Calculadora de Creators</h1>
+                    <h1 id="recalcule">Calculadora de Creators</h1>
                     <h2>Calcule o preço de publicidade baseado nas <br> principais métricas de influência.</h2>
                     <img class="influencers" src="assets/influencer.png" alt="influencers-box">
                 </div>
@@ -53,9 +52,8 @@
                         </div>
 
                         <div class="container">
-                            <p class="text-start mt-5 text-calculator">Tamanho do canal</p>
+                            <p class="text-start mt-4 text-calculator">Tamanho do canal</p>
                             <div class="range-wrap">
-                                <!-- <div class="range-value" id="rangeV"></div> -->
                                 <input id="range" type="range" min="0" max="12" step="1" v-model="size">
                                 <div class="description" :style="{marginLeft: 4 + (size * 7.66) + '%' }">{{
                                     descriptions[size] }}</div>
@@ -73,8 +71,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="btn-investment">
-                                    <button onclick="showCreatorCalculator()" class="mt-4 py-3">Calcule seu
-                                        investimento</button>
+                                    <button type="button" onclick="showCreatorCalculator()" class="mt-4 py-3">Calcule seu investimento</button>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +99,7 @@
         </div>
 
         <section>
-            <div class="container calculadora" id="calculator-show">
+            <div class="container calculadora calcule" id="calculator-show">
                 <div class="little-gap">
                     <div class="row">
                         <div class="card">
@@ -119,7 +116,7 @@
                                                 currency: 'BRL', }) }}
                                             </h5>
                                         </div>
-                                        <div class="col-md-4 align">
+                                        <!-- <div class="col-md-4 align">
                                             <div class="position">
                                                 <img src="assets/alert-circle.png" alt="">
                                                 <p>Nível de engajamento</p>
@@ -128,7 +125,7 @@
                                                 <div class="range-value" id="range"></div>
                                                 <input id="range" type="range" min="50" max="100" value="50" step="1">
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +135,9 @@
                                     <div class="p-2 hide-mobile"><button class="btn btn-primary">Cadastre-se e
                                             contrate</button></div>
                                     <div class="p-2"><button class="btn btn-primary">Receba por email</button></div>
-                                    <div class="ms-auto p-2 "><button class="btn btn-primary">Recalcule</button></div>
+                                    <div class="ms-auto p-2 "><button class="btn btn-primary"><a
+                                                style="color: white; text-decoration: none;"
+                                                href="#recalcule">Recalcule</a></button></div>
                                 </div>
                             </div>
                         </div>
@@ -146,6 +145,48 @@
                 </div>
             </div>
     </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="card-information">
+                <div class="row">
+                    <div class="col-md-6 order-md-2 info-img">
+                        <img src="assets/firstcard.jpg">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">Quer o criador de <br> conteúdo certo para <br> sua empresa?</h5>
+                            <p class="card-text mt-3">Conectamos marcas admiradas com criadores de conteúdo de acordo
+                                com a necessidade de cada cliente. </p>
+                            <div class="btn-investment">
+                                <button class="py-2">
+                                    Encontre Creators</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-information">
+                <div class="row">
+                    <div class="col-md-6 info-img">
+                        <img src="assets/firstcard.jpg">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">Quer receber trabalhos  de parceria como criador de
+                                conteúdo?</h5>
+                            <p class="card-text mt-3">Cadastre-se na nossa comunidade <br>
+                                de criadores </p>
+                            <div class="btn-investment">
+                                <button class=" py-2">
+                                    Seja Creator</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div class="container questionary little-gap">
