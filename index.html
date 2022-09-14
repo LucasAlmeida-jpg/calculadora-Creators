@@ -62,16 +62,21 @@
                         </div>
 
                         <div class="container">
-                            <p class="text-start mt-4">Número de postagens por rede</p>
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="27" v-model="posts" />
+                            <div class="was-validated">
+                                <p class="text-start mt-4">Número de postagens por rede</p>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" style="border-radius: 12px" placeholder="27" required />
+                                    <div class="invalid-feedback">
+                                        É necessário digitar um número de posts </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="container">
                             <div class="row">
                                 <div class="btn-investment">
-                                    <button type="button" onclick="showCreatorCalculator()" class="mt-4 py-3">Calcule seu investimento</button>
+                                    <button type="submit" onclick="showCreatorCalculator()" class="mt-4 py-3">Calcule
+                                        seu investimento</button>
                                 </div>
                             </div>
                         </div>
@@ -98,6 +103,8 @@
             </div>
         </div>
 
+
+
         <section>
             <div class="container calculadora calcule" id="calculator-show">
                 <div class="little-gap">
@@ -116,7 +123,7 @@
                                                 currency: 'BRL', }) }}
                                             </h5>
                                         </div>
-                                       <div class="col-md-4 align">
+                                        <div class="col-md-4 align">
                                             <div class="position">
                                                 <img src="assets/alert-circle.png" alt="">
                                                 <p>Nível de engajamento</p>
@@ -125,7 +132,7 @@
                                                 <div class="range-value" id="range"></div>
                                                 <input id="range" type="range" min="50" max="100" value="50" step="1">
                                             </div>
-                                        </div> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +181,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <h5 class="card-title">Quer receber trabalhos  de parceria como criador de
+                            <h5 class="card-title">Quer receber trabalhos de parceria como criador de
                                 conteúdo?</h5>
                             <p class="card-text mt-3">Cadastre-se na nossa comunidade <br>
                                 de criadores </p>
