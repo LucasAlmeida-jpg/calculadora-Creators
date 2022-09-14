@@ -65,8 +65,8 @@
                             <div class="was-validated">
                                 <p class="text-start mt-4">Número de postagens por rede</p>
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="27" v-model="posts" style="border-radius: 12px"
-                                        required />
+                                    <input type="text" class="form-control" placeholder="27" v-model="posts"
+                                        style="border-radius: 12px" required />
                                     <div class="invalid-feedback">
                                         É necessário digitar um número de posts </div>
                                 </div>
@@ -107,7 +107,8 @@
 
 
         <section>
-            <div class="container calculadora calcule" id="calculator-show">
+            <div class="container  calcule" id="calculator-show">
+                <!--colocar a class calculadora aqui -->
                 <div class="little-gap">
                     <div class="row">
                         <div class="card">
@@ -124,7 +125,7 @@
                                                 currency: 'BRL', }) }}
                                             </h5>
                                         </div>
-                                        <div class="col-md-4 align">
+                                        <!-- <div class="col-md-4 align">
                                             <div class="position">
                                                 <img src="assets/alert-circle.png" alt="">
                                                 <p>Nível de engajamento</p>
@@ -133,7 +134,7 @@
                                                 <div class="range-value" id="range"></div>
                                                 <input id="range" type="range" min="50" max="100" value="50" step="1">
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -142,10 +143,107 @@
                                 <div class="d-flex">
                                     <div class="p-2 hide-mobile"><button class="btn btn-primary">Cadastre-se e
                                             contrate</button></div>
-                                    <div class="p-2"><button class="btn btn-primary">Receba por email</button></div>
-                                    <div class="ms-auto p-2 "><button class="btn btn-primary"><a
-                                                style="color: white; text-decoration: none;"
-                                                href="#recalcule">Recalcule</a></button></div>
+                                    <div class="p-2">
+                                        <div class="modal fade" id="exampleModalToggle" aria-hidden="true"
+                                            aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h5 class="modal-title " id="exampleModalToggleLabel">
+                                                            <img src="assets/clogo.png" alt="">
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                        <h1>
+                                                            Preencha as informações e receba sua simulação em seu email
+                                                        </h1>
+                                                    </div>
+                                                    <div class="d-flex justify-content-center mb-4 main">
+                                                        <button class="btn-creator btn"
+                                                            data-bs-target="#exampleModalToggle2"
+                                                            data-bs-toggle="modal">Sou Empresa</button>
+                                                        <button class=" btn-company btn"
+                                                            data-bs-target="#exampleModalToggle"
+                                                            data-bs-toggle="modal">Sou Creator</button>
+                                                    </div>
+
+                                                    <div class="form-floating mb-4">
+                                                        <input type="text" class="form-control" id="floatingPassword"
+                                                            placeholder="Nome">
+                                                        <label for="floatingPassword">Nome</label>
+                                                    </div>
+
+                                                    <div class="form-floating">
+                                                        <input type="email" class="form-control" id="floatingInput"
+                                                            placeholder="name@example.com">
+                                                        <label for="floatingInput">Email</label>
+                                                    </div>
+
+                                                    <button class="btn-primary mt-4 simulation-btn">Enviar
+                                                        simulação</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                                            aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h5 class="modal-title " id="exampleModalToggleLabel">
+                                                            <img src="assets/clogo.png" alt="">
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                        <h1>
+                                                            Preencha as informações e receba sua simulação em seu email
+                                                        </h1>
+                                                    </div>
+                                                    <div class="d-flex justify-content-center mb-4 main">
+                                                        <button class="btn-creator btn"
+                                                            data-bs-target="#exampleModalToggle2"
+                                                            data-bs-toggle="modal">Sou Empresa</button>
+                                                        <button class=" btn-company btn"
+                                                            data-bs-target="#exampleModalToggle"
+                                                            data-bs-toggle="modal">Sou Creator</button>
+                                                    </div>
+
+
+                                                    <div class="form-floating  mb-4">
+                                                        <input type="text" class="form-control" id="floatingPassword"
+                                                            placeholder="Nome">
+                                                        <label for="floatingPassword">Nome da empresa</label>
+                                                    </div>
+
+                                                    <div class="form-floating">
+                                                        <input type="email" class="form-control" id="floatingInput"
+                                                            placeholder="name@example.com">
+                                                        <label for="floatingInput">Email</label>
+                                                    </div>
+
+                                                    <button class="btn-primary mt-4 simulation-btn">Enviar
+                                                        simulação</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <a class="btn btn-primary " data-bs-toggle="modal" href="#exampleModalToggle"
+                                            role="button">Receba por email</a>
+                                    </div>
+                                    <div class="ms-auto p-2 ">
+                                        <button class="btn btn-primary">
+                                            <a style="color: white; text-decoration: none;"
+                                                href="#recalcule">Recalcule</a></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -153,6 +251,9 @@
                 </div>
             </div>
     </div>
+    </section>
+    <section>
+
     </section>
     <section>
         <div class="container">

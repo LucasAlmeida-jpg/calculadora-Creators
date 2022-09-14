@@ -290,6 +290,55 @@ body .card .card-body .align img {
   position: absolute;
   margin-top: 3px;
 }
+body .modal .modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 80%;
+}
+body .modal .modal-content label {
+  color: #7F7F7F;
+  font-size: 12px;
+}
+body .modal .modal-content .simulation-btn {
+  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+  color: white;
+  font-size: 20px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+body .modal .modal-content .btn-close {
+  font-size: 15px;
+  opacity: 1;
+}
+body .modal .modal-content .form-control {
+  background-color: #F0F0F0;
+  border: none;
+}
+body .modal h1 {
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+}
+body .modal .main .btn-creator {
+  background: white;
+  border: 1px solid #3300FF;
+  color: #3300FF;
+  padding: 10px;
+  border-radius: 12px 0px 0px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 210px;
+}
+body .modal .main .btn-company {
+  background-color: white;
+  border: 1px solid #3300FF;
+  color: #3300FF;
+  border-radius: 0px 12px 12px 0px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 210px;
+}
 body .card-information {
   background-color: #1C1E25;
   border-radius: 15px;
@@ -414,6 +463,17 @@ body footer ul li i:hover {
 @media screen and (min-width: 300px) and (max-width: 900px) {
   body body {
     overflow-x: hidden;
+  }
+  body .modal .modal-content {
+    display: block;
+    width: 109%;
+    position: absolute;
+    bottom: 0px;
+    margin: -15px !important;
+    border-radius: 20px 20px 0px 0px;
+  }
+  body .modal .modal-content .simulation-btn {
+    width: 100%;
   }
   body .btn-primary {
     padding: 10px 23px;

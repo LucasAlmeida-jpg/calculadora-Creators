@@ -14,14 +14,16 @@ document.querySelectorAll('.accordion__button').forEach(button => {
 })
 
 
-function showCreatorCalculator() {
-  const showCalculator = document.getElementById("calculator-show")
-  if (showCalculator.style.display === "none") {
-    showCalculator.style.display = "block"
-  } else {
-    showCalculator.style.display = "block"
-  }
-}
+
+
+// function showCreatorCalculator() {
+//   const showCalculator = document.getElementById("calculator-show")
+//   if (showCalculator.style.display === "none") {
+//     showCalculator.style.display = "block"
+//   } else {
+//     showCalculator.style.display = "block"
+//   }
+// }
 
 $("button").click(function() {
   $('html,body').animate({
@@ -104,4 +106,11 @@ Vue.createApp({
 
 }).mount('#calc');
 
+const btn = document.getElementsByClassName('btn');
+
+btn.addEventListener('click', function onClick(event) {
+ 
+  document.body.style.backgroundColor = 'red';
+
+});
 

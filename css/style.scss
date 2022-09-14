@@ -375,6 +375,68 @@ body {
 
     }
 
+    .modal {
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 80%;
+
+            label {
+                color: #7F7F7F;
+                font-size: 12px;
+            }
+
+            .simulation-btn {
+                background: $cor-botao;
+                color: white;
+                font-size: 20px;
+                border-radius: 30px;
+                font-weight: 600;
+            }
+
+            .btn-close {
+                font-size: 15px;
+                opacity: 1;
+            }
+
+            .form-control {
+                background-color: #F0F0F0;
+                border: none;
+            }
+        }
+
+        h1 {
+            color: black;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .main {
+            .btn-creator {
+                background: white;
+                border: 1px solid #3300FF;
+                color: #3300FF;
+                padding: 10px;
+                border-radius: 12px 0px 0px 12px;
+                font-size: 16px;
+                font-weight: 500;
+                width: 210px;
+            }
+
+            .btn-company {
+                background-color: white;
+                border: 1px solid #3300FF;
+                color: #3300FF;
+                border-radius: 0px 12px 12px 0px;
+                font-size: 16px;
+                font-weight: 500;
+                width: 210px;
+            }
+        }
+
+    }
+
     .card-information {
         background-color: #1C1E25;
         border-radius: 15px;
@@ -383,23 +445,23 @@ body {
         display: flex;
         justify-content: center !important;
 
-        .info-img{
+        .info-img {
             display: flex;
             justify-content: center;
         }
 
         img {
-           width: 500px;
-           height: 400px;
-           margin-top: -100px;
-           border-radius: 20px;
-           object-fit: cover;
+            width: 500px;
+            height: 400px;
+            margin-top: -100px;
+            border-radius: 20px;
+            object-fit: cover;
         }
 
         .card-body {
             padding: 80px 90px;
             color: #FFFFFF;
-            
+
 
             h5 {
                 font-weight: 700;
@@ -482,6 +544,7 @@ body {
             margin-top: 40px;
             margin-bottom: 40px;
 
+
             a {
                 text-align: center;
                 font-weight: 600;
@@ -489,7 +552,6 @@ body {
                 font-size: 13px;
                 color: #8B90A0;
             }
-
         }
 
         h3 {
@@ -536,6 +598,21 @@ body {
             overflow-x: hidden;
         }
 
+        .modal {
+            .modal-content {
+                display: block;
+                width: 109%;
+                position: absolute;
+                bottom: 0px;
+                margin: -15px !important;
+                border-radius: 20px 20px 0px 0px;
+
+                .simulation-btn {
+                    width: 100%;
+                }
+            }
+        }
+
         .btn-primary {
             padding: 10px 23px;
         }
@@ -573,12 +650,13 @@ body {
                     margin: 0;
                 }
             }
-            #calculator-show{
-                .card-body{
+
+            #calculator-show {
+                .card-body {
                     height: 25px;
                 }
             }
-           
+
             .internal {
                 padding: 5px;
             }
@@ -610,26 +688,30 @@ body {
         }
 
         .card-information {
-            .card-title{
+            .card-title {
                 line-height: .9 !important;
             }
-            p{
+
+            p {
                 line-height: 1.2 !important;
             }
-           
-                img{
-                    max-width: 330px;
-                    height: 300px;
-                    margin-top: -140px;
-                }
-                .card-body{
-                    padding: 20px;
-                }
-               
+
+            img {
+                max-width: 330px;
+                height: 300px;
+                margin-top: -140px;
+            }
+
+            .card-body {
+                padding: 20px;
+            }
+
         }
-        .btn-investment{
+
+        .btn-investment {
             text-align: center;
         }
+
         .footer {
             img {
                 display: block;
