@@ -7,6 +7,10 @@ body {
 body .calculadora {
   display: none;
 }
+body .background {
+  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%) !important;
+  color: white !important;
+}
 body .btn-primary {
   background-color: rgba(255, 255, 255, 0.1) !important;
   border: none;
@@ -294,7 +298,7 @@ body .modal .modal-content {
   background-color: white;
   padding: 30px;
   border-radius: 20px;
-  width: 80%;
+  width: 90%;
 }
 body .modal .modal-content label {
   color: #7F7F7F;

@@ -25,18 +25,13 @@ document.querySelectorAll('.accordion__button').forEach(button => {
 //   }
 // }
 
-$("button").click(function() {
-  $('html,body').animate({
-      scrolltop: $(".calcule").offset().top},
-      'slow');
-})
-
-
-
 Vue.createApp({
 
   data() {
     return {
+
+      isUser1: true,
+
       redes: [
         {
           name: "Youtube", icon: "fa-youtube", selected: false,
@@ -86,7 +81,7 @@ Vue.createApp({
   },
 
   mounted() {
-    //
+ 
   },
 
   computed: {
@@ -106,11 +101,4 @@ Vue.createApp({
 
 }).mount('#calc');
 
-const btn = document.getElementsByClassName('btn');
-
-btn.addEventListener('click', function onClick(event) {
- 
-  document.body.style.backgroundColor = 'red';
-
-});
 

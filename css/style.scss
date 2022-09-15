@@ -12,12 +12,18 @@ $small: 300px;
 $medium: 900px;
 
 body {
+    
     scroll-behavior: smooth;
     background-color: $background-calculadora;
     overflow-x: hidden;
 
     .calculadora {
         display: none;
+    }
+
+    .background{
+        background: $cor-botao !important;
+        color: white !important;
     }
 
     .btn-primary {
@@ -80,6 +86,7 @@ body {
         font-size: 13px;
         font-weight: 500;
     }
+
 
     .influencers {
         margin-top: -80px;
@@ -375,13 +382,15 @@ body {
 
     }
 
+  
     .modal {
         .modal-content {
             background-color: white;
             padding: 30px;
             border-radius: 20px;
-            width: 80%;
+            width:90% ;
 
+           
             label {
                 color: #7F7F7F;
                 font-size: 12px;
@@ -588,8 +597,6 @@ body {
                 }
             }
         }
-
-
     }
 
     @media screen and (min-width: $small) and (max-width: $medium) {
