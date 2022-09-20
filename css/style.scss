@@ -12,7 +12,12 @@ $small: 300px;
 $medium: 900px;
 
 body {
-    
+
+    .overlay {
+        position: sticky;
+        top: 300px;
+    }
+
     scroll-behavior: smooth;
     background-color: $background-calculadora;
     overflow-x: hidden;
@@ -21,8 +26,22 @@ body {
         display: none;
     }
 
-    .background{
-        background: $cor-botao !important;
+    .collapse {
+        display: none;
+    }
+
+    .navbar-collapse {
+        ul {
+            li {
+                a {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .background {
+        background: $cor-botao  !important;
         color: white !important;
     }
 
@@ -68,6 +87,7 @@ body {
             padding: 12px 20px;
             color: white;
             border: none;
+            font-weight: 500;
         }
     }
 
@@ -90,10 +110,10 @@ body {
 
     .influencers {
         margin-top: -80px;
-        width: 893px;
+        width: 650px;
         height: auto;
         object-fit: cover;
-        margin-top: -134px;
+        margin-top: -80px;
     }
 
     .flickity-page-dots {
@@ -114,7 +134,7 @@ body {
         .social-card {
             background-color: #272A33;
             border-radius: 12px;
-            padding: 10px 0px 9px 0px;
+            padding: 10px 0px 1px 0px;
             margin: 5px;
             cursor: pointer;
 
@@ -204,7 +224,7 @@ body {
             font-weight: 500;
             transform: translate(-50%, 0);
             border-radius: 6px;
-            padding: 4px 8px;
+            padding: 4px 0px;
         }
 
         .description:before {
@@ -382,15 +402,15 @@ body {
 
     }
 
-  
+
     .modal {
         .modal-content {
             background-color: white;
             padding: 30px;
             border-radius: 20px;
-            width:90% ;
+            width: 90%;
 
-           
+
             label {
                 color: #7F7F7F;
                 font-size: 12px;
@@ -620,6 +640,16 @@ body {
             }
         }
 
+        .navbar-collapse {
+            ul {
+                li {
+                    a {
+                        display: block;
+                    }
+                }
+            }
+        }
+
         .btn-primary {
             padding: 10px 23px;
         }
@@ -641,6 +671,71 @@ body {
             }
         }
 
+        .navbar {
+            background: rgba(15, 15, 15, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(13.5px);
+            -webkit-backdrop-filter: blur(13.5px);
+            position: fixed;
+            bottom: 0;
+            z-index: 1;
+
+            width: 100vw;
+            left: 0;
+            right: 0;
+
+
+            h1 {
+                font-weight: 700;
+                margin-left: 20px;
+                margin-top: 10px;
+            }
+
+
+            button:focus:not(:focus-visible) {
+                box-shadow: none;
+
+            }
+
+        }
+
+        .form-control:valid {
+            z-index: 0 !important;
+        }
+
+
+
+        .collapsed-all {
+            padding: 32px 85px 85px 22px;
+            white-space: nowrap;
+
+            .col {
+
+                h2 {
+                    font-size: 16px;
+                    font-weight: 100;
+
+                }
+            }
+        }
+
+        .navbar-toggler-icon {
+            background-color: rgb(99, 44, 237);
+            padding: 20px;
+            border-radius: 50%;
+            background-size: 59%;
+        }
+
+        .navbar-toggler {
+            border: none !important;
+
+            &:hover {
+                border: none !important;
+
+            }
+        }
+
+
         .container {
 
             .influencers {
@@ -661,6 +756,7 @@ body {
             #calculator-show {
                 .card-body {
                     height: 25px;
+
                 }
             }
 
@@ -704,13 +800,14 @@ body {
             }
 
             img {
-                max-width: 330px;
-                height: 300px;
+                max-width: 320px;
+                max-height: 250px;
+                object-fit: cover;
                 margin-top: -140px;
             }
 
             .card-body {
-                padding: 20px;
+                padding: 100px 20px 20px 20px;
             }
 
         }
@@ -761,8 +858,38 @@ body {
             }
         }
 
-        .show {
+        .button-hiring {
+            display: none;
+        }
+
+
+        .navbar-collapse {
+            ul {
+                li {
+                    a {
+                        color: white !important;
+                    }
+                }
+            }
+        }
+
+        .collapse {
             display: block;
+        }
+
+        .show,
+        .hide {
+            display: block;
+        }
+
+        .card-body {
+
+            .internal {
+                h5 {
+                    font-size: 14px !important;
+                }
+            }
+
         }
     }
 }

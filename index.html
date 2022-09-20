@@ -17,22 +17,49 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
 </head>
 
 <body>
-    <div id="calc" class="container mt-5">
-        <nav class="navbar navbar-expand-lg d-flex justify-content-between">
-            <div class="logo"><a href="https://creators.llc/" target="_blank"><img src="assets/logo.png"
-                        alt="Logo da Creators"></a></div>
-            <div class="button-hiring"><button>Contrate Creators</button></div>
-        </nav>
+    
+    <div id="calc" class="container mt-4">
+        <div class="container-fluid">
+        <nav class="navbar">
+            <a class="navbar-brand hide-mobile" href="https://creators.llc/" target="_blank">
+                <img src="./assets/logo.png" alt="creators logo">
+              </a>
+              <div class="button-hiring">
+                <button>
+                Contrate Creators
+              </button></div>
+              <div class="collapse" id="navbarToggleExternalContent">
+                <div class=" collapsed-all">
+                  <div class="row">
+                    <div class="col"><h2>Como funciona</h2></div>
+                    <div class="col"><h2>Encontre Creators</h2></div>
+                    <div class="col"><h2>Seja Creator</h2></div>
+                    <div class="col"><h2>FAQ</h2></div>
+                  </div>
+                </div>
+              </div>
+              <nav class="navbar navbar-dark hide">
+                <div class="container">
+                  <button class="navbar-toggler d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent">
+                    <span class="navbar-toggler-icon"></span>
+                    <h1>Calculadora de Creators</h1>
+                  </button>
+                </div>
+              </nav>
+            </div>
+          </nav>
+
 
         <div class="container">
             <div class="row mt-5">
                 <div class="col-md-8 ">
                     <h1 id="recalcule">Calculadora de Creators</h1>
                     <h2>Calcule o preço de publicidade baseado nas <br> principais métricas de influência.</h2>
-                    <img class="influencers" src="assets/influencer.png" alt="influencers-box">
+                    <img class="influencers" src="./assets/influencer.png" alt="influencers-box">
                 </div>
                 <div class="col-md-4">
                     <div class="container calculator">
@@ -67,8 +94,7 @@
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="27" v-model="posts"
                                         style="border-radius: 12px" required />
-                                    <div class="invalid-feedback">
-                                        É necessário digitar um número de posts </div>
+                                    <div class="invalid-feedback">É necessário digitar um número de posts </div>
                                 </div>
                             </div>
                         </div>
@@ -76,8 +102,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="btn-investment">
-                                    <button type="submit" onclick="showCreatorCalculator()" class="mt-4 py-3">Calcule
-                                        seu investimento</button>
+                                    <button type="submit" onclick="showCreatorCalculator()" class="mt-4 py-3"><a href="#calculator-show" style="color: white; text-decoration: none;">Calcule
+                                        seu investimento</a></button>
                                 </div>
                             </div>
                         </div>
@@ -90,16 +116,16 @@
             <div class="row">
                 <h2>Invista no match perfeito</h2>
                 <div class="carousel mt-5" data-flickity='{ "contain": true }'>
-                    <div class="carousel-cell"><img src="assets/profile/ale.jpg" alt=""></div>
-                    <div class="carousel-cell"><img src="assets/profile/aline.jpg" alt=""></div>
-                    <div class="carousel-cell"><img src="assets/profile/fabiano.jpg" alt=""></div>
-                    <div class="carousel-cell"><img src="assets/profile/ale.jpg" alt=""></div>
-                    <div class="carousel-cell"><img src="assets/profile/aline.jpg" alt=""></div>
-                    <div class="carousel-cell"><img src="assets/profile/ale.jpg" alt=""></div>
-                    <div class="carousel-cell"><img src="assets/profile/aline.jpg" alt=""></div>
-                    <div class="carousel-cell"><img src="assets/profile/ale.jpg" alt=""></div>
-                    <div class="carousel-cell"><img src="assets/profile/aline.jpg" alt=""></div>
-                    <div class="carousel-cell"><img src="assets/profile/fabiano.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="./assets/profile/ale.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="./assets/profile/aline.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="./assets/profile/fabiano.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="./assets/profile/ale.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="./assets/profile/aline.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="./assets/profile/ale.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="./assets/profile/aline.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="./assets/profile/ale.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="./assets/profile/aline.jpg" alt=""></div>
+                    <div class="carousel-cell"><img src="./assets/profile/fabiano.jpg" alt=""></div>
                 </div>
             </div>
         </div>
@@ -107,7 +133,7 @@
 
 
         <section>
-            <div class="container  calcule" id="calculator-show">
+            <div class="container  calcule calculadora" id="calculator-show">
                 <!--colocar a class calculadora aqui -->
                 <div class="little-gap">
                     <div class="row">
@@ -116,7 +142,7 @@
                                 <div class="internal">
                                     <div class="row justify-content-between">
                                         <div class="col align-right">
-                                            <img src="assets/engrenagem.png" alt="">
+                                            <img src="./assets/engrenagem.png" alt="">
                                             <p>Investimento estimado</p>
                                             <h5>
                                                 {{ (estimate * 0.5).toLocaleString('pt-BR', { style: 'currency',
@@ -151,7 +177,7 @@
                                                 <div class="modal-content">
                                                     <div class="d-flex justify-content-between align-items-center">
                                                         <h5 class="modal-title " id="exampleModalToggleLabel">
-                                                            <img src="assets/clogo.png" alt="">
+                                                            <img src="./assets/clogo.png" alt="">
                                                         </h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
@@ -211,8 +237,8 @@
         <div class="container">
             <div class="card-information">
                 <div class="row">
-                    <div class="col-md-6 order-md-2 info-img">
-                        <img src="assets/firstcard.jpg">
+                    <div class="col-md-6 order-md-2 info-img ">
+                        <img class="rellax" src="./assets/firstcard.jpg">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
@@ -227,11 +253,12 @@
                     </div>
                 </div>
             </div>
+            
 
-            <div class="card-information">
+            <div class="card-information ">
                 <div class="row">
                     <div class="col-md-6 info-img">
-                        <img src="assets/firstcard.jpg">
+                        <img class="rellax" src="./assets/firstcard.jpg">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
@@ -288,7 +315,7 @@
             <div class="container">
                 <div class="row footer">
                     <div class="col-md-6">
-                        <a href="https://creators.llc/" target="_blank"><img src="assets/logo.png" class="py-5" alt="">
+                        <a href="https://creators.llc/" target="_blank"><img src="./assets/logo.png" class="py-5" alt="">
                             <h3>POWERFUL INFLUENCE <br>
                                 MARKETING PLATFORM</h3>
                         </a>

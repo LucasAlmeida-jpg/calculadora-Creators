@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/LucasAlmeida-jpg/calculadora-Creators/issues"
   },
-  "homepage": "https://github.com/LucasAlmeida-jpg/calculadora-Creators#readme"
+  "homepage": "https://github.com/LucasAlmeida-jpg/calculadora-Creators#readme",
+  "dependencies": {
+    "rellax": "^1.12.1"
+  }
 }

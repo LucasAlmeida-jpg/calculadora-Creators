@@ -16,14 +16,14 @@ document.querySelectorAll('.accordion__button').forEach(button => {
 
 
 
-// function showCreatorCalculator() {
-//   const showCalculator = document.getElementById("calculator-show")
-//   if (showCalculator.style.display === "none") {
-//     showCalculator.style.display = "block"
-//   } else {
-//     showCalculator.style.display = "block"
-//   }
-// }
+function showCreatorCalculator() {
+  const showCalculator = document.getElementById("calculator-show")
+  if (showCalculator.style.display === "none") {
+    showCalculator.style.display = "block"
+  } else {
+    showCalculator.style.display = "block"
+  }
+}
 
 Vue.createApp({
 
@@ -37,17 +37,17 @@ Vue.createApp({
           name: "Youtube", icon: "fa-youtube", selected: false,
         },
         {
-          name: "Instagram", icon: "fa-instagram", selected: true,
+          name: "Instagram", icon: "fa-instagram", selected: false,
         },
         {
-          name: "TikTok", icon: "fa-tiktok", selected: true,
+          name: "TikTok", icon: "fa-tiktok", selected: false,
         },
         {
           name: "Twitter", icon: "fa-twitter", selected: false,
         },
       ],
       size: 0,
-      posts: 1,
+      posts: 0,
       descriptions: [
         "1K - 5K",
         "5K - 10K",
@@ -81,7 +81,7 @@ Vue.createApp({
   },
 
   mounted() {
- 
+
   },
 
   computed: {
@@ -101,4 +101,11 @@ Vue.createApp({
 
 }).mount('#calc');
 
-
+var rellax = new Rellax('.rellax', {
+  speed: -0.4,
+  center: false,
+  wrapper: null,
+  round: true,
+  vertical: true,
+  horizontal: true
+});

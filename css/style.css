@@ -4,7 +4,17 @@ body {
   background-color: black !important;
   overflow-x: hidden;
 }
+body .overlay {
+  position: sticky;
+  top: 300px;
+}
 body .calculadora {
+  display: none;
+}
+body .collapse {
+  display: none;
+}
+body .navbar-collapse ul li a {
   display: none;
 }
 body .background {
@@ -45,6 +55,7 @@ body .button-hiring button {
   padding: 12px 20px;
   color: white;
   border: none;
+  font-weight: 500;
 }
 body h1 {
   color: white;
@@ -61,10 +72,10 @@ body p {
 }
 body .influencers {
   margin-top: -80px;
-  width: 893px;
+  width: 650px;
   height: auto;
   object-fit: cover;
-  margin-top: -134px;
+  margin-top: -80px;
 }
 body .flickity-page-dots .dot {
   display: none;
@@ -80,7 +91,7 @@ body .calculator {
 body .calculator .social-card {
   background-color: #272A33;
   border-radius: 12px;
-  padding: 10px 0px 9px 0px;
+  padding: 10px 0px 1px 0px;
   margin: 5px;
   cursor: pointer;
 }
@@ -155,7 +166,7 @@ body .calculator .description {
   font-weight: 500;
   transform: translate(-50%, 0);
   border-radius: 6px;
-  padding: 4px 8px;
+  padding: 4px 0px;
 }
 body .calculator .description:before {
   content: "";
@@ -479,6 +490,9 @@ body footer ul li i:hover {
   body .modal .modal-content .simulation-btn {
     width: 100%;
   }
+  body .navbar-collapse ul li a {
+    display: block;
+  }
   body .btn-primary {
     padding: 10px 23px;
   }
@@ -494,6 +508,49 @@ body footer ul li i:hover {
   }
   body .calculator button {
     padding: 10px 20px;
+  }
+  body .navbar {
+    background: rgba(15, 15, 15, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100vw;
+    left: 0;
+    right: 0;
+  }
+  body .navbar h1 {
+    font-weight: 700;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  body .navbar button:focus:not(:focus-visible) {
+    box-shadow: none;
+  }
+  body .form-control:valid {
+    z-index: 0 !important;
+  }
+  body .collapsed-all {
+    padding: 32px 85px 85px 22px;
+    white-space: nowrap;
+  }
+  body .collapsed-all .col h2 {
+    font-size: 16px;
+    font-weight: 100;
+  }
+  body .navbar-toggler-icon {
+    background-color: rgb(99, 44, 237);
+    padding: 20px;
+    border-radius: 50%;
+    background-size: 59%;
+  }
+  body .navbar-toggler {
+    border: none !important;
+  }
+  body .navbar-toggler:hover {
+    border: none !important;
   }
   body .container .influencers {
     display: none;
@@ -535,12 +592,13 @@ body footer ul li i:hover {
     line-height: 1.2 !important;
   }
   body .card-information img {
-    max-width: 330px;
-    height: 300px;
+    max-width: 320px;
+    max-height: 250px;
+    object-fit: cover;
     margin-top: -140px;
   }
   body .card-information .card-body {
-    padding: 20px;
+    padding: 100px 20px 20px 20px;
   }
   body .btn-investment {
     text-align: center;
@@ -570,8 +628,21 @@ body footer ul li i:hover {
   body .footer ul li i {
     margin: 0px;
   }
-  body .show {
+  body .button-hiring {
+    display: none;
+  }
+  body .navbar-collapse ul li a {
+    color: white !important;
+  }
+  body .collapse {
     display: block;
+  }
+  body .show,
+body .hide {
+    display: block;
+  }
+  body .card-body .internal h5 {
+    font-size: 14px !important;
   }
 }
 
