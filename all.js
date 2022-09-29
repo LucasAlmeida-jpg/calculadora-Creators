@@ -25,6 +25,10 @@ function showCreatorCalculator() {
   }
 }
 
+var filtroTeclas = function(event) {
+  return ((event.charCode >= 48 && event.charCode <= 57) || (event.keyCode == 45 || event.charCode == 46))
+}
+
 Vue.createApp({
 
   data() {
@@ -64,6 +68,7 @@ Vue.createApp({
         "5M+",
       ],
       ranges: [
+
         [
           1000, 1000, 5000, 9000, 14000, 20000, 25000, 25000, 25000, 25000, 35000, 35000, 35000 // youtube
         ],
@@ -76,6 +81,7 @@ Vue.createApp({
         [
           1000, 1000, 1000, 1000, 2500, 4500, 5500, 7500, 9500, 12500, 12500, 15000, 20000 // Twitter
         ]
+        
       ]
     }
   },
@@ -84,6 +90,7 @@ Vue.createApp({
 
   },
 
+ 
   computed: {
 
     estimate() {
