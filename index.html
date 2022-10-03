@@ -86,14 +86,13 @@
                                 <div class="description" :style="{marginLeft: 4 + (size * 7.66) + '%' }">{{
                                     descriptions[size] }}</div>
                             </div>
-
                         </div>
 
-                        <div class="container">
+                        <div class="container mt-5">
                             <div class="was-validated">
                                 <p class="text-start mt-4">Número de postagens por rede</p>
                                 <div class="input-group mb-3">
-                                    <input onkeypress='return filtroTeclas(event)' type="text" class="form-control" placeholder="27" v-model="posts" 
+                                    <input onkeypress='return filtroTeclas(event)' type="text" class="form-control" placeholder="27" v-model="posts"  maxlength="3"
                                         style="border-radius: 12px; color: grey;" required/>
                                     <div class="invalid-feedback">É necessário digitar um número de posts </div>
                                 </div>

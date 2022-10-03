@@ -133,7 +133,7 @@ body .calculator input[type=range]:focus {
 }
 body .calculator input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 16px;
+  height: 6px;
   cursor: pointer;
   animate: 0.2s;
   background: #404554;
@@ -146,7 +146,7 @@ body .calculator input[type=range]::-webkit-slider-thumb {
   background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -6px;
+  margin-top: -9px;
   border: 5px solid rgb(51, 48, 48);
 }
 body .calculator input[type=range]:focus::-webkit-slider-runnable-track {
@@ -157,6 +157,7 @@ body .calculator .range-wrap {
   background-color: #272A33;
   border-radius: 12px;
   padding: 0px 10px;
+  height: 50px;
 }
 body .calculator .description {
   width: auto;
@@ -301,10 +302,9 @@ body .card .card-body .align-right img {
   position: absolute;
   margin-left: -50px;
   margin-top: 8px;
-  background: #FFFFFF;
+  background: rgba(255, 255, 34, 0.1333333333);
   padding: 10px;
   border-radius: 50%;
-  opacity: 0.2;
 }
 body .card .card-body .align p {
   margin-left: 20px;

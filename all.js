@@ -33,7 +33,7 @@ Vue.createApp({
 
   data() {
     return {
-
+      messageError: false,
       isUser1: true,
 
       redes: [
@@ -90,7 +90,6 @@ Vue.createApp({
 
   },
 
- 
   computed: {
 
     estimate() {
