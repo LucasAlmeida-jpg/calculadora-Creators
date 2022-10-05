@@ -663,6 +663,9 @@ body .hide {
   body .card-body .internal h5 {
     font-size: 14px !important;
   }
+  body .calculator .calc-price {
+    padding: 10px 70px !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
