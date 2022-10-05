@@ -612,6 +612,16 @@ body footer ul li i:hover {
   body .btn-investment {
     text-align: center;
   }
+  body .btn-investment button {
+    background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+    color: white;
+    text-align: center;
+    border: none;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    border-radius: 30px;
+    font-weight: 600;
+  }
   body .footer img {
     display: block;
     margin: 0px auto;
