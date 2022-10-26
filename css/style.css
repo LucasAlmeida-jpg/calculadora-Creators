@@ -191,15 +191,23 @@ body .line {
   opacity: 0.2;
   padding: 0px !important;
 }
+body .btn-investment-main button {
+  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  width: 100%;
+}
 body .btn-investment button {
   background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
   color: white;
   text-align: center;
   border: none;
-  padding-left: 7rem;
-  padding-right: 8rem;
   border-radius: 30px;
   font-weight: 600;
+  height: 50px;
 }
 body .card {
   background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
@@ -212,7 +220,27 @@ body .card {
   padding: 0px;
 }
 body .card .internal {
-  padding: 35px;
+  padding: 53px 32px;
+}
+body .card .internal .disclaimer h5 {
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  padding: 19px 0px;
+  font-weight: 500;
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  border-radius: 6px;
+}
+body .card .internal .disclaimer h5 span i {
+  border: 2px solid white;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: white;
+  text-align: center;
 }
 body .card .internal-btn {
   padding: 5px 40px;
@@ -617,8 +645,6 @@ body footer ul li i:hover {
     color: white;
     text-align: center;
     border: none;
-    padding-left: 3rem;
-    padding-right: 3rem;
     border-radius: 30px;
     font-weight: 600;
   }
@@ -662,6 +688,13 @@ body .hide {
   }
   body .card-body .internal h5 {
     font-size: 14px !important;
+  }
+  body .card {
+    height: 255px;
+  }
+  body .card .internal .disclaimer h5 {
+    margin-top: 10px;
+    padding: 20px 20px;
   }
   body .calculator .calc-price {
     padding: 10px 70px !important;

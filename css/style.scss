@@ -41,7 +41,7 @@ body {
     }
 
     .background {
-        background: $cor-botao  !important;
+        background: $cor-botao !important;
         color: white !important;
     }
 
@@ -138,8 +138,8 @@ body {
             padding: 10px 0px 1px 0px;
             margin: 5px;
             cursor: pointer;
-           
-            &:hover{
+
+            &:hover {
                 opacity: 0.5;
             }
         }
@@ -206,9 +206,9 @@ body {
 
         input[type=range]:focus::-webkit-slider-runnable-track {
             background: $cor-botao;
-            
+
         }
-      
+
         .range-wrap {
             position: relative;
             background-color: #272A33;
@@ -255,6 +255,19 @@ body {
         padding: 0px !important;
     }
 
+    .btn-investment-main {
+        button {
+            background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            width: 100%;
+
+        }
+    }
+
     .btn-investment {
 
         button {
@@ -262,11 +275,12 @@ body {
             color: white;
             text-align: center;
             border: none;
-            padding-left: 7rem;
-            padding-right: 8rem;
             border-radius: 30px;
             font-weight: 600;
+            height: 50px;
         }
+
+
     }
 
     .card {
@@ -279,8 +293,35 @@ body {
         margin-bottom: 20px;
         padding: 0px;
 
+
         .internal {
-            padding: 35px;
+            padding: 53px 32px;
+
+            .disclaimer {
+                h5 {
+                    font-size: 16px;
+                    background-color: rgba(255, 255, 255, 0.1) !important;
+                    padding: 19px 0px;
+                    font-weight: 500;
+                    align-items: center;
+                    display: flex;
+                    gap: 14px;
+                    justify-content: center;
+                    border-radius: 6px;
+
+                    span {
+                        i {
+                            border: 2px solid white;
+                            font-size: 15px;
+                            padding: 10px;
+                            border-radius: 50%;
+                            background-color: rgba(255, 255, 255, 0.1) !important;
+                            color: white;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
         }
 
         .internal-btn {
@@ -393,7 +434,7 @@ body {
                     background: #ff22;
                     padding: 10px;
                     border-radius: 50%;
-                      
+
                 }
             }
 
@@ -825,19 +866,17 @@ body {
 
         .btn-investment {
             text-align: center;
-           
 
-                button {
-                    background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
-                    color: white;
-                    text-align: center;
-                    border: none;
-                    padding-left: 3rem;
-                    padding-right: 3rem;
-                    border-radius: 30px;
-                    font-weight: 600;
-                }
-        
+
+            button {
+                background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+                color: white;
+                text-align: center;
+                border: none;
+                border-radius: 30px;
+                font-weight: 600;
+            }
+
         }
 
         .footer {
@@ -916,12 +955,25 @@ body {
 
         }
 
-        .calculator{
-            
-                .calc-price{
-                    padding: 10px 70px !important;
+        .card {
+            height: 255px;
+
+            .internal {
+                .disclaimer {
+                    h5 {
+                        margin-top: 10px;
+                        padding: 20px 20px;
+                    }
                 }
-            
+            }
+        }
+
+        .calculator {
+
+            .calc-price {
+                padding: 10px 70px !important;
+            }
+
         }
     }
 }
