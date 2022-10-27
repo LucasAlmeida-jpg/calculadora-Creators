@@ -325,7 +325,7 @@ body {
         }
 
         .internal-btn {
-            padding: 5px 40px;
+            padding: 30px 40px 30px;
         }
 
         input[type=range] {
@@ -845,6 +845,7 @@ body {
         .card-information {
             .card-title {
                 line-height: .9 !important;
+                margin: 0 !important;
             }
 
             p {

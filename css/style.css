@@ -243,7 +243,7 @@ body .card .internal .disclaimer h5 span i {
   text-align: center;
 }
 body .card .internal-btn {
-  padding: 5px 40px;
+  padding: 30px 40px 30px;
 }
 body .card input[type=range] {
   -webkit-appearance: none;
@@ -624,6 +624,7 @@ body footer ul li i:hover {
   }
   body .card-information .card-title {
     line-height: 0.9 !important;
+    margin: 0 !important;
   }
   body .card-information p {
     line-height: 1.2 !important;
