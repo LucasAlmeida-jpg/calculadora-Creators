@@ -103,14 +103,16 @@
                         </div>
 
                         <div class="container mt-5">
-                            <div class="was-validated">
-                                <p class="text-start mt-4">Número de postagens por rede</p>
+
+                            <p class="text-start mt-4">Número de postagens por rede</p>
+                            <div class="validation">
                                 <div class="input-group mb-3">
                                     <input onkeypress='return filtroTeclas(event)' type="text" class="form-control"
-                                        placeholder="27" v-model="posts" maxlength="3"
-                                        style="border-radius: 12px; color: grey;" required />
-                                    <div class="invalid-feedback">É necessário digitar um número de posts </div>
+                                        v-model="posts" maxlength="3" style="border-radius: 12px; color: grey;"
+                                        placeholder="27" onfocus="this.value='';" />
                                 </div>
+                                <div v-if="this.posts <= 0" class="less">É necessário digitar um número de posts</div>
+                                <div v-else-if="this.posts > 100" class="less">Número máximo de posts é de 100</div>
                             </div>
                         </div>
 
@@ -167,11 +169,14 @@
                                                 currency: 'BRL', }) }}
                                             </h5>
                                         </div>
-                                         <div class="col-md-7">
+                                        <div class="col-md-7">
                                             <div class="disclaimer">
-                                                <h5 class=""><span><i class="fa-solid fa-triangle-exclamation"></i></span> Essa estimativa considera canais de criadores com engajamento entre 2% a 20%.</h5>
+                                                <h5 class=""><span><i
+                                                            class="fa-solid fa-triangle-exclamation"></i></span> Essa
+                                                    estimativa considera canais de criadores com engajamento entre 2% a
+                                                    20%.</h5>
                                             </div>
-                                            
+
                                             <!--<div class="position">
                                                 <img src="assets/alert-circle.png" alt="">
                                                 <p>Nível de engajamento</p>
@@ -180,7 +185,7 @@
                                                 <div class="range-value" id="range"></div>
                                                 <input id="range" type="range" min="50" max="100" value="50" step="1">
                                             </div>-->
-                                        </div> 
+                                        </div>
 
 
 
@@ -269,14 +274,15 @@
                     <div class="col-md-6">
                         <div class="card-body">
                             <!-- <h5 class="card-title">Quer o criador de  conteúdo certo para <br> sua empresa?</h5> -->
-                            <h5>Quer receber mais <br> trabalhos de parceria com o seu perfil de criador de conteúdo?</h5>
-                            <p class="card-text mt-3">Cadastre-se na nossa comunidade de criadores 
+                            <h5>Quer receber mais <br> trabalhos de parceria com o seu perfil de criador de conteúdo?
+                            </h5>
+                            <p class="card-text mt-3">Cadastre-se na nossa comunidade de criadores
                             </p>
                             <div class="btn-investment">
                                 <button class="py-2">
 
-                                    <a style="text-decoration:none; color: white;" class="button-be-creators px-5" href="https://creators.llc/"
-                                        target="_blank">Seja Creators</a>
+                                    <a style="text-decoration:none; color: white;" class="button-be-creators px-5"
+                                        href="https://creators.llc/" target="_blank">Seja Creators</a>
                                 </button>
                             </div>
                         </div>
@@ -294,12 +300,13 @@
                         <div class="card-body">
                             <h5 class="card-title mt-5">Quer contratar criadores de conteúdo?
                             </h5>
-                            <p class="card-text mt-3">Seja um parceiro da Creators e 
+                            <p class="card-text mt-3">Seja um parceiro da Creators e
                             </p>
                             <div class="btn-investment mb-5">
                                 <button class="py-2">
-                                    <a style="text-decoration:none; color: white;" class="px-4" href="https://creators.llc/"
-                                        target="_blank">Cadastre-se sua empresa</a></button>
+                                    <a style="text-decoration:none; color: white;" class="px-4"
+                                        href="https://creators.llc/" target="_blank">Cadastre-se sua
+                                        empresa</a></button>
                             </div>
                         </div>
                     </div>
@@ -344,7 +351,12 @@
             <button type="button" class="accordion__button container">Como a Creators funciona?</button>
             <div class="accordion__content container">
                 <hr>
-                <p>Conectamos marcas admiradas com criadores de conteúdo a partir dos objetivos de cada campanha e perfil dos criadores. Para clientes, basta publicar um briefing na plataforma que entregamos estratégia, mapeamento dos melhores criadores, gerenciamento de conteúdo e relatório de resultados. Para criadores, basta criar um perfil na plataforma, deixar o mais completo possível e aguardar nosso sistema de matchmaking para receber convites de jobs. Crie sua conta <a href="https://creators.llc/" target="_blank">clicando aqui.</a>
+                <p>Conectamos marcas admiradas com criadores de conteúdo a partir dos objetivos de cada campanha e
+                    perfil dos criadores. Para clientes, basta publicar um briefing na plataforma que entregamos
+                    estratégia, mapeamento dos melhores criadores, gerenciamento de conteúdo e relatório de resultados.
+                    Para criadores, basta criar um perfil na plataforma, deixar o mais completo possível e aguardar
+                    nosso sistema de matchmaking para receber convites de jobs. Crie sua conta <a
+                        href="https://creators.llc/" target="_blank">clicando aqui.</a>
                 </p>
             </div>
         </div>
@@ -364,15 +376,15 @@
                         <div class="list-terms">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md">
+                                    <div class="col-md-3">
                                         <a href="https://creators.llc/documents/Termos_de_Uso_Creators.pdf">Termos e
                                             condições</a>
                                     </div>
-                                    <div class="col-md">
+                                    <div class="col-md-3">
                                         <a href="https://creators.llc/documents/Politica_de_privacidade.pdf">Política de
                                             privacidade</a>
                                     </div>
-                                    <div class="col-md">
+                                    <div class="col-md-3">
                                         <a href="mailto:hello@creators.llc">hello@creators.llc</a>
                                     </div>
                                 </div>

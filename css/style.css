@@ -4,9 +4,18 @@ body {
   background-color: #111111 !important;
   overflow-x: hidden;
 }
+body .validation .input-group input:focus {
+  box-shadow: 0px 0em 0em 0em !important;
+}
 body .overlay {
   position: sticky;
   top: 300px;
+}
+body .less {
+  font-size: 0.875em;
+  color: #dc3545;
+  margin-top: -12px;
+  margin-left: 5px;
 }
 body .calculadora {
   display: none;
@@ -482,7 +491,7 @@ body footer .list-terms {
 body footer .list-terms a {
   text-align: center;
   font-weight: 600;
-  margin-left: -99px;
+  margin-left: -50px;
   font-size: 13px;
   color: #8B90A0;
 }

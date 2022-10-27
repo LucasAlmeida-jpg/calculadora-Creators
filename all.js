@@ -13,9 +13,6 @@ document.querySelectorAll('.accordion__button').forEach(button => {
   })
 })
 
-
-
-
 function showCreatorCalculator() {
   const showCalculator = document.getElementById("calculator-show")
   if (showCalculator.style.display === "none") {
@@ -34,9 +31,7 @@ Vue.createApp({
 
   data() {
     return {
-      messageError: false,
       isUser1: true,
-
       redes: [
         {
           name: "Youtube", icon: "fa-youtube", selected: false,
