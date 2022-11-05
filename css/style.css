@@ -95,7 +95,7 @@ body .flickity-page-dots .dot {
 body .calculator {
   background: #1C1E25;
   color: white;
-  height: 547px;
+  height: 630px;
   padding: 20px;
   border-radius: 15px;
   margin-top: 30px;
@@ -103,12 +103,18 @@ body .calculator {
 body .calculator .social-card {
   background-color: #272A33;
   border-radius: 12px;
-  padding: 10px 0px 1px 0px;
+  padding: 1px 0px 0px 0px;
   margin: 5px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
 }
 body .calculator .social-card:hover {
   opacity: 0.5;
+}
+body .calculator .social-card .youtube-card {
+  margin-top: 12px;
 }
 body .calculator .selected {
   outline: 4px solid #B390FF;
