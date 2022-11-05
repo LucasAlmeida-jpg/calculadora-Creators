@@ -79,14 +79,14 @@
                 <div class="col-md-4">
                     <div class="container calculator">
                         <p class="text-start">Selecione a plataforma do criador</p>
-                        <div class="row g-0">
+                        <div class="row g-0 d-flex justify-content-center">
 
-                            <div class="col-6 " v-for="rede in redes">
+                            <div class="col-6" v-for="rede in redes">
                                 <div class="social-card text-center" :class="{selected: rede.selected}"
                                     @click="rede.selected = !rede.selected">
-                                    <div class="youtube-card">
+                                    <div class="youtube-card d-flex align-items-center">
                                         <i class="fa-brands" :class="rede.icon"></i>
-                                        <p class="align-center">{{ rede.name }}</p>
+                                        <p class="mt-3 ms-2">{{ rede.name }}</p>
                                     </div>
                                 </div>
                             </div>
