@@ -104,7 +104,7 @@ Vue.createApp({
 }).mount('#calc');
 
 var rellax = new Rellax('.rellax', {
-  speed: -1,
+  speed: -0.7,
   center: false,
   wrapper: null,
   round: true,
