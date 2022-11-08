@@ -1,4 +1,4 @@
-$background-calculadora: #111111 !important;
+$background-calculadora: #111111;
 $background-calculadora-pagina: #1C1E25;
 $first-btn: #3E465F;
 $cor-botao: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
@@ -15,7 +15,7 @@ body {
     .validation {
         .input-group {
             input:focus {
-                box-shadow: 0px 0em 0em 0em !important;
+                box-shadow: 0px 0em 0em 0em;
             }
         }
     }
@@ -55,12 +55,12 @@ body {
     }
 
     .background {
-        background: $cor-botao !important;
-        color: white !important;
+        background: $cor-botao ;
+        color: white;
     }
 
     .btn-primary {
-        background-color: rgba(255, 255, 255, 0.1) !important;
+        background-color: rgba(255, 255, 255, 0.1);
         border: none;
         padding: 12px 16px;
         font-weight: 500;
@@ -86,7 +86,7 @@ body {
             height: 360px;
             margin-right: 20px;
             counter-increment: carousel-cell;
-            border-radius: 12px !important;
+            border-radius: 12px;
             object-fit: cover;
         }
     }
@@ -156,15 +156,14 @@ body {
             cursor: pointer;
             display: flex;
             justify-content: center;
-            align-items: center !important;
+            align-items: center;
 
             &:hover {
                 opacity: 0.5;
             }
-            .youtube-card{
-                
-            }
-            
+
+            .youtube-card {}
+
         }
 
         .selected {
@@ -184,7 +183,7 @@ body {
 
         .input-group {
             input {
-                background: #272A33 !important;
+                background: #272A33;
                 border: none;
                 color: white;
                 height: 50px;
@@ -275,7 +274,7 @@ body {
     .line {
         border-bottom: 1px solid #FFFFFF;
         opacity: 0.2;
-        padding: 0px !important;
+        padding: 0px;
     }
 
     .btn-investment-main {
@@ -323,7 +322,7 @@ body {
             .disclaimer {
                 h5 {
                     font-size: 16px;
-                    background-color: rgba(255, 255, 255, 0.1) !important;
+                    background-color: rgba(255, 255, 255, 0.1);
                     padding: 19px 27px;
                     font-weight: 500;
                     align-items: center;
@@ -338,7 +337,7 @@ body {
                             font-size: 15px;
                             padding: 10px;
                             border-radius: 50%;
-                            background-color: rgba(255, 255, 255, 0.1) !important;
+                            background-color: rgba(255, 255, 255, 0.1);
                             color: white;
                             text-align: center;
                         }
@@ -546,7 +545,7 @@ body {
         max-height: 450px;
         margin-top: 209px;
         display: flex;
-        justify-content: center !important;
+        justify-content: center;
 
         .info-img {
             display: flex;
@@ -639,6 +638,10 @@ body {
         display: flex;
         align-items: center;
 
+        .powerful {
+            margin-top: -40px;
+        }
+
         .list-terms {
             color: white;
             opacity: 0.6;
@@ -704,7 +707,7 @@ body {
                 width: 109%;
                 position: absolute;
                 bottom: 0px;
-                margin: -15px !important;
+                margin: -15px;
                 border-radius: 20px 20px 0px 0px;
 
                 .simulation-btn {
@@ -728,7 +731,7 @@ body {
         }
 
         .internal-btn {
-            padding: 5px 10px !important;
+            padding: 5px 10px;
         }
 
         .hide-mobile {
@@ -773,7 +776,7 @@ body {
         }
 
         .form-control:valid {
-            z-index: 0 !important;
+            z-index: 0;
         }
 
 
@@ -800,10 +803,10 @@ body {
         }
 
         .navbar-toggler {
-            border: none !important;
+            border: none;
 
             &:hover {
-                border: none !important;
+                border: none;
 
             }
         }
@@ -866,12 +869,12 @@ body {
 
         .card-information {
             .card-title {
-                line-height: .9 !important;
-                margin: 0 !important;
+                line-height: .9;
+                margin: 0;
             }
 
             p {
-                line-height: 1.2 !important;
+                line-height: 1.2;
             }
 
             img {
@@ -908,6 +911,7 @@ body {
                 margin: 0px auto;
                 margin-bottom: 60px;
                 width: 160px;
+
             }
 
             h3 {
@@ -917,7 +921,7 @@ body {
                 margin-bottom: 60px;
             }
 
-          
+
 
             .list-terms {
 
@@ -947,7 +951,7 @@ body {
             ul {
                 li {
                     a {
-                        color: white !important;
+                        color: white;
                     }
                 }
             }
@@ -966,7 +970,7 @@ body {
 
             .internal {
                 h5 {
-                    font-size: 14px !important;
+                    font-size: 14px;
                 }
             }
 
@@ -988,7 +992,7 @@ body {
         .calculator {
 
             .calc-price {
-                padding: 10px 70px !important;
+                padding: 10px 70px;
             }
 
         }

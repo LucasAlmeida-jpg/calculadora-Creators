@@ -1,11 +1,11 @@
 @charset "UTF-8";
 body {
   scroll-behavior: smooth;
-  background-color: #111111 !important;
+  background-color: #111111;
   overflow-x: hidden;
 }
 body .validation .input-group input:focus {
-  box-shadow: 0px 0em 0em 0em !important;
+  box-shadow: 0px 0em 0em 0em;
 }
 body .overlay {
   position: sticky;
@@ -27,11 +27,11 @@ body .navbar-collapse ul li a {
   display: none;
 }
 body .background {
-  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%) !important;
-  color: white !important;
+  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+  color: white;
 }
 body .btn-primary {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.1);
   border: none;
   padding: 12px 16px;
   font-weight: 500;
@@ -53,7 +53,7 @@ body .carousel-cell img {
   height: 360px;
   margin-right: 20px;
   counter-increment: carousel-cell;
-  border-radius: 12px !important;
+  border-radius: 12px;
   object-fit: cover;
 }
 body .little-gap {
@@ -108,7 +108,7 @@ body .calculator .social-card {
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center !important;
+  align-items: center;
 }
 body .calculator .social-card:hover {
   opacity: 0.5;
@@ -126,7 +126,7 @@ body .calculator .text-calculator {
   margin-bottom: 15px;
 }
 body .calculator .input-group input {
-  background: #272A33 !important;
+  background: #272A33;
   border: none;
   color: white;
   height: 50px;
@@ -203,7 +203,7 @@ body .calculator .description:before {
 body .line {
   border-bottom: 1px solid #FFFFFF;
   opacity: 0.2;
-  padding: 0px !important;
+  padding: 0px;
 }
 body .btn-investment-main button {
   background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
@@ -238,7 +238,7 @@ body .card .internal {
 }
 body .card .internal .disclaimer h5 {
   font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 19px 27px;
   font-weight: 500;
   align-items: center;
@@ -252,7 +252,7 @@ body .card .internal .disclaimer h5 span i {
   font-size: 15px;
   padding: 10px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
   text-align: center;
 }
@@ -411,7 +411,7 @@ body .card-information {
   max-height: 450px;
   margin-top: 209px;
   display: flex;
-  justify-content: center !important;
+  justify-content: center;
 }
 body .card-information .info-img {
   display: flex;
@@ -485,6 +485,9 @@ body footer {
   display: flex;
   align-items: center;
 }
+body footer .powerful {
+  margin-top: -40px;
+}
 body footer .list-terms {
   color: white;
   opacity: 0.6;
@@ -535,7 +538,7 @@ body footer ul li i:hover {
     width: 109%;
     position: absolute;
     bottom: 0px;
-    margin: -15px !important;
+    margin: -15px;
     border-radius: 20px 20px 0px 0px;
   }
   body .modal .modal-content .simulation-btn {
@@ -548,7 +551,7 @@ body footer ul li i:hover {
     padding: 10px 23px;
   }
   body .internal-btn {
-    padding: 5px 10px !important;
+    padding: 5px 10px;
   }
   body .hide-mobile {
     display: none;
@@ -581,7 +584,7 @@ body footer ul li i:hover {
     box-shadow: none;
   }
   body .form-control:valid {
-    z-index: 0 !important;
+    z-index: 0;
   }
   body .collapsed-all {
     padding: 32px 85px 85px 22px;
@@ -598,10 +601,10 @@ body footer ul li i:hover {
     background-size: 59%;
   }
   body .navbar-toggler {
-    border: none !important;
+    border: none;
   }
   body .navbar-toggler:hover {
-    border: none !important;
+    border: none;
   }
   body .container .influencers {
     display: none;
@@ -637,11 +640,11 @@ body footer ul li i:hover {
     margin-bottom: -10px;
   }
   body .card-information .card-title {
-    line-height: 0.9 !important;
-    margin: 0 !important;
+    line-height: 0.9;
+    margin: 0;
   }
   body .card-information p {
-    line-height: 1.2 !important;
+    line-height: 1.2;
   }
   body .card-information img {
     max-width: 320px;
@@ -687,7 +690,7 @@ body footer ul li i:hover {
     display: none;
   }
   body .navbar-collapse ul li a {
-    color: white !important;
+    color: white;
   }
   body .collapse {
     display: block;
@@ -697,7 +700,7 @@ body .hide {
     display: block;
   }
   body .card-body .internal h5 {
-    font-size: 14px !important;
+    font-size: 14px;
   }
   body .card {
     height: 255px;
@@ -707,7 +710,7 @@ body .hide {
     padding: 20px 20px;
   }
   body .calculator .calc-price {
-    padding: 10px 70px !important;
+    padding: 10px 70px;
   }
 }
 

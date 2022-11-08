@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de Creators - Calcule o preço de publicidade baseado
+    nas principais métricas de influência">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap">
+    <meta name="author" content="Creators.llc">
+    <meta property="og:description" content="Calculadora de Creators - Calcule o preço de publicidade baseado
+    nas principais métricas de influência" />
+    <meta property="og:image" content="https://creators.llc/images/share.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
     <title>Calculadora Creators</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="https://creators.llc/favicon.png">
     <script src="https://unpkg.com/vue@3"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -15,6 +23,7 @@
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/e99973526a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -96,7 +105,8 @@
                         <div class="container">
                             <p class="text-start mt-4 text-calculator">Tamanho do canal</p>
                             <div class="range-wrap">
-                                <input id="range" type="range" min="0" max="12" step="1" v-model="size">
+                                <input id="range" type="range" min="0" max="12" step="1" v-model="size"
+                                    aria-hidden="channel size">
                                 <div class="description" :style="{marginLeft: 4 + (size * 7.66) + '%' }">{{
                                     descriptions[size] }}</div>
                             </div>
@@ -160,7 +170,7 @@
                                 <div class="internal">
                                     <div class="row justify-content-between">
                                         <div class="col align-right">
-                                            <img src="./assets/promotion.svg" alt="">
+                                            <img src="./assets/promotion.svg" alt="" aria-hidden="true">
                                             <p>Investimento estimado</p>
                                             <h5>
                                                 {{ (estimate * 0.5).toLocaleString('pt-BR', { style: 'currency',
@@ -249,9 +259,9 @@
                                             role="button">Receba por email</a> -->
                                     </div>
                                     <div class="ms-auto p-2 ">
-                                        <a style="color: white; text-decoration: none;"
-                                        href="#recalcule"> <button class="btn btn-primary">
-                                            Recalcule</button></a>
+                                        <a style="color: white; text-decoration: none;" href="#recalcule"> <button
+                                                class="btn btn-primary">
+                                                Recalcule</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -269,13 +279,13 @@
             <div class="card-information">
                 <div class="row">
                     <div class="col-md-6 order-md-2 info-img ">
-                        <img class="rellax" src="./assets/woman.jpg">
+                        <img class="rellax" src="./assets/woman.jpg" alt="" aria-hidden="true">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
                             <!-- <h5 class="card-title">Quer o criador de  conteúdo certo para <br> sua empresa?</h5> -->
-                            <h5>Quer receber mais <br> trabalhos de parceria com o seu perfil de criador de conteúdo?
-                            </h5>
+                            <h3>Quer receber mais <br> trabalhos de parceria com o seu perfil de criador de conteúdo?
+                            </h3>
                             <p class="card-text mt-3">Cadastre-se na nossa comunidade de criadores
                             </p>
                             <div class="btn-investment">
@@ -294,12 +304,12 @@
             <div class="card-information ">
                 <div class="row">
                     <div class="col-md-6 info-img">
-                        <img class="rellax mb-5" src="./assets/man1.jpg">
+                        <img class="rellax mb-5" src="./assets/man1.jpg" alt="" aria-hidden="true">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <h5 class="card-title mt-5">Quer contratar criadores de conteúdo?
-                            </h5>
+                            <h3 class="card-title mt-5">Quer contratar criadores de conteúdo?
+                            </h3>
                             <p class="card-text mt-3">Seja um parceiro da Creators e cadastre sua empresa
                             </p>
                             <div class="btn-investment mb-5">
@@ -368,10 +378,10 @@
             <div class="container">
                 <div class="row footer">
                     <div class="col-md-6">
-                        <a href="https://creators.llc/" target="_blank"><img src="./assets/logo.svg" class="py-5"
-                                alt="">
-                            <h3>POWERFUL INFLUENCE <br>
-                                MARKETING PLATFORM</h3>
+                        <a href="https://creators.llc/" target="_blank"><img src="./assets/logo.svg" alt=""
+                                aria-hidden="true" class="py-5">
+                            <p class="powerful">POWERFUL INFLUENCE <br>
+                                MARKETING PLATFORM</p>
                         </a>
                         <div class="list-terms">
                             <div class="container">
