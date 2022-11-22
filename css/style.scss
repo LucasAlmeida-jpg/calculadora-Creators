@@ -40,17 +40,51 @@ body {
         display: none;
     }
 
-    .collapse {
-        display: none;
+    
+    .menu{
+        padding: 50px 0 80px;
     }
+    .navbar-expand-lg .navbar-collapse{
+        justify-content: end;
 
-    .navbar-collapse {
-        ul {
-            li {
-                a {
-                    display: none;
+        .nav-item{
+            text-align: center;
+            a{
+                font-size: 16px;
+                line-height: 16px;
+                letter-spacing: -0.5px;
+                color: #FFF;
+    
+                &:first-child{
+                    margin-right: 24px;
                 }
             }
+        }
+    
+        .btn-area{
+            display: flex;
+            justify-content: flex-end;
+        }
+    
+        .btn{
+            background: #3E465F;
+            border-radius: 10px;
+            padding: 13px 18px;
+            margin-right: 8px;
+    
+            font-size: 14px;
+            line-height: 16px;
+            text-align: center;
+            letter-spacing: -0.5px;
+    
+            color: #FFFFFF;
+    
+            &.purple{
+                background: #7553E2;
+                border-radius: 10px;
+                min-width: 89px;
+            }
+    
         }
     }
 
@@ -716,11 +750,55 @@ body {
             }
         }
 
-        .navbar-collapse {
-            ul {
-                li {
-                    a {
-                        display: block;
+        .menu{
+            padding: 0 0 80px;
+
+            button.navbar-toggler {
+                background: linear-gradient(284.09deg, #9757FF -1.11%, #3300FF 193.48%);
+                border: none;
+                border-radius: 50%;
+                padding: 10px;
+
+                span.navbar-toggler-icon{
+                    filter: invert(1);
+                }
+            }
+        }
+
+        .navbar-expand-lg{
+            .navbar-collapse{
+
+                padding: 20px 0 0;
+                .nav-item{
+                    a{
+                        font-size: 24px;
+                        line-height: 16px;
+                        text-align: right;
+
+                        &:first-child{
+                            margin-right: 0;
+                            padding: 18px 8px 18px 0;
+                        }
+                    }
+                }
+                .btn-area{
+                    display: grid;
+                    float: right;
+
+                    .btn{
+                        background: transparent;
+                        text-align: right;
+                        padding: 18px 8px 18px 0;
+                        margin-right: 0;
+
+                        font-size: 24px;
+                        line-height: 16px;
+
+                        &.purple{
+                            background: #7553E2;
+                            text-align: center;
+                            margin-top: 18px;
+                        }
                     }
                 }
             }
@@ -747,34 +825,6 @@ body {
             }
         }
 
-        .navbar {
-            background: rgba(15, 15, 15, 0.6);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(13.5px);
-            -webkit-backdrop-filter: blur(13.5px);
-            position: fixed;
-            bottom: 0;
-            z-index: 1;
-
-            width: 100vw;
-            left: 0;
-            right: 0;
-
-
-            h1 {
-                font-weight: 700;
-                margin-left: 20px;
-                margin-top: 10px;
-            }
-
-
-            button:focus:not(:focus-visible) {
-                box-shadow: none;
-
-            }
-
-        }
-
         .form-control:valid {
             z-index: 0;
         }
@@ -795,12 +845,6 @@ body {
             }
         }
 
-        .navbar-toggler-icon {
-            background-color: rgb(99, 44, 237);
-            padding: 20px;
-            border-radius: 50%;
-            background-size: 59%;
-        }
 
         .navbar-toggler {
             border: none;

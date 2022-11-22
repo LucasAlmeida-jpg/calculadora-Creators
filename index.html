@@ -34,45 +34,35 @@
 
     <div id="calc" class="container mt-4">
         <div class="container-fluid">
-            <nav class="navbar">
-                <a class="navbar-brand hide-mobile" href="https://creators.llc/" target="_blank">
-                    <img src="./assets/logo.svg" alt="creators logo">
-                </a>
-                <div class="button-hiring">
-                    <button>
-                        <a style="text-decoration:none; color: white;" href="https://creators.llc/?newclient=1"
-                            target="_blank">Contrate Creators</a>
-                    </button>
+            <nav class="navbar navbar-expand-lg menu">
+                <div class="container">
+                  <a class="navbar-brand" href="https://creators.llc/" target="_blank">
+                    <img class="d-none d-md-block" src="./assets/logo.svg" alt="creators logo">
+                    <img class="d-md-none d-block" src="./assets/short-logo_creators.svg" alt="creators logo">
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+    
+                  <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav col-xl-4">
+                      <li class="nav-item">
+                        <a class="nav-link" href="https://creators.llc/">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="https://creators.llc/cases" target="_blank">Cases</a>
+                      </li>
+                    </ul>
+    
+                    <div class="btn-area col-xl-5">
+                        <a class="btn" href="https://creators.llc/?newclient=1" target="_blank">Contrate Creators</a>
+                        <a class="btn" href="https://creators.llc/?newcreator=1"target="_blank">Seja Creators</a>
+                        <a class="btn purple" href="https://creators.llc/?openlogin=true" target="_blank">Login</a>
+                      </div>
+                  </div>
+    
                 </div>
-                <div class="collapse" id="navbarToggleExternalContent">
-                    <div class=" collapsed-all">
-                        <div class="row">
-                            <div class="col">
-                                <h2>Como funciona</h2>
-                            </div>
-                            <div class="col">
-                                <h2>Encontre Creators</h2>
-                            </div>
-                            <div class="col">
-                                <h2>Seja Creator</h2>
-                            </div>
-                            <div class="col">
-                                <h2>FAQ</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <nav class="navbar navbar-dark hide">
-                    <div class="container">
-                        <button class="navbar-toggler d-flex align-items-center" data-bs-toggle="collapse"
-                            data-bs-target="#navbarToggleExternalContent">
-                            <span class="navbar-toggler-icon"></span>
-                            <h1>Calculadora de Creators</h1>
-                        </button>
-                    </div>
-                </nav>
-        </div>
-        </nav>
+            </nav>
 
 
         <div class="container">
