@@ -80,6 +80,11 @@ body .btn-cards {
   width: 60%;
   font-size: 16px;
 }
+body .accordion-body p {
+  border-top: 1px solid grey;
+  margin-top: -13px;
+  padding-top: 20px;
+}
 body .accordion-flush .accordion-item {
   border-radius: 12px !important;
   background: #232323;

@@ -116,6 +116,14 @@ body {
         font-size: 16px;
     }
 
+    .accordion-body{
+        p{
+        border-top: 1px solid grey;
+        margin-top: -13px;
+        padding-top: 20px;
+        }
+    }
+
     .accordion-flush {
         .accordion-item {
             border-radius: 12px !important;
@@ -190,6 +198,7 @@ body {
         color: white;
         font-size: 13px;
         font-weight: 500;
+        
     }
 
 
