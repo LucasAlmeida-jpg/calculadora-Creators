@@ -47,6 +47,7 @@ body {
 
     .navbar-expand-lg .navbar-collapse {
         justify-content: end;
+        
 
         .nav-item {
             text-align: center;
@@ -56,6 +57,7 @@ body {
                 line-height: 16px;
                 letter-spacing: -0.5px;
                 color: #FFF;
+                
 
                 &:first-child {
                     margin-right: 24px;
@@ -73,6 +75,7 @@ body {
             border-radius: 10px;
             padding: 13px 18px;
             margin-right: 8px;
+            font-weight: 500 !important;
 
             font-size: 14px;
             line-height: 16px;
