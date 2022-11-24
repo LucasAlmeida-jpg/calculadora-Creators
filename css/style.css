@@ -747,6 +747,19 @@ body .hide {
   body .calculator .calc-price {
     padding: 10px 70px;
   }
+  body .social-media {
+    align-items: center !important;
+    margin-top: -10px;
+  }
+  body footer .powerful {
+    text-align: center;
+    margin-top: -100px;
+    margin-bottom: -29px;
+  }
+  body footer li a img {
+    width: 44px !important;
+    margin-top: -50px !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

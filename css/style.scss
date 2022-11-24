@@ -1039,7 +1039,26 @@ body {
             }
 
         } 
-        
+        .social-media{
+            align-items: center !important;
+            margin-top: -10px;
+        }
+         footer {
+            .powerful{
+                text-align: center;
+                margin-top: -100px;
+                margin-bottom: -29px;
+            }
+           li{
+            a{
+                img{
+                    width: 44px !important;
+                    margin-top: -50px !important;
+                }
+            }
+           }
+         } 
     }
+    
    
 }
