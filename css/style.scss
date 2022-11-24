@@ -40,51 +40,53 @@ body {
         display: none;
     }
 
-    
-    .menu{
+
+    .menu {
         padding: 50px 0 80px;
     }
-    .navbar-expand-lg .navbar-collapse{
+
+    .navbar-expand-lg .navbar-collapse {
         justify-content: end;
 
-        .nav-item{
+        .nav-item {
             text-align: center;
-            a{
+
+            a {
                 font-size: 16px;
                 line-height: 16px;
                 letter-spacing: -0.5px;
                 color: #FFF;
-    
-                &:first-child{
+
+                &:first-child {
                     margin-right: 24px;
                 }
             }
         }
-    
-        .btn-area{
+
+        .btn-area {
             display: flex;
             justify-content: flex-end;
         }
-    
-        .btn{
+
+        .btn {
             background: #3E465F;
             border-radius: 10px;
             padding: 13px 18px;
             margin-right: 8px;
-    
+
             font-size: 14px;
             line-height: 16px;
             text-align: center;
             letter-spacing: -0.5px;
-    
+
             color: #FFFFFF;
-    
-            &.purple{
+
+            &.purple {
                 background: #7553E2;
                 border-radius: 10px;
                 min-width: 89px;
             }
-    
+
         }
     }
 
@@ -113,6 +115,38 @@ body {
         width: 60%;
         font-size: 16px;
     }
+
+    .accordion-flush {
+        .accordion-item {
+            border-radius: 12px !important;
+            background: #232323;
+            border: none;
+
+            .accordion-button {
+                border-radius: 12px !important;
+                padding: 25px 20px;
+                background: #232323;
+                border: #232323 1px solid;
+                color: white;
+
+
+            }
+        }
+    }
+
+    .accordion-button::after {
+        background-image: none !important;
+        content: '\25be';
+        float: right;
+        transform: scale(1.5);
+    }
+
+    button:focus {
+        box-shadow: 0 0 0 0 !important;
+        border: 0 none !important;
+        outline: 0 !important;
+    }
+
 
     .carousel-cell {
         img {
@@ -195,8 +229,6 @@ body {
             &:hover {
                 opacity: 0.5;
             }
-
-            .youtube-card {}
 
         }
 
@@ -616,52 +648,16 @@ body {
 
 
     .questionary {
+        margin-top: 80px;
+        margin-bottom: 80px;
+
         h1 {
             font-size: 35px;
-        }
-
-        .accordion {
-            margin-bottom: 40px;
-        }
-
-        .accordion__button {
-            display: block;
-            padding: 25px 25px 25px 30px;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            background: #232323;
-            color: #E3E3E3;
-            text-align: left;
-            border-radius: 14px;
-            transition: background 0.2s;
 
         }
 
-        .accordion__button::after {
-            content: '\25be';
-            float: right;
-            transform: scale(1.5);
-        }
-
-        .accordion__button--active {
-            background: #232323;
-        }
-
-        .accordion__content {
-            overflow: hidden;
-            max-height: 0px;
-            transition: max-height 0.2s;
-            margin-top: -22px;
-            background: #232323;
-            border-radius: 14px;
-            margin-bottom: -22px;
-            padding-top: 15px;
-            color: #E3E3E3;
-            padding-left: 16px;
-            font-weight: 500;
-        }
     }
+
 
 
     footer {
@@ -750,7 +746,7 @@ body {
             }
         }
 
-        .menu{
+        .menu {
             padding: 0 0 80px;
 
             button.navbar-toggler {
@@ -759,33 +755,35 @@ body {
                 border-radius: 50%;
                 padding: 10px;
 
-                span.navbar-toggler-icon{
+                span.navbar-toggler-icon {
                     filter: invert(1);
                 }
             }
         }
 
-        .navbar-expand-lg{
-            .navbar-collapse{
+        .navbar-expand-lg {
+            .navbar-collapse {
 
                 padding: 20px 0 0;
-                .nav-item{
-                    a{
+
+                .nav-item {
+                    a {
                         font-size: 24px;
                         line-height: 16px;
                         text-align: right;
 
-                        &:first-child{
+                        &:first-child {
                             margin-right: 0;
                             padding: 18px 8px 18px 0;
                         }
                     }
                 }
-                .btn-area{
+
+                .btn-area {
                     display: grid;
                     float: right;
 
-                    .btn{
+                    .btn {
                         background: transparent;
                         text-align: right;
                         padding: 18px 8px 18px 0;
@@ -794,7 +792,7 @@ body {
                         font-size: 24px;
                         line-height: 16px;
 
-                        &.purple{
+                        &.purple {
                             background: #7553E2;
                             text-align: center;
                             margin-top: 18px;
@@ -950,6 +948,7 @@ body {
         }
 
         .footer {
+            
             img {
                 display: block;
                 margin: 0px auto;
@@ -1039,6 +1038,8 @@ body {
                 padding: 10px 70px;
             }
 
-        }
+        } 
+        
     }
+   
 }

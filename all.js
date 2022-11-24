@@ -1,24 +1,6 @@
-document.querySelectorAll('.accordion__button').forEach(button => {
-  button.addEventListener('click', () => {
-      const accordionContent = button.nextElementSibling
-
-      button.classList.toggle('accordion__button--active')
-
-      if(button.classList.contains('accordion__button--active')) {
-          accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px'
-      }
-      else {
-          accordionContent.style.maxHeight = 0
-      }
-  })  
-})
-
-const toggleButton = document.getElementsByClassName('toggle-button') [0]
-const navbar = document.getElementsByClassName('navbar') [0]
-toggleButton.addEventListener('click', () => {
-    navbar.classList.toggle('active')
-
-})
+var filtroTeclas = function(event) {
+  return ((event.charCode >= 48 && event.charCode <= 57) || (event.keyCode == 45 || event.charCode == 46))
+}
 
 function showCreatorCalculator() {
   const showCalculator = document.getElementById("calculator-show")
@@ -27,11 +9,6 @@ function showCreatorCalculator() {
   } else {
     showCalculator.style.display = "block"
   }
-}
-
-
-var filtroTeclas = function(event) {
-  return ((event.charCode >= 48 && event.charCode <= 57) || (event.keyCode == 45 || event.charCode == 46))
 }
 
 Vue.createApp({
