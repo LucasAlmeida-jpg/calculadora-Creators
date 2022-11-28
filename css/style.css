@@ -1,704 +1,232 @@
-@charset "UTF-8";
 body {
   scroll-behavior: smooth;
   background-color: #111111;
-  overflow-x: hidden;
-}
-body .validation .input-group input:focus {
-  box-shadow: 0px 0em 0em 0em;
-}
-body .overlay {
-  position: sticky;
-  top: 300px;
-}
-body .less {
-  font-size: 0.875em;
-  color: #dc3545;
-  margin-top: -12px;
-  margin-left: 5px;
-}
-body .calculadora {
-  display: none;
-}
-body .menu {
-  padding: 50px 0 80px;
-}
-body .navbar-expand-lg .navbar-collapse {
-  justify-content: end;
-}
-body .navbar-expand-lg .navbar-collapse .nav-item {
-  text-align: center;
-}
-body .navbar-expand-lg .navbar-collapse .nav-item a {
-  font-size: 16px;
-  line-height: 16px;
-  letter-spacing: -0.5px;
-  color: #FFF;
-}
-body .navbar-expand-lg .navbar-collapse .nav-item a:first-child {
-  margin-right: 24px;
-}
-body .navbar-expand-lg .navbar-collapse .btn-area {
-  display: flex;
-  justify-content: flex-end;
-}
-body .navbar-expand-lg .navbar-collapse .btn {
-  background: #3E465F;
-  border-radius: 10px;
-  padding: 13px 18px;
-  margin-right: 8px;
-  font-weight: 500 !important;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: -0.5px;
-  color: #FFFFFF;
-}
-body .navbar-expand-lg .navbar-collapse .btn.purple {
-  background: #7553E2;
-  border-radius: 10px;
-  min-width: 89px;
-}
-body .background {
-  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
-  color: white;
-}
-body .btn-primary {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: none;
-  padding: 12px 16px;
-  font-weight: 500;
-}
-body .hide {
-  display: none;
-}
-body .btn-cards {
-  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-weight: 600;
-  width: 60%;
-  font-size: 16px;
-}
-body .accordion-body p {
-  border-top: 1px solid grey;
-  margin-top: -13px;
-  padding-top: 20px;
-}
-body .accordion-flush .accordion-item {
-  border-radius: 12px !important;
-  background: #232323;
-  border: none;
-}
-body .accordion-flush .accordion-item .accordion-button {
-  border-radius: 12px !important;
-  padding: 25px 20px;
-  background: #232323;
-  border: #232323 1px solid;
-  color: white;
-}
-body .accordion-button::after {
-  background-image: none !important;
-  content: "▾";
-  float: right;
-  transform: scale(1.5);
-}
-body button:focus {
-  box-shadow: 0 0 0 0 !important;
-  border: 0 none !important;
-  outline: 0 !important;
-}
-body .carousel-cell img {
-  width: 250px;
-  height: 360px;
-  margin-right: 20px;
-  counter-increment: carousel-cell;
-  border-radius: 12px;
-  object-fit: cover;
-}
-body .little-gap {
-  margin-top: 95px;
-}
-body .button-hiring button {
-  background-color: #3E465F;
-  border-radius: 10px;
-  padding: 12px 20px;
-  color: white;
-  border: none;
-  font-weight: 500;
-}
-body h1 {
-  color: white;
-  font-weight: 700;
-  line-height: 38px;
-  font-size: 48px;
-}
-body h2 {
-  font-size: 22px;
-  color: white;
-}
-body p {
-  color: white;
-  font-size: 13px;
-  font-weight: 500;
-}
-body .influencers {
-  width: 650px;
-  height: auto;
-  object-fit: cover;
-  margin-top: -130px;
-  margin-bottom: -75px;
-}
-body .flickity-page-dots .dot {
-  display: none;
-}
-body .calculator {
-  background: #1C1E25;
-  color: white;
-  height: 570px;
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 30px;
-}
-body .calculator .social-card {
-  background-color: #272A33;
-  border-radius: 12px;
-  padding: 1px 0px 0px 0px;
-  margin: 5px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-body .calculator .social-card:hover {
-  opacity: 0.5;
-}
-body .calculator .selected {
-  outline: 4px solid #B390FF;
-  border-radius: 12px;
-}
-body .calculator i {
-  background: rgba(117, 83, 226, 0.1);
-  padding: 10px;
-  border-radius: 50%;
-}
-body .calculator .text-calculator {
-  margin-bottom: 15px;
-}
-body .calculator .input-group input {
-  background: #272A33;
-  border: none;
-  color: white;
-  height: 50px;
-  border-radius: 12px;
-  font-size: 18px;
-  font-weight: 500;
-  padding-left: 20px;
-}
-body .calculator input[type=range] {
-  -webkit-appearance: none;
-  margin: 20px 0;
-  width: 100%;
-  background: rgb(39, 42, 51);
-  border-radius: 12px;
-}
-body .calculator input[type=range]:focus {
-  outline: none;
-}
-body .calculator input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 6px;
-  cursor: pointer;
-  animate: 0.2s;
-  background: #404554;
-  border-radius: 25px;
-}
-body .calculator input[type=range]::-webkit-slider-thumb {
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -9px;
-  border: 5px solid rgb(51, 48, 48);
-}
-body .calculator input[type=range]:focus::-webkit-slider-runnable-track {
-  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
-}
-body .calculator .range-wrap {
-  position: relative;
-  background-color: #272A33;
-  border-radius: 12px;
-  padding: 0px 10px;
-  height: 50px;
-}
-body .calculator .description {
-  width: auto;
-  min-width: 80px;
-  height: 25px;
-  text-align: center;
-  background: #555;
-  color: #fff;
-  font-size: 12px;
-  display: inline-block;
-  font-weight: 500;
-  transform: translate(-50%, 0);
-  border-radius: 6px;
-  padding: 4px 0px;
-}
-body .calculator .description:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-bottom: 10px solid #555;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -5px;
-  margin-top: -1px;
-}
-body .line {
-  border-bottom: 1px solid #FFFFFF;
-  opacity: 0.2;
-  padding: 0px;
-}
-body .btn-investment-main button {
-  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
-  color: white;
-  text-align: center;
-  border: none;
-  border-radius: 30px;
-  font-weight: 600;
-  width: 100%;
-}
-body .btn-investment button {
-  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
-  color: white;
-  text-align: center;
-  border: none;
-  border-radius: 30px;
-  font-weight: 600;
-  height: 50px;
-}
-body .card {
-  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
-  border-radius: 16px;
-  border: none;
-  font-size: 22px;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 20px;
-  padding: 0px;
-}
-body .card .internal {
-  padding: 53px 32px;
-}
-body .card .internal .disclaimer h5 {
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 19px 27px;
-  font-weight: 500;
-  align-items: center;
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  border-radius: 6px;
-}
-body .card .internal .disclaimer h5 span i {
-  border: 2px solid white;
-  font-size: 15px;
-  padding: 10px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  text-align: center;
-}
-body .card .internal-btn {
-  padding: 30px 40px 30px;
-}
-body .card input[type=range] {
-  -webkit-appearance: none;
-  margin: 20px 0;
-  width: 100%;
-  background: rgb(39, 42, 51);
-  border-radius: 12px;
-}
-body .card input[type=range]:focus {
-  outline: none;
-}
-body .card input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 16px;
-  cursor: pointer;
-  animate: 0.2s;
-  background: #9556FE;
-  border-radius: 25px;
-}
-body .card input[type=range]::-webkit-slider-thumb {
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  background: white;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -6px;
-  border: 5px solid #9556FE;
-}
-body .card input[type=range]:focus::-webkit-slider-runnable-track {
-  background: white;
-}
-body .card .range-wrap {
-  position: relative;
-}
-body .card .range-value {
-  position: absolute;
-  top: -36%;
-}
-body .card .range-value span {
-  width: 40px;
-  height: 20px;
-  line-height: 24px;
-  text-align: center;
-  background: white;
-  color: #fff;
-  font-size: 14px;
-  display: block;
-  position: absolute;
-  font-weight: 500;
-  transform: translate(-50%, 0);
-  border-radius: 6px;
-}
-body .card .range-value span:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 10px solid #272A33;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  margin-top: -3px;
-}
-body .card .card-body {
-  height: 185px;
-  width: auto;
-}
-body .card .card-body h5 {
-  font-size: 24px;
-  margin-top: -12px;
-}
-body .card .card-body p {
-  font-size: 14px;
-  color: #FFFFFF;
-  opacity: 0.8;
-}
-body .card .card-body .align-right {
-  margin-left: 50px;
-}
-body .card .card-body .align-right img {
-  position: absolute;
-  margin-left: -50px;
-  margin-top: 8px;
-  background: rgba(255, 255, 34, 0.1333333333);
-  padding: 10px;
-  border-radius: 50%;
-}
-body .card .card-body .align p {
-  margin-left: 20px;
-  margin-bottom: -10px;
-}
-body .card .card-body .align img {
-  position: absolute;
-  margin-top: 3px;
-}
-body .modal .modal-content {
-  background-color: white;
-  padding: 30px;
-  border-radius: 20px;
-  width: 90%;
-}
-body .modal .modal-content label {
-  color: #7F7F7F;
-  font-size: 12px;
-}
-body .modal .modal-content .simulation-btn {
-  background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
-  color: white;
-  font-size: 20px;
-  border-radius: 30px;
-  font-weight: 600;
-}
-body .modal .modal-content .btn-close {
-  font-size: 15px;
-  opacity: 1;
-}
-body .modal .modal-content .form-control {
-  background-color: #F0F0F0;
-  border: none;
-}
-body .modal h1 {
-  color: black;
-  font-size: 20px;
-  font-weight: 700;
-}
-body .modal .main .btn-creator {
-  background: white;
-  border: 1px solid #3300FF;
-  color: #3300FF;
-  padding: 10px;
-  border-radius: 12px 0px 0px 12px;
-  font-size: 16px;
-  font-weight: 500;
-  width: 210px;
-}
-body .modal .main .btn-company {
-  background-color: white;
-  border: 1px solid #3300FF;
-  color: #3300FF;
-  border-radius: 0px 12px 12px 0px;
-  font-size: 16px;
-  font-weight: 500;
-  width: 210px;
-}
-body .card-information {
-  background-color: #1C1E25;
-  border-radius: 15px;
-  max-height: 450px;
-  margin-top: 209px;
-  display: flex;
-  justify-content: center;
-}
-body .card-information .info-img {
-  display: flex;
-  justify-content: center;
-}
-body .card-information img {
-  width: 500px;
-  height: 400px;
-  margin-top: -130px;
-  border-radius: 20px;
-  object-fit: cover;
-}
-body .card-information .card-body {
-  padding: 80px 90px;
-  color: #FFFFFF;
-}
-body .card-information .card-body h5 {
-  font-weight: 700;
-  font-size: 39px;
-  line-height: 38px;
-}
-body .card-information .card-body p {
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 24px;
-}
-body .questionary {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-body .questionary h1 {
-  font-size: 35px;
-}
-body footer {
-  border-top: 1px solid #3E465F;
-  padding: 0px 0px 20px 0px;
-  width: 100%;
-  justify-content: space-around;
-  display: flex;
-  align-items: center;
-}
-body footer .powerful {
-  margin-top: -40px;
-}
-body footer .list-terms {
-  color: white;
-  opacity: 0.6;
-  text-decoration: none;
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-body footer .list-terms a {
-  text-align: center;
-  font-weight: 600;
-  margin-left: -50px;
-  font-size: 13px;
-  color: #8B90A0;
-}
-body footer h3 {
-  color: #E3E3E3;
-  position: absolute;
-  font-size: 14px;
-  margin-top: -43px;
-}
-body footer a {
-  color: white;
-  text-decoration: none;
-}
-body footer a a:hover {
-  text-decoration: underline;
-  color: white;
-}
-body footer ul li i {
-  font-size: 20px;
-  margin-left: 1px;
-  background: rgb(141, 141, 141);
-  padding: 11px;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-}
-body footer ul li i:hover {
-  opacity: 0.9;
-}
-@media screen and (min-width: 300px) and (max-width: 900px) {
-  body body {
-    overflow-x: hidden;
-  }
-  body .modal .modal-content {
-    display: block;
-    width: 109%;
-    position: absolute;
-    bottom: 0px;
-    margin: -15px;
-    border-radius: 20px 20px 0px 0px;
-  }
-  body .modal .modal-content .simulation-btn {
-    width: 100%;
-  }
-  body .menu {
-    padding: 0 0 80px;
-  }
-  body .menu button.navbar-toggler {
-    background: linear-gradient(284.09deg, #9757FF -1.11%, #3300FF 193.48%);
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-  }
-  body .menu button.navbar-toggler span.navbar-toggler-icon {
-    filter: invert(1);
-  }
-  body .navbar-expand-lg .navbar-collapse {
-    padding: 20px 0 0;
-  }
-  body .navbar-expand-lg .navbar-collapse .nav-item a {
-    font-size: 24px;
-    line-height: 16px;
-    text-align: right;
-  }
-  body .navbar-expand-lg .navbar-collapse .nav-item a:first-child {
-    margin-right: 0;
-    padding: 18px 8px 18px 0;
-  }
-  body .navbar-expand-lg .navbar-collapse .btn-area {
-    display: grid;
-    float: right;
-  }
-  body .navbar-expand-lg .navbar-collapse .btn-area .btn {
-    background: transparent;
-    text-align: right;
-    padding: 18px 8px 18px 0;
-    margin-right: 0;
-    font-size: 24px;
-    line-height: 16px;
-  }
-  body .navbar-expand-lg .navbar-collapse .btn-area .btn.purple {
-    background: #7553E2;
-    text-align: center;
-    margin-top: 18px;
-  }
-  body .btn-primary {
-    padding: 10px 23px;
-  }
-  body .internal-btn {
-    padding: 5px 10px;
-  }
-  body .hide-mobile {
-    display: none;
-  }
-  body .calculator {
-    height: 573px;
-    margin-bottom: 45px;
-  }
-  body .calculator button {
-    padding: 10px 20px;
-  }
-  body .form-control:valid {
-    z-index: 0;
-  }
-  body .collapsed-all {
-    padding: 32px 85px 85px 22px;
-    white-space: nowrap;
-  }
-  body .collapsed-all .col h2 {
-    font-size: 16px;
-    font-weight: 100;
-  }
-  body .navbar-toggler {
-    border: none;
-  }
-  body .navbar-toggler:hover {
-    border: none;
-  }
-  body .container .influencers {
-    display: none;
-  }
-  body .container h1 {
-    font-size: 22px;
-  }
-  body .container .card-calculator input {
-    margin: 0;
-  }
-  body .container #calculator-show .card-body {
-    height: 25px;
-  }
-  body .container .internal {
-    padding: 5px;
-  }
-  body .container .line {
-    margin-top: 80px;
-  }
-  body .container .card-body h5 {
-    font-size: 20px;
+  overflow-x: hidden; }
+  body .validation .input-group input:focus {
+    box-shadow: 0px 0em 0em 0em; }
+  body .overlay {
+    position: sticky;
+    top: 300px; }
+  body .less {
+    font-size: .875em;
+    color: #dc3545;
     margin-top: -12px;
-  }
-  body .container .card-body p {
-    font-size: 14px;
-    color: #FFFFFF;
-    opacity: 0.8;
-  }
-  body .container .card-body .position {
-    margin-top: 20px;
-  }
-  body .container .card-body .position p {
-    margin-bottom: -10px;
-  }
-  body .card-information .card-title {
-    line-height: 0.9;
-    margin: 0;
-  }
-  body .card-information p {
-    line-height: 1.2;
-  }
-  body .card-information img {
-    max-width: 320px;
-    max-height: 250px;
+    margin-left: 5px; }
+  body .calculadora {
+    display: none; }
+  body .menu {
+    padding: 50px 0 80px; }
+  body .navbar-expand-lg .navbar-collapse {
+    justify-content: end; }
+    body .navbar-expand-lg .navbar-collapse .nav-item {
+      text-align: center; }
+      body .navbar-expand-lg .navbar-collapse .nav-item a {
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: -0.5px;
+        color: #FFF; }
+        body .navbar-expand-lg .navbar-collapse .nav-item a:first-child {
+          margin-right: 24px; }
+    body .navbar-expand-lg .navbar-collapse .btn-area {
+      display: flex;
+      justify-content: flex-end; }
+    body .navbar-expand-lg .navbar-collapse .btn {
+      background: #3E465F;
+      border-radius: 10px;
+      padding: 13px 18px;
+      margin-right: 8px;
+      font-weight: 500 !important;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      letter-spacing: -0.5px;
+      color: #FFFFFF; }
+      body .navbar-expand-lg .navbar-collapse .btn.purple {
+        background: #7553E2;
+        border-radius: 10px;
+        min-width: 89px; }
+  body .background {
+    background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+    color: white; }
+  body .btn-primary {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 12px 16px;
+    font-weight: 500; }
+  body .hide {
+    display: none; }
+  body .btn-cards {
+    background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    width: 60%;
+    font-size: 16px; }
+  body .accordion-body p {
+    border-top: 1px solid grey;
+    margin-top: -13px;
+    padding-top: 20px; }
+  body .accordion-flush .accordion-item {
+    border-radius: 12px !important;
+    background: #232323;
+    border: none; }
+    body .accordion-flush .accordion-item .accordion-button {
+      border-radius: 12px !important;
+      padding: 25px 20px;
+      background: #232323;
+      border: #232323 1px solid;
+      color: white; }
+  body .accordion-button::after {
+    background-image: none !important;
+    content: '\25be';
+    float: right;
+    transform: scale(1.5); }
+  body button:focus {
+    box-shadow: 0 0 0 0 !important;
+    border: 0 none !important;
+    outline: 0 !important; }
+  body .carousel-cell img {
+    width: 250px;
+    height: 360px;
+    margin-right: 20px;
+    counter-increment: carousel-cell;
+    border-radius: 12px;
+    object-fit: cover; }
+  body .little-gap {
+    margin-top: 95px; }
+  body .button-hiring button {
+    background-color: #3E465F;
+    border-radius: 10px;
+    padding: 12px 20px;
+    color: white;
+    border: none;
+    font-weight: 500; }
+  body h1 {
+    color: white;
+    font-weight: 700;
+    line-height: 38px;
+    font-size: 48px; }
+  body h2 {
+    font-size: 22px;
+    color: white; }
+  body p {
+    color: white;
+    font-size: 13px;
+    font-weight: 500; }
+  body .influencers {
+    width: 650px;
+    height: auto;
     object-fit: cover;
-    margin-top: -190px;
-  }
-  body .card-information .card-body {
-    padding: 100px 20px 20px 20px;
-  }
-  body .btn-investment {
+    margin-top: -130px;
+    margin-bottom: -75px; }
+  body .flickity-page-dots .dot {
+    display: none; }
+  body .calculator {
+    background: #1C1E25;
+    color: white;
+    height: 570px;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 30px; }
+    body .calculator .social-card {
+      background-color: #272A33;
+      border-radius: 12px;
+      padding: 1px 0px 0px 0px;
+      margin: 5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      body .calculator .social-card:hover {
+        opacity: 0.5; }
+    body .calculator .selected {
+      outline: 4px solid #B390FF;
+      border-radius: 12px; }
+    body .calculator i {
+      background: rgba(117, 83, 226, 0.1);
+      padding: 10px;
+      border-radius: 50%; }
+    body .calculator .text-calculator {
+      margin-bottom: 15px; }
+    body .calculator .input-group input {
+      background: #272A33;
+      border: none;
+      color: white;
+      height: 50px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 500;
+      padding-left: 20px; }
+    body .calculator input[type=range] {
+      -webkit-appearance: none;
+      margin: 20px 0;
+      width: 100%;
+      background: #272a33;
+      border-radius: 12px; }
+    body .calculator input[type=range]:focus {
+      outline: none; }
+    body .calculator input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 6px;
+      cursor: pointer;
+      animate: 0.2s;
+      background: #404554;
+      border-radius: 25px; }
+    body .calculator input[type=range]::-webkit-slider-thumb {
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -9px;
+      border: 5px solid #333030; }
+    body .calculator input[type=range]:focus::-webkit-slider-runnable-track {
+      background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%); }
+    body .calculator .range-wrap {
+      position: relative;
+      background-color: #272A33;
+      border-radius: 12px;
+      padding: 0px 10px;
+      height: 50px; }
+    body .calculator .description {
+      width: auto;
+      min-width: 80px;
+      height: 25px;
+      text-align: center;
+      background: #555;
+      color: #fff;
+      font-size: 12px;
+      display: inline-block;
+      font-weight: 500;
+      transform: translate(-50%, 0);
+      border-radius: 6px;
+      padding: 4px 0px; }
+    body .calculator .description:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-bottom: 10px solid #555;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      margin-top: -1px; }
+  body .line {
+    border-bottom: 1px solid #FFFFFF;
+    opacity: 0.2;
+    padding: 0px; }
+  body .btn-investment-main button {
+    background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+    color: white;
     text-align: center;
-  }
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    width: 100%; }
   body .btn-investment button {
     background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
     color: white;
@@ -706,66 +234,395 @@ body footer ul li i:hover {
     border: none;
     border-radius: 30px;
     font-weight: 600;
-  }
-  body .footer img {
-    display: block;
-    margin: 0px auto;
-    margin-bottom: 60px;
-    width: 160px;
-  }
-  body .footer h3 {
-    text-align: center;
-    position: relative;
-    margin-top: -102px;
-    margin-bottom: 60px;
-  }
-  body .footer .list-terms a {
-    text-align: center;
-    margin: 0px;
-    font-size: 14px;
-  }
-  body .footer ul li i {
-    margin: 0px;
-  }
-  body .button-hiring {
-    display: none;
-  }
-  body .navbar-collapse ul li a {
-    color: white;
-  }
-  body .collapse {
-    display: block;
-  }
-  body .show,
-body .hide {
-    display: block;
-  }
-  body .card-body .internal h5 {
-    font-size: 14px;
-  }
+    height: 50px; }
   body .card {
-    height: 255px;
-  }
-  body .card .internal .disclaimer h5 {
-    margin-top: 10px;
-    padding: 20px 20px;
-  }
-  body .calculator .calc-price {
-    padding: 10px 55px;
-  }
-  body .social-media {
-    align-items: center !important;
-    margin-top: -10px;
-  }
-  body footer .powerful {
-    text-align: center;
-    margin-top: -100px;
-    margin-bottom: -29px;
-  }
-  body footer li a img {
-    width: 44px !important;
-    margin-top: -50px !important;
-  }
-}
-
-/*# sourceMappingURL=style.css.map */
+    background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+    border-radius: 16px;
+    border: none;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    padding: 0px; }
+    body .card .internal {
+      padding: 53px 32px; }
+      body .card .internal .disclaimer h5 {
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 19px 27px;
+        font-weight: 500;
+        align-items: center;
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        border-radius: 6px; }
+        body .card .internal .disclaimer h5 span i {
+          border: 2px solid white;
+          font-size: 15px;
+          padding: 10px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.1);
+          color: white;
+          text-align: center; }
+    body .card .internal-btn {
+      padding: 30px 40px 30px; }
+    body .card input[type=range] {
+      -webkit-appearance: none;
+      margin: 20px 0;
+      width: 100%;
+      background: #272a33;
+      border-radius: 12px; }
+    body .card input[type=range]:focus {
+      outline: none; }
+    body .card input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 16px;
+      cursor: pointer;
+      animate: 0.2s;
+      background: #9556FE;
+      border-radius: 25px; }
+    body .card input[type=range]::-webkit-slider-thumb {
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      background: white;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -6px;
+      border: 5px solid #9556FE; }
+    body .card input[type=range]:focus::-webkit-slider-runnable-track {
+      background: white; }
+    body .card .range-wrap {
+      position: relative; }
+    body .card .range-value {
+      position: absolute;
+      top: -36%; }
+    body .card .range-value span {
+      width: 40px;
+      height: 20px;
+      line-height: 24px;
+      text-align: center;
+      background: white;
+      color: #fff;
+      font-size: 14px;
+      display: block;
+      position: absolute;
+      font-weight: 500;
+      transform: translate(-50%, 0);
+      border-radius: 6px; }
+    body .card .range-value span:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 10px solid #272A33;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      margin-top: -3px; }
+    body .card .card-body {
+      height: 185px;
+      width: auto; }
+      body .card .card-body h5 {
+        font-size: 24px;
+        margin-top: -12px; }
+      body .card .card-body p {
+        font-size: 14px;
+        color: #FFFFFF;
+        opacity: 0.8; }
+      body .card .card-body .align-right {
+        margin-left: 50px; }
+        body .card .card-body .align-right img {
+          position: absolute;
+          margin-left: -50px;
+          margin-top: 8px;
+          background: #ff22;
+          padding: 10px;
+          border-radius: 50%; }
+      body .card .card-body .align p {
+        margin-left: 20px;
+        margin-bottom: -10px; }
+      body .card .card-body .align img {
+        position: absolute;
+        margin-top: 3px; }
+  body .modal .modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%; }
+    body .modal .modal-content label {
+      color: #7F7F7F;
+      font-size: 12px; }
+    body .modal .modal-content .simulation-btn {
+      background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+      color: white;
+      font-size: 20px;
+      border-radius: 30px;
+      font-weight: 600; }
+    body .modal .modal-content .btn-close {
+      font-size: 15px;
+      opacity: 1; }
+    body .modal .modal-content .form-control {
+      background-color: #F0F0F0;
+      border: none; }
+  body .modal h1 {
+    color: black;
+    font-size: 20px;
+    font-weight: 700; }
+  body .modal .main .btn-creator {
+    background: white;
+    border: 1px solid #3300FF;
+    color: #3300FF;
+    padding: 10px;
+    border-radius: 12px 0px 0px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 210px; }
+  body .modal .main .btn-company {
+    background-color: white;
+    border: 1px solid #3300FF;
+    color: #3300FF;
+    border-radius: 0px 12px 12px 0px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 210px; }
+  body .card-information {
+    background-color: #1C1E25;
+    border-radius: 15px;
+    max-height: 450px;
+    margin-top: 209px;
+    display: flex;
+    justify-content: center; }
+    body .card-information .info-img {
+      display: flex;
+      justify-content: center; }
+    body .card-information img {
+      width: 500px;
+      height: 400px;
+      margin-top: -130px;
+      border-radius: 20px;
+      object-fit: cover; }
+    body .card-information .card-body {
+      padding: 80px 90px;
+      color: #FFFFFF; }
+      body .card-information .card-body h5 {
+        font-weight: 700;
+        font-size: 39px;
+        line-height: 38px; }
+      body .card-information .card-body p {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 24px; }
+  body .questionary {
+    margin-top: 80px;
+    margin-bottom: 80px; }
+    body .questionary h1 {
+      font-size: 35px; }
+  body footer {
+    border-top: 1px solid #3E465F;
+    padding: 0px 0px 20px 0px;
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    align-items: center; }
+    body footer .powerful {
+      margin-top: -40px; }
+    body footer .list-terms {
+      color: white;
+      opacity: 0.6;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px; }
+      body footer .list-terms a {
+        text-align: center;
+        font-weight: 600;
+        margin-left: -50px;
+        font-size: 13px;
+        color: #8B90A0; }
+    body footer h3 {
+      color: #E3E3E3;
+      position: absolute;
+      font-size: 14px;
+      margin-top: -43px; }
+    body footer a {
+      color: white;
+      text-decoration: none; }
+      body footer a a:hover {
+        text-decoration: underline;
+        color: white; }
+    body footer ul li i {
+      font-size: 20px;
+      margin-left: 1px;
+      background: #8d8d8d;
+      padding: 11px;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer; }
+      body footer ul li i:hover {
+        opacity: .9; }
+  @media screen and (min-width: 300px) and (max-width: 900px) {
+    body body {
+      overflow-x: hidden; }
+    body .modal .modal-content {
+      display: block;
+      width: 109%;
+      position: absolute;
+      bottom: 0px;
+      margin: -15px;
+      border-radius: 20px 20px 0px 0px; }
+      body .modal .modal-content .simulation-btn {
+        width: 100%; }
+    body .menu {
+      backdrop-filter: blur(12.5px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 18px;
+      z-index: 10;
+      width: 100%; }
+      body .menu button.navbar-toggler {
+        background: linear-gradient(284.09deg, #9757FF -1.11%, #3300FF 193.48%);
+        border: none;
+        border-radius: 50%;
+        padding: 10px; }
+        body .menu button.navbar-toggler span.navbar-toggler-icon {
+          filter: invert(1); }
+    body .navbar-expand-lg .navbar-collapse {
+      padding: 20px 0 0; }
+      body .navbar-expand-lg .navbar-collapse .nav-item a {
+        font-size: 24px;
+        line-height: 16px;
+        text-align: right; }
+        body .navbar-expand-lg .navbar-collapse .nav-item a:first-child {
+          margin-right: 0;
+          padding: 18px 8px 18px 0; }
+      body .navbar-expand-lg .navbar-collapse .btn-area {
+        display: grid;
+        float: right; }
+        body .navbar-expand-lg .navbar-collapse .btn-area .btn {
+          background: transparent;
+          text-align: right;
+          padding: 18px 8px 18px 0;
+          margin-right: 0;
+          font-size: 24px;
+          line-height: 16px; }
+          body .navbar-expand-lg .navbar-collapse .btn-area .btn.purple {
+            background: #7553E2;
+            text-align: center;
+            margin-top: 18px; }
+    body h1 {
+      margin-top: 60px; }
+    body .btn-primary {
+      padding: 10px 23px; }
+    body .internal-btn {
+      padding: 5px 10px; }
+    body .hide-mobile {
+      display: none; }
+    body .calculator {
+      height: 573px;
+      margin-bottom: 45px; }
+      body .calculator button {
+        padding: 10px 20px; }
+    body .form-control:valid {
+      z-index: 0; }
+    body .collapsed-all {
+      padding: 32px 85px 85px 22px;
+      white-space: nowrap; }
+      body .collapsed-all .col h2 {
+        font-size: 16px;
+        font-weight: 100; }
+    body .navbar-toggler {
+      border: none; }
+      body .navbar-toggler:hover {
+        border: none; }
+    body .container .influencers {
+      display: none; }
+    body .container h1 {
+      font-size: 22px; }
+    body .container .card-calculator input {
+      margin: 0; }
+    body .container #calculator-show .card-body {
+      height: 25px; }
+    body .container .internal {
+      padding: 5px; }
+    body .container .line {
+      margin-top: 80px; }
+    body .container .card-body h5 {
+      font-size: 20px;
+      margin-top: -12px; }
+    body .container .card-body p {
+      font-size: 14px;
+      color: #FFFFFF;
+      opacity: 0.8; }
+    body .container .card-body .position {
+      margin-top: 20px; }
+      body .container .card-body .position p {
+        margin-bottom: -10px; }
+    body .card-information .card-title {
+      line-height: .9;
+      margin: 0; }
+    body .card-information p {
+      line-height: 1.2; }
+    body .card-information img {
+      max-width: 320px;
+      max-height: 250px;
+      object-fit: cover;
+      margin-top: -190px; }
+    body .card-information .card-body {
+      padding: 100px 20px 20px 20px; }
+    body .btn-investment {
+      text-align: center; }
+      body .btn-investment button {
+        background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
+        color: white;
+        text-align: center;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600; }
+    body .footer img {
+      display: block;
+      margin: 0px auto;
+      margin-bottom: 60px;
+      width: 160px; }
+    body .footer h3 {
+      text-align: center;
+      position: relative;
+      margin-top: -102px;
+      margin-bottom: 60px; }
+    body .footer .list-terms a {
+      text-align: center;
+      margin: 0px;
+      font-size: 14px; }
+    body .footer ul li i {
+      margin: 0px; }
+    body .button-hiring {
+      display: none; }
+    body .navbar-collapse ul li a {
+      color: white; }
+    body .collapse {
+      display: block; }
+    body .show,
+    body .hide {
+      display: block; }
+    body .card-body .internal h5 {
+      font-size: 14px; }
+    body .card {
+      height: 255px; }
+      body .card .internal .disclaimer h5 {
+        margin-top: 10px;
+        padding: 20px 20px; }
+    body .calculator .calc-price {
+      padding: 10px 55px; }
+    body .social-media {
+      align-items: center !important;
+      margin-top: -10px; }
+    body footer .powerful {
+      text-align: center;
+      margin-top: -100px;
+      margin-bottom: -29px; }
+    body footer li a img {
+      width: 44px !important;
+      margin-top: -50px !important; } }

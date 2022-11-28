@@ -759,7 +759,13 @@ body {
         }
 
         .menu {
-            padding: 0 0 80px;
+            backdrop-filter: blur(12.5px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 18px;
+            z-index: 10;
+            width: 100%;
 
             button.navbar-toggler {
                 background: linear-gradient(284.09deg, #9757FF -1.11%, #3300FF 193.48%);
@@ -812,6 +818,10 @@ body {
                     }
                 }
             }
+        }
+
+        h1{
+            margin-top: 60px;
         }
 
         .btn-primary {
