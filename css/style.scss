@@ -26,7 +26,7 @@ body {
     }
 
     .less {
-        font-size: .875em;
+        font-size: 16px;
         color: #dc3545;
         margin-top: -12px;
         margin-left: 5px;
@@ -47,7 +47,7 @@ body {
 
     .navbar-expand-lg .navbar-collapse {
         justify-content: end;
-        
+
 
         .nav-item {
             text-align: center;
@@ -57,7 +57,7 @@ body {
                 line-height: 16px;
                 letter-spacing: -0.5px;
                 color: #FFF;
-                
+
 
                 &:first-child {
                     margin-right: 24px;
@@ -99,7 +99,7 @@ body {
     }
 
     .btn-primary {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.2);
         border: none;
         padding: 12px 16px;
         font-weight: 500;
@@ -119,11 +119,11 @@ body {
         font-size: 16px;
     }
 
-    .accordion-body{
-        p{
-        border-top: 1px solid grey;
-        margin-top: -13px;
-        padding-top: 20px;
+    .accordion-body {
+        p {
+            border-top: 1px solid grey;
+            margin-top: -13px;
+            padding-top: 20px;
         }
     }
 
@@ -199,9 +199,9 @@ body {
 
     p {
         color: white;
-        font-size: 13px;
+        font-size: 16px;
         font-weight: 500;
-        
+
     }
 
 
@@ -222,7 +222,7 @@ body {
     .calculator {
         background: $background-calculadora-pagina;
         color: white;
-        height: 570px;
+        height: 585px;
         padding: 20px;
         border-radius: 15px;
         margin-top: 30px;
@@ -274,7 +274,7 @@ body {
 
         input[type=range] {
             -webkit-appearance: none;
-            margin: 20px 0;
+            margin: 23px 0;
             width: 100%;
             background: rgb(39, 42, 51);
             border-radius: 12px;
@@ -510,8 +510,6 @@ body {
             height: 185px;
             width: auto;
 
-
-
             h5 {
                 font-size: 24px;
                 margin-top: -12px;
@@ -519,9 +517,9 @@ body {
             }
 
             p {
-                font-size: 14px;
+                font-size: 16px;
                 color: #FFFFFF;
-                opacity: 0.8;
+
             }
 
             .align-right {
@@ -743,6 +741,17 @@ body {
             overflow-x: hidden;
         }
 
+        p {
+            font-size: 13px;
+        }
+
+        .less {
+            font-size: 13px;
+            color: #dc3545;
+            margin-top: -12px;
+            margin-left: 5px;
+        }
+
         .modal {
             .modal-content {
                 display: block;
@@ -778,6 +787,8 @@ body {
                 }
             }
         }
+
+
 
         .navbar-expand-lg {
             .navbar-collapse {
@@ -820,7 +831,7 @@ body {
             }
         }
 
-        h1{
+        h1 {
             margin-top: 60px;
         }
 
@@ -970,7 +981,7 @@ body {
         }
 
         .footer {
-            
+
             img {
                 display: block;
                 margin: 0px auto;
@@ -1033,6 +1044,7 @@ body {
 
         .card-body {
 
+
             .internal {
                 h5 {
                     font-size: 14px;
@@ -1042,10 +1054,19 @@ body {
         }
 
         .card {
-            height: 255px;
+            .internal-btn {
+                padding: 6px 6px;
+            }
+
+            height: auto;
 
             .internal {
+                position: relative;
+                padding: 10px 14px;
+
                 .disclaimer {
+                    display: none;
+
                     h5 {
                         margin-top: 10px;
                         padding: 20px 20px;
@@ -1060,27 +1081,30 @@ body {
                 padding: 10px 55px;
             }
 
-        } 
-        .social-media{
+        }
+
+        .social-media {
             align-items: center !important;
             margin-top: -10px;
         }
-         footer {
-            .powerful{
+
+        footer {
+            .powerful {
                 text-align: center;
                 margin-top: -100px;
                 margin-bottom: -29px;
             }
-           li{
-            a{
-                img{
-                    width: 44px !important;
-                    margin-top: -50px !important;
+
+            li {
+                a {
+                    img {
+                        width: 44px !important;
+                        margin-top: -50px !important;
+                    }
                 }
             }
-           }
-         } 
+        }
     }
-    
-   
+
+
 }
