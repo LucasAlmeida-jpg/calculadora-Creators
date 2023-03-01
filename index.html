@@ -100,12 +100,30 @@
                             <div class="row g-0 d-flex justify-content-center">
 
                                 <div class="col-6" v-for="rede in redes">
-                                    <div class="social-card text-center" :class="{selected: rede.selected}"
-                                        @click="rede.selected = !rede.selected">
+                                    <div v-if="rede.visible"
+                                        class="social-card d-flex justify-content-around select example"
+                                        :class="{selected: rede.selected}" @click="rede.selected = !rede.selected">
                                         <div class="youtube-card d-flex align-items-center">
                                             <i class="fa-brands" :class="rede.icon"></i>
-                                            <p class="mt-3 ms-2">{{ rede.name }}</p>
                                         </div>
+                                        <div>
+                                            <p class="mt-3">{{ rede.name }}</p>
+                                        </div>
+                                        <div data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                                            aria-controls="offcanvas" id="select-icon"><i
+                                                class='fas fa-chevron-down '></i></div>
+                                    </div>
+
+                                   
+                                </div>
+
+                                <div class="more-channel me-4" @click="showUp = !showUp">
+                                    <div v-if="showUp" role="button">
+                                        <p @click="toggleItens(true)">Mais canais <i
+                                                class='fas fa-chevron-down ms-2'></i></p>
+                                    </div>
+                                    <div v-else role="button">
+                                        <p @click="toggleItens(false)">Menos canais <i class='fas fa-chevron-up ms-2'></i></p>
                                     </div>
                                 </div>
 
@@ -141,16 +159,33 @@
                                     <div class="btn-investment-main">
                                         <a href="#calculator-show" style="color: white; text-decoration: none;"> <button
                                                 type="submit" onclick="showCreatorCalculator()"
-                                                class="mt-4 py-3 calc-price" id="input-form">Calcular preço</button></a>
+                                                class="mt-4 py-3 calc-price" id="input-form">Calcule seu
+                                                investimento</button></a>
                                     </div>
                                 </div>
                             </div>
+                            <div class="offcanvas calculator" id="offcanvas"
+                            aria-labelledby="offcanvas">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvas">Offcanvas bottom</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body small">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus libero
+                                quaerat odio voluptate aut exercitationem laboriosam eligendi, aliquam
+                                tempore saepe dicta adipisci optio sit? Deleniti ratione corrupti alias
+                                quibusdam maxime? </div>
+                        </div>
+
+
                         </div>
                     </div>
                 </div>
             </div>
             <section>
-                <div class="container  calcule calculadora" id="calculator-show">
+                <!--colocar calculador abaixo-->
+                <div class="container  calcule" id="calculator-show">
                     <!--colocar a class calculadora aqui -->
                     <div class="little-gap">
                         <div class="row">
@@ -174,7 +209,8 @@
                                                         <span>
                                                             <i class="fa-solid fa-triangle-exclamation"></i></span>
                                                         Essa estimativa considera canais de criadores com engajamento
-                                                        entre 2% a 20%.</h5>
+                                                        entre 2% a 20%.
+                                                    </h5>
                                                 </div>
 
                                                 <!--<div class="position">
@@ -249,8 +285,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- <a class="btn btn-primary " data-bs-toggle="modal" href="#exampleModalToggle"
-                                            role="button">Receba por email</a> -->
+                                            <a class="btn btn-primary " data-bs-toggle="modal"
+                                                href="#exampleModalToggle" role="button">Receba por email</a>
                                         </div>
                                         <div class="ms-auto p-2 ">
                                             <a style="color: white; text-decoration: none;" href="#recalcule"> <button
@@ -410,7 +446,8 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <a href="https://creators.llc/termos" target="_blank">Termos de uso e política de privacidade</a>
+                                        <a href="https://creators.llc/termos" target="_blank">Termos de uso e política
+                                            de privacidade</a>
                                     </div>
                                     <div class="col-md-3">
                                         <a href="mailto:hello@creators.llc">hello@creators.llc</a>

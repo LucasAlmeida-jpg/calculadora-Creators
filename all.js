@@ -1,4 +1,4 @@
-var filtroTeclas = function(event) {
+var filtroTeclas = function (event) {
   return ((event.charCode >= 48 && event.charCode <= 57) || (event.keyCode == 45 || event.charCode == 46))
 }
 
@@ -15,19 +15,45 @@ Vue.createApp({
 
   data() {
     return {
+      visible: true,
+      showUp: true,
       isUser1: true,
       redes: [
         {
-          name: "Youtube", icon: "fa-youtube", selected: false,
+          name: "Youtube", icon: "fa-youtube", selected: false, visible: true
         },
         {
-          name: "Instagram", icon: "fa-instagram", selected: false,
+          name: "Instagram", icon: "fa-instagram", selected: false, visible: true
         },
         {
-          name: "TikTok", icon: "fa-tiktok", selected: false,
+          name: "TikTok", icon: "fa-tiktok", selected: false, visible: true
         },
         {
-          name: "Twitter", icon: "fa-twitter", selected: false,
+          name: "Twitter", icon: "fa-twitter", selected: false, visible: true
+        },
+        {
+          name: "Newsletter", icon: "fa fa-file-o", selected: false, visible: false
+        },
+        {
+          name: "Proprio", icon: "fa fa-user-o", selected: false, visible: false
+        },
+        {
+          name: "LinkedIn", icon: "fa-linkedin", selected: false, visible: false
+        },
+        {
+          name: "WhatsApp", icon: "fa-whatsapp", selected: false, visible: false
+        },
+        {
+          name: "Facebook", icon: "fa-facebook", selected: false, visible: false
+        },
+        {
+          name: "Pinterest", icon: "fa-pinterest", selected: false, visible: false
+        },
+        {
+          name: "Podcast", icon: "fa-microphone", selected: false, visible: false
+        },
+        {
+          name: "Proprio", icon: "fa-paper-plane", selected: false, visible: false
         },
       ],
       size: 0,
@@ -60,8 +86,10 @@ Vue.createApp({
         ],
         [
           1000, 1000, 1000, 1000, 2500, 4500, 5500, 7500, 9500, 12500, 12500, 15000, 20000 // Twitter
-        ]
-        
+        ],
+        // [ 
+        //   1000, 1000, 4000, 5000, 6000, 7000, 9000, 9000, 10000, 10000, 10000, 10000 // LinkedIn
+        // ] 
       ]
     }
   },
@@ -82,6 +110,13 @@ Vue.createApp({
       }
 
       return value;
+    }
+  },
+  methods: {
+    toggleItens(visible) {
+      for (let i = 4; i < this.redes.length; i++) {
+        this.redes[i].visible = visible;
+      }
     }
   }
 
