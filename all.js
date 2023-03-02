@@ -18,44 +18,47 @@ Vue.createApp({
       visible: true,
       showUp: true,
       isUser1: true,
+      typeSelected: "",
+      socialSelected: "",
       redes: [
         {
-          name: "Youtube", icon: "fa-youtube", selected: false, visible: true
+          name: "Youtube", icon: "fa-youtube", selected: false, visible: true, contents: ["Inserção", "Shorts", "Colab", "Impulsionamento", "Live"]
         },
         {
-          name: "Instagram", icon: "fa-instagram", selected: false, visible: true
+          name: "Instagram", icon: "fa-instagram", selected: false, visible: true, contents: ["Carrossel vídeo", "Reels", "Stories", "Stories", "Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Live"]
         },
         {
-          name: "TikTok", icon: "fa-tiktok", selected: false, visible: true
+          name: "TikTok", icon: "fa-tiktok", selected: false, visible: true, contents: ["Vídeo", "Colab", "Live", "Impulsionamento",]
         },
         {
-          name: "Twitter", icon: "fa-twitter", selected: false, visible: true
+          name: "Twitter", icon: "fa-twitter", selected: false, visible: true, contents: ["Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Texto",]
         },
         {
-          name: "Newsletter", icon: "fa fa-file-o", selected: false, visible: false
+          name: "Newsletter", icon: "fa fa-file-o", selected: false, visible: false, contents: ["Texto", "Imagem",]
         },
         {
-          name: "Proprio", icon: "fa fa-user-o", selected: false, visible: false
+          name: "Proprio", icon: "fa fa-user-o", selected: false, visible: false, contents: ["Mentoria", "Aula", "Uso de Imagem", "Locução", "Produto",]
         },
         {
-          name: "LinkedIn", icon: "fa-linkedin", selected: false, visible: false
+          name: "LinkedIn", icon: "fa-linkedin", selected: false, visible: false, contents: ["Vídeo", "Foto", "Texto", "Colab", "Impulsionamento",]
         },
         {
-          name: "WhatsApp", icon: "fa-whatsapp", selected: false, visible: false
+          name: "WhatsApp", icon: "fa-whatsapp", selected: false, visible: false, contents: ["Foto", "Vídeo", "Texto", "Banner",]
         },
         {
-          name: "Facebook", icon: "fa-facebook", selected: false, visible: false
+          name: "Facebook", icon: "fa-facebook", selected: false, visible: false, contents: ["Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Live", "Stories", "Texto",]
         },
         {
-          name: "Pinterest", icon: "fa-pinterest", selected: false, visible: false
+          name: "Pinterest", icon: "fa-pinterest", selected: false, visible: false, contents: ["Texto", "Imagem",]
         },
         {
-          name: "Podcast", icon: "fa-microphone", selected: false, visible: false
+          name: "Podcast", icon: "fa-microphone", selected: false, visible: false, contents: ["Audio",]
         },
         {
-          name: "Proprio", icon: "fa-paper-plane", selected: false, visible: false
+          name: "Outros", icon: "fa-paper-plane", selected: false, visible: false, contents: ["Texto", "Imagem",]
         },
       ],
+      selectedRedes: [],
       size: 0,
       posts: 0,
       descriptions: [
@@ -87,15 +90,37 @@ Vue.createApp({
         [
           1000, 1000, 1000, 1000, 2500, 4500, 5500, 7500, 9500, 12500, 12500, 15000, 20000 // Twitter
         ],
+
+        [
+          1000, 1000, 5000, 9000, 14000, 20000, 25000, 25000, 25000, 25000, 35000, 35000, 35000 // youtube
+        ],
+        [
+          2500, 3500, 4500, 5000, 9000, 10000, 15000, 20000, 23000, 25000, 30000, 40000, 60000 // instagram
+        ],
+        [
+          1000, 3000, 4000, 5000, 7500, 9000, 12000, 15000, 15000, 20000, 30000, 35000, 45000 // Tiktok
+        ],
+        [
+          1000, 1000, 1000, 1000, 2500, 4500, 5500, 7500, 9500, 12500, 12500, 15000, 20000 // Twitter
+        ],
+
+        [
+          1000, 1000, 5000, 9000, 14000, 20000, 25000, 25000, 25000, 25000, 35000, 35000, 35000 // youtube
+        ],
+        [
+          2500, 3500, 4500, 5000, 9000, 10000, 15000, 20000, 23000, 25000, 30000, 40000, 60000 // instagram
+        ],
+        [
+          1000, 3000, 4000, 5000, 7500, 9000, 12000, 15000, 15000, 20000, 30000, 35000, 45000 // Tiktok
+        ],
+        [
+          1000, 1000, 1000, 1000, 2500, 4500, 5500, 7500, 9500, 12500, 12500, 15000, 20000 // Twitter
+        ],
         // [ 
         //   1000, 1000, 4000, 5000, 6000, 7000, 9000, 9000, 10000, 10000, 10000, 10000 // LinkedIn
         // ] 
       ]
     }
-  },
-
-  mounted() {
-
   },
 
   computed: {
@@ -117,7 +142,11 @@ Vue.createApp({
       for (let i = 4; i < this.redes.length; i++) {
         this.redes[i].visible = visible;
       }
-    }
+    },
+    socialName(nome, contents) {
+      this.socialSelected = nome;
+      this.typeSelected = contents;
+    },
   }
 
 }).mount('#calc');

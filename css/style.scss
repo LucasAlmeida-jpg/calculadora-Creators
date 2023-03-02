@@ -207,10 +207,10 @@ body {
 
 
     .influencers {
-        width: 650px;
+        width: 594px;
         height: auto;
         object-fit: cover;
-        margin-top: -130px;
+        margin-top: -83px;
         margin-bottom: -75px;
     }
 
@@ -239,32 +239,68 @@ body {
         padding: 20px;
         border-radius: 15px;
         margin-top: 30px;
+        width: auto;
 
-        offcanvas-backdrop.show {
-            overflow: auto !important;
-          }
+        .offcanvas-header {
+            margin-top: -70px;
 
-        .offcanvas.show:not(.hiding),
-        .offcanvas.showing {
-            transform: none;
-            position: relative;
-            margin-top: -209px;
+            img {
+                width: 30px;
+                margin-right: -35px;
+            }
 
-        
-        // Adicione outras propriedades aqui
+            .offcanvas-title-outside {
+                font-size: 15px;
+                margin-left: -33px;
+            }
+
+        }
+
+        .checkbox-part {
+            position: absolute;
+            right: -80px;
         }
 
         .offcanvas.show:not(.showing),
         .offcanvas.showing {
-        transform: none;
-        position: relative;
-        margin-top: -209px;
-
-        
-        // Adicione outras propriedades aqui
+            transition: .3s;
+            position: relative;
+            margin-top: -329px;
+            background-color: #272A33;
+            min-height: 400px;
         }
 
-       
+        .offcanvas.show:not(.hiding),
+        .offcanvas.showing {
+            position: relative;
+            margin-top: -329px;
+            background-color: #272A33;
+            min-height: 400px;
+        }
+
+        .offcanvas-backdrop.show {
+            opacity: 0.5;
+            overflow-y: scroll;
+        }
+
+        .offcanvas-footer {
+            bottom: 2px;
+            z-index: 1;
+            
+
+            button {
+                font-size: 18px;
+                border: none;
+                border-radius: 35px;
+                padding: 16px 120px;
+                background: rgba(80, 86, 102, 0.3);
+                color: #FFFFFF;
+                font-weight: 600;
+                // opacity: 0.3;
+                margin: 0 auto !important;
+            }
+        }
+
 
         .social-card {
             background-color: #272A33;
@@ -300,16 +336,6 @@ body {
 
         #select-icon {
             font-size: 11px;
-
-            :hover {
-                background: white;
-                color: black;
-                padding: 5px;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
         }
 
         .text-calculator {
@@ -328,6 +354,22 @@ body {
                 padding-left: 20px;
             }
         }
+
+        .offcanvas-body {
+            input[type=checkbox] {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border: 2px solid #fff;
+                background-color: transparent;
+                width: 20px;
+                height: 20px;
+                outline: none;
+                cursor: pointer;
+               
+            }
+        }
+
         input[type=range] {
             -webkit-appearance: none;
             margin: 23px 0;

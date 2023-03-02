@@ -88,14 +88,14 @@
 
             <div class="container">
                 <div class="row mt-5">
-                    <div class="col-md-8 ">
+                    <div class="col-md-7 ">
                         <h1 id="recalcule">Creators Pricing</h1>
                         <h2 style="margin-top:20px; font-size: 26px">Calcule o preço de publicidade baseado <br> nas
                             principais métricas de influência.</h2>
                         <img class="influencers" src="./assets/influ.png" alt="influencers-box">
                     </div>
-                    <div class="col-md-4">
-                        <div class="container calculator">
+                    <div class="col-md-5">
+                        <div class="container calculator offcanvas-backdrop.show">
                             <p class="ms-2">Selecione a plataforma do criador</p>
                             <div class="row g-0 d-flex justify-content-center">
 
@@ -109,12 +109,11 @@
                                         <div>
                                             <p class="mt-3">{{ rede.name }}</p>
                                         </div>
-                                        <div data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
-                                            aria-controls="offcanvas" id="select-icon"><i
-                                                class='fas fa-chevron-down '></i></div>
+                                        <div @click="rede.selected = !rede.selected" data-bs-toggle="offcanvas"
+                                            data-bs-target="#offcanvas" aria-controls="offcanvas" id="select-icon"><i
+                                                class='fas fa-chevron-down'
+                                                @click="socialName(rede.name, rede.contents)"></i></div>
                                     </div>
-
-                                   
                                 </div>
 
                                 <div class="more-channel me-4" @click="showUp = !showUp">
@@ -123,7 +122,8 @@
                                                 class='fas fa-chevron-down ms-2'></i></p>
                                     </div>
                                     <div v-else role="button">
-                                        <p @click="toggleItens(false)">Menos canais <i class='fas fa-chevron-up ms-2'></i></p>
+                                        <p @click="toggleItens(false)">Menos canais <i
+                                                class='fas fa-chevron-up ms-2'></i></p>
                                     </div>
                                 </div>
 
@@ -146,7 +146,7 @@
                                     <div class="input-group mb-3">
                                         <input onkeypress='return filtroTeclas(event)' type="text" class="form-control"
                                             v-model="posts" maxlength="3" style="border-radius: 12px; color: grey;"
-                                            placeholder="27" onfocus="this.value='';" />
+                                            onfocus="this.value='';" />
                                     </div>
                                     <div v-if="this.posts <= 0" class="less">É necessário digitar um número de posts
                                     </div>
@@ -164,19 +164,38 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="offcanvas calculator" id="offcanvas"
-                            aria-labelledby="offcanvas">
-                            <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvas">Offcanvas bottom</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>
+                            <div class="offcanvas calculator" id="offcanvas" v-for="rede in redes"
+                                aria-labelledby="offcanvas">
+                                <div class="offcanvas-header d-flex">
+                                    <h5 class="offcanvas-title-outside text-start" id="offcanvas">Selecione um ou mais
+                                        formatos</h5>
+                                    <div type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+                                        <img src="assets/plus.svg" alt="botão de fechar">
+                                    </div>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <div class="row d-flex justify-content-between">
+                                        <div class="col-md-6 ">
+                                            <div>
+                                                <p>{{ socialSelected }}</p>
+                                                <div class="form-check my-4" v-for="types in typeSelected">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label ms-2" for="flexCheckDefault">
+                                                        {{ types }}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="offcanvas-footer">
+                                            <button >Confirmar Selecão</button>
+                                        </div>
+                                        <div class="col-md-6 checkbox-part" role="button">
+                                            <p>Limpar seleção</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="offcanvas-body small">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus libero
-                                quaerat odio voluptate aut exercitationem laboriosam eligendi, aliquam
-                                tempore saepe dicta adipisci optio sit? Deleniti ratione corrupti alias
-                                quibusdam maxime? </div>
-                        </div>
 
 
                         </div>

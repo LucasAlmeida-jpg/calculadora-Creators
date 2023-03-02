@@ -144,10 +144,10 @@ body p {
   font-weight: 500;
 }
 body .influencers {
-  width: 650px;
+  width: 594px;
   height: auto;
   object-fit: cover;
-  margin-top: -130px;
+  margin-top: -83px;
   margin-bottom: -75px;
 }
 body .flickity-page-dots .dot {
@@ -168,21 +168,55 @@ body .calculator {
   padding: 20px;
   border-radius: 15px;
   margin-top: 30px;
+  width: auto;
 }
-body .calculator offcanvas-backdrop.show {
-  overflow: auto !important;
+body .calculator .offcanvas-header {
+  margin-top: -70px;
 }
-body .calculator .offcanvas.show:not(.hiding),
-body .calculator .offcanvas.showing {
-  transform: none;
-  position: relative;
-  margin-top: -209px;
+body .calculator .offcanvas-header img {
+  width: 30px;
+  margin-right: -35px;
+}
+body .calculator .offcanvas-header .offcanvas-title-outside {
+  font-size: 15px;
+  margin-left: -33px;
+}
+body .calculator .checkbox-part {
+  position: absolute;
+  right: -80px;
 }
 body .calculator .offcanvas.show:not(.showing),
 body .calculator .offcanvas.showing {
-  transform: none;
+  transition: 0.3s;
   position: relative;
-  margin-top: -209px;
+  margin-top: -329px;
+  background-color: #272A33;
+  min-height: 400px;
+}
+body .calculator .offcanvas.show:not(.hiding),
+body .calculator .offcanvas.showing {
+  position: relative;
+  margin-top: -329px;
+  background-color: #272A33;
+  min-height: 400px;
+}
+body .calculator .offcanvas-backdrop.show {
+  opacity: 0.5;
+  overflow-y: scroll;
+}
+body .calculator .offcanvas-footer {
+  bottom: 2px;
+  z-index: 1;
+}
+body .calculator .offcanvas-footer button {
+  font-size: 18px;
+  border: none;
+  border-radius: 35px;
+  padding: 16px 120px;
+  background: rgba(80, 86, 102, 0.3);
+  color: #FFFFFF;
+  font-weight: 600;
+  margin: 0 auto !important;
 }
 body .calculator .social-card {
   background-color: #272A33;
@@ -212,15 +246,6 @@ body .calculator .youtube-card i {
 body .calculator #select-icon {
   font-size: 11px;
 }
-body .calculator #select-icon :hover {
-  background: white;
-  color: black;
-  padding: 5px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 body .calculator .text-calculator {
   margin-bottom: 15px;
 }
@@ -233,6 +258,17 @@ body .calculator .input-group input {
   font-size: 18px;
   font-weight: 500;
   padding-left: 20px;
+}
+body .calculator .offcanvas-body input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 2px solid #fff;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  outline: none;
+  cursor: pointer;
 }
 body .calculator input[type=range] {
   -webkit-appearance: none;
