@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -100,20 +99,30 @@
                             <p class="ms-2">Selecione a plataforma do criador</p>
                             <div class="row g-0 d-flex justify-content-center">
 
-                                <div class="col-6" v-for="(rede, index) in redes" :key="index">
+                                <div class="col-6" v-for="rede in redes">
                                     <div v-if="rede.visible"
                                         class="social-card d-flex justify-content-around select example"
-                                        :class="{selected: rede.selected}" @click="networksSelect(index)">
+                                        :class="{selected: rede.selected}" @click="rede.selected = !rede.selected">
                                         <div class="youtube-card d-flex align-items-center">
                                             <i class="fa-brands" :class="rede.icon"></i>
+
                                         </div>
+                                        <div v-if="rede.selectedTypes.length == 0" class="d-none">
+                                            <p></p>
+                                          </div>
+                                          <div v-else class="notification">
+                                            <p>{{ selectedCountNotification(rede) }}</p>
+                                          </div>
                                         <div>
                                             <p class="mt-3">{{ rede.name }}</p>
                                         </div>
                                         <div @click="rede.selected = !rede.selected" data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvas" aria-controls="offcanvas" id="select-icon"><i
                                                 class='fas fa-chevron-down'
-                                                @click="socialName(rede.name, rede.contents)"></i></div>
+                                                @click="socialName(rede.name, rede.contents, rede.selectedTypes)"></i>
+
+                                        </div>
+
                                     </div>
                                 </div>
 
@@ -130,10 +139,9 @@
 
                             </div>
 
-                            <div class="container">
+                            <div class="container" style="margin-top: -20px">
                                 <p class="text-start mt-4 text-calculator">Tamanho do canal</p>
                                 <div class="range-wrap">
-                                    {{ size }}
                                     <input id="range" type="range" min="0" max="12" step="1" v-model="size"
                                         aria-label="channel size">
                                     <div class="description" :style="{marginLeft: 4 + (size * 7.66) + '%' }">{{
@@ -146,9 +154,8 @@
                                 <p class="text-start mt-4">Número de postagens por rede</p>
                                 <div class="validation">
                                     <div class="input-group mb-3">
-                                        <input onkeypress='return filtroTeclas(event)' type="text" class="form-control"
-                                            v-model="posts" maxlength="3" style="border-radius: 12px; color: grey;"
-                                            onfocus="this.value='';" />
+                                        <input type="text" class="form-control" v-model="posts" maxlength="3"
+                                            style="border-radius: 12px; color: grey;" onfocus="this.value='';" />
                                     </div>
                                     <div v-if="this.posts <= 0" class="less">É necessário digitar um número de posts
                                     </div>
@@ -160,14 +167,12 @@
                                 <div class="row">
                                     <div class="btn-investment-main">
                                         <a href="#calculator-show" style="color: white; text-decoration: none;"> <button
-                                                type="submit" onclick="showCreatorCalculator()"
-                                                class="mt-4 py-3 calc-price" id="input-form">Calcule seu
-                                                investimento</button></a>
+                                                type="submit" @click="toggleCalculator()" class="mt-4 py-3 calc-price"
+                                                id="input-form">Calcule seu investimento</button></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="offcanvas calculator" id="offcanvas" v-for="rede in redes"
-                                aria-labelledby="offcanvas">
+                            <div class="offcanvas calculator" id="offcanvas" aria-labelledby="offcanvas">
                                 <div class="offcanvas-header d-flex">
                                     <h5 class="offcanvas-title-outside text-start" id="offcanvas">Selecione um ou mais
                                         formatos</h5>
@@ -177,37 +182,38 @@
                                 </div>
                                 <div class="offcanvas-body">
                                     <div class="row d-flex justify-content-between">
-                                        <div class="col-md-6 ">
+                                        <div class="col-md-6">
                                             <div>
                                                 <p>{{ socialSelected }}</p>
-                                                <div class="form-check my-4" v-for="types in typeSelected">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                        id="flexCheckDefault">
-                                                    <label class="form-check-label ms-2" for="flexCheckDefault">
-                                                        {{ types }}
-                                                    </label>
+                                                <div class="form-check my-4" v-for="(types, index) in typeSelected"
+                                                    :key="index">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        :id="'flexCheckDefault' + index" v-model="selectedTypes[index]">
+                                                    <label class="form-check-label ms-2"
+                                                        :for="'flexCheckDefault' + index">{{ types }}</label>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="offcanvas-footer">
-                                            <button >Confirmar Selecão</button>
+                                            <button @click="confirmSelection(socialSelected)"
+                                                data-bs-dismiss="offcanvas" aria-label="Close">Confirmar
+                                                Seleção</button>
                                         </div>
                                         <div class="col-md-6 checkbox-part" role="button">
-                                            <p>Limpar seleção</p>
+                                            <p @click="unselectAll(socialSelected)">Limpar Seleção</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
             <section>
                 <!--colocar calculador abaixo-->
-                <div class="container  calcule" id="calculator-show">
-                    <!--colocar a class calculadora aqui -->
+                <div class="container  calcule calculadora" id="calculator-show" v-if="showCalculator">
+                    <!--colocar a class  aqui -->
                     <div class="little-gap">
                         <div class="row">
                             <div class="card">
@@ -276,29 +282,29 @@
                                                         </div>
                                                         <div class="d-flex justify-content-center mb-4 main">
                                                             <button :class="{ background : isUser1 }"
-                                                                @click="isUser1 = true, type = 1" class="btn-creator "
-                                                                data-bs-target="#exampleModalToggle" v-model="type">Sou
+                                                                @click="isUser1 = true" class="btn-creator "
+                                                                data-bs-target="#exampleModalToggle">Sou
                                                                 Empresa</button>
                                                             <button :class="{ background : !isUser1 }"
-                                                                @click="isUser1 = false, type = 2" class=" btn-company "
-                                                                data-bs-target="#exampleModalToggle" v-model="type">Sou
+                                                                @click="isUser1 = false" class=" btn-company "
+                                                                data-bs-target="#exampleModalToggle">Sou
                                                                 Creator</button>
                                                         </div>
 
                                                         <div class="form-floating mb-4">
-                                                            <input type="text" class="form-control" placeholder="Nome" v-model="nome">
+                                                            <input type="text" class="form-control" placeholder="Nome">
                                                             <label>Nome</label>
                                                         </div>
 
                                                         <div class="form-floating">
                                                             <input type="email" class="form-control" id="floatingInput"
-                                                                placeholder="name@example.com" v-model="email">
+                                                                placeholder="name@example.com">
                                                             <label for="floatingInput">{{(isUser1) ? "Email da empresa"
                                                                 :
                                                                 "Email"}}</label>
                                                         </div>
 
-                                                        <button @click="sendSimulation()" class="btn-primary mt-4 simulation-btn"
+                                                        <button class="btn-primary mt-4 simulation-btn"
                                                             data-bs-dismiss="modal">Enviar
                                                             simulação</button>
 

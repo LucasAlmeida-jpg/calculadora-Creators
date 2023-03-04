@@ -3,6 +3,7 @@ body {
   scroll-behavior: smooth;
   background-color: #111111;
   overflow-x: hidden;
+  overflow-y: scroll !important;
 }
 body .validation .input-group input:focus {
   box-shadow: 0px 0em 0em 0em;
@@ -18,7 +19,7 @@ body .less {
   margin-left: 5px;
 }
 body .calculadora {
-  display: none;
+  display: block;
 }
 body .menu {
   padding: 50px 0 80px;
@@ -181,6 +182,21 @@ body .calculator .offcanvas-header .offcanvas-title-outside {
   font-size: 15px;
   margin-left: -33px;
 }
+body .calculator .notification {
+  text-align: center;
+  position: absolute;
+  margin-right: -210px;
+  width: 20px;
+  height: 20px;
+  background-color: #B390FF;
+  border-radius: 50%;
+  align-items: center;
+  margin-top: -49px;
+  padding-top: 1px;
+}
+body .calculator .notification p {
+  font-size: 12px;
+}
 body .calculator .checkbox-part {
   position: absolute;
   right: -80px;
@@ -217,6 +233,9 @@ body .calculator .offcanvas-footer button {
   color: #FFFFFF;
   font-weight: 600;
   margin: 0 auto !important;
+}
+body .calculator .fa-chevron-down:before {
+  font-size: 14px;
 }
 body .calculator .social-card {
   background-color: #272A33;

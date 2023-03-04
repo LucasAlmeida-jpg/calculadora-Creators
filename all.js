@@ -1,61 +1,51 @@
-var filtroTeclas = function (event) {
-  return ((event.charCode >= 48 && event.charCode <= 57) || (event.keyCode == 45 || event.charCode == 46))
-}
 
-function showCreatorCalculator() {
-  const showCalculator = document.getElementById("calculator-show")
-  if (showCalculator.style.display === "none") {
-    showCalculator.style.display = "block"
-  } else {
-    showCalculator.style.display = "block"
-  }
-}
-
-Vue.createApp({
-
+const app = Vue.createApp({
+  props: [ 'index'],
   data() {
     return {
+      showCalculator: false,
       visible: true,
       showUp: true,
       isUser1: true,
-      typeSelected: "",
-      socialSelected: "",
+      typeSelected: [],
+      socialSelected: [],
+      selectedTypes: [],
       redes: [
         {
-          name: "Youtube", icon: "fa-youtube", selected: false, visible: true, contents: ["Inserção", "Shorts", "Colab", "Impulsionamento", "Live"]
+          name: "Youtube", icon: "fa-youtube", selected: false, visible: true, contents: ["Inserção", "Shorts", "Colab", "Impulsionamento", "Live"], selectedTypes: []
         },
         {
-          name: "Instagram", icon: "fa-instagram", selected: false, visible: true, contents: ["Carrossel vídeo", "Reels", "Stories", "Stories", "Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Live"]
+          name: "Instagram", icon: "fa-instagram", selected: false, visible: true, contents: ["Carrossel vídeo", "Reels", "Stories", "Stories", "Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Live"], selectedTypes: []
         },
         {
-          name: "TikTok", icon: "fa-tiktok", selected: false, visible: true, contents: ["Vídeo", "Colab", "Live", "Impulsionamento",]
+          name: "TikTok", icon: "fa-tiktok", selected: false, visible: true, contents: ["Vídeo", "Colab", "Live", "Impulsionamento",], selectedTypes: []
         },
         {
-          name: "Twitter", icon: "fa-twitter", selected: false, visible: true, contents: ["Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Texto",]
+          name: "Twitter", icon: "fa-twitter", selected: false, visible: true, contents: ["Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Texto",], selectedTypes: []
         },
         {
-          name: "Newsletter", icon: "fa fa-file-o", selected: false, visible: false, contents: ["Texto", "Imagem",]
+          name: "Newsletter", icon: "fa fa-file-o", selected: false, visible: false, contents: ["Texto", "Imagem",], selectedTypes: []
         },
         {
-          name: "Proprio", icon: "fa fa-user-o", selected: false, visible: false, contents: ["Mentoria", "Aula", "Uso de Imagem", "Locução", "Produto",]
+          name: "Proprio", icon: "fa fa-user-o", selected: false, visible: false, contents: ["Mentoria", "Aula", "Uso de Imagem", "Locução", "Produto",], selectedTypes: []
         },
         {
-          name: "LinkedIn", icon: "fa-linkedin", selected: false, visible: false, contents: ["Vídeo", "Foto", "Texto", "Colab", "Impulsionamento",]
+          name: "LinkedIn", icon: "fa-linkedin", selected: false, visible: false, contents: ["Vídeo", "Foto", "Texto", "Colab", "Impulsionamento",], selectedTypes: []
         },
         {
-          name: "WhatsApp", icon: "fa-whatsapp", selected: false, visible: false, contents: ["Foto", "Vídeo", "Texto", "Banner",]
+          name: "WhatsApp", icon: "fa-whatsapp", selected: false, visible: false, contents: ["Foto", "Vídeo", "Texto", "Banner",], selectedTypes: []
         },
         {
-          name: "Facebook", icon: "fa-facebook", selected: false, visible: false, contents: ["Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Live", "Stories", "Texto",]
+          name: "Facebook", icon: "fa-facebook", selected: false, visible: false, contents: ["Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Live", "Stories", "Texto",], selectedTypes: []
         },
         {
-          name: "Pinterest", icon: "fa-pinterest", selected: false, visible: false, contents: ["Texto", "Imagem",]
+          name: "Pinterest", icon: "fa-pinterest", selected: false, visible: false, contents: ["Texto", "Imagem",], selectedTypes: []
         },
         {
-          name: "Podcast", icon: "fa-microphone", selected: false, visible: false, contents: ["Audio",]
+          name: "Podcast", icon: "fa-microphone", selected: false, visible: false, contents: ["Audio",], selectedTypes: []
         },
         {
-          name: "Outros", icon: "fa-paper-plane", selected: false, visible: false, contents: ["Texto", "Imagem",]
+          name: "Outros", icon: "fa-paper-plane", selected: false, visible: false, contents: ["Texto", "Imagem",], selectedTypes: []
         },
       ],
       selectedRedes: [],
@@ -119,13 +109,7 @@ Vue.createApp({
         // [ 
         //   1000, 1000, 4000, 5000, 6000, 7000, 9000, 9000, 10000, 10000, 10000, 10000 // LinkedIn
         // ] 
-      ],
-      networks:[],
-      valueEstimated: '',
-      quantity: '',
-      type: '',
-      nome: '',
-      email:''
+      ]
     }
   },
 
@@ -140,49 +124,44 @@ Vue.createApp({
         }
       }
 
-      this.valueEstimated = value;
       return value;
-    }
+    },
+
+
   },
   methods: {
+    toggleCalculator() {
+      this.showCalculator = true;
+    },
+
     toggleItens(visible) {
       for (let i = 4; i < this.redes.length; i++) {
         this.redes[i].visible = visible;
       }
     },
-    socialName(nome, contents) {
+
+    socialName(nome, contents, selected) {
       this.socialSelected = nome;
       this.typeSelected = contents;
+      this.selectedTypes = selected;
     },
 
-    networksSelect(index){
-      this.redes[index].selected = !this.redes[index].selected
-      if(this.redes[index].selected){
-        this.networks.push(this.redes[index].name);
+    confirmSelection(send) {
+      const selected = this.typeSelected.filter((index) => this.selectedTypes[index])
+      const index = redes.findIndex((elemento) => elemento.name === send);
+      this.redes[index].selectedTypes = selected;
+    },
+
+    selectedCountNotification(rede) {
+      if (rede && rede.selectedTypes) {
+        return rede.selectedTypes.filter(index => index).length;
       } else {
-        const indice = this.networks.indexOf(this.redes[index].name);
-        if (indice !== -1) {
-          this.networks.splice(indice, 1);
-        }
+        return 0;
       }
-    },
+    },    
 
-    sendSimulation(){
-      var data = {
-        size: this.descriptions[this.size], 
-        posts: this.posts,
-        networks: this.networks,
-        value: [this.valueEstimated * 0.5, this.valueEstimated * 1.5],
-        email: this.email,
-        type: this.type
-      }
-
-      axios({
-        method: 'post',
-        url: 'http://127.0.0.1:8000/api/v1/calculator/send-simulation',
-        data: data
-      });
-
+    unselectAll() {
+      this.selectedTypes = []
     }
   }
 
