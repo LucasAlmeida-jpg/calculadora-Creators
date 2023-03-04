@@ -119,7 +119,13 @@ Vue.createApp({
         // [ 
         //   1000, 1000, 4000, 5000, 6000, 7000, 9000, 9000, 10000, 10000, 10000, 10000 // LinkedIn
         // ] 
-      ]
+      ],
+      networks:[],
+      valueEstimated: '',
+      quantity: '',
+      type: '',
+      nome: '',
+      email:''
     }
   },
 
@@ -134,6 +140,7 @@ Vue.createApp({
         }
       }
 
+      this.valueEstimated = value;
       return value;
     }
   },
@@ -147,6 +154,36 @@ Vue.createApp({
       this.socialSelected = nome;
       this.typeSelected = contents;
     },
+
+    networksSelect(index){
+      this.redes[index].selected = !this.redes[index].selected
+      if(this.redes[index].selected){
+        this.networks.push(this.redes[index].name);
+      } else {
+        const indice = this.networks.indexOf(this.redes[index].name);
+        if (indice !== -1) {
+          this.networks.splice(indice, 1);
+        }
+      }
+    },
+
+    sendSimulation(){
+      var data = {
+        size: this.descriptions[this.size], 
+        posts: this.posts,
+        networks: this.networks,
+        value: [this.valueEstimated * 0.5, this.valueEstimated * 1.5],
+        email: this.email,
+        type: this.type
+      }
+
+      axios({
+        method: 'post',
+        url: 'http://127.0.0.1:8000/api/v1/calculator/send-simulation',
+        data: data
+      });
+
+    }
   }
 
 }).mount('#calc');

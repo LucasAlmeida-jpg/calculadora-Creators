@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -99,10 +100,10 @@
                             <p class="ms-2">Selecione a plataforma do criador</p>
                             <div class="row g-0 d-flex justify-content-center">
 
-                                <div class="col-6" v-for="rede in redes">
+                                <div class="col-6" v-for="(rede, index) in redes" :key="index">
                                     <div v-if="rede.visible"
                                         class="social-card d-flex justify-content-around select example"
-                                        :class="{selected: rede.selected}" @click="rede.selected = !rede.selected">
+                                        :class="{selected: rede.selected}" @click="networksSelect(index)">
                                         <div class="youtube-card d-flex align-items-center">
                                             <i class="fa-brands" :class="rede.icon"></i>
                                         </div>
@@ -132,6 +133,7 @@
                             <div class="container">
                                 <p class="text-start mt-4 text-calculator">Tamanho do canal</p>
                                 <div class="range-wrap">
+                                    {{ size }}
                                     <input id="range" type="range" min="0" max="12" step="1" v-model="size"
                                         aria-label="channel size">
                                     <div class="description" :style="{marginLeft: 4 + (size * 7.66) + '%' }">{{
@@ -275,29 +277,29 @@
                                                         </div>
                                                         <div class="d-flex justify-content-center mb-4 main">
                                                             <button :class="{ background : isUser1 }"
-                                                                @click="isUser1 = true" class="btn-creator "
-                                                                data-bs-target="#exampleModalToggle">Sou
+                                                                @click="isUser1 = true, type = 1" class="btn-creator "
+                                                                data-bs-target="#exampleModalToggle" v-model="type">Sou
                                                                 Empresa</button>
                                                             <button :class="{ background : !isUser1 }"
-                                                                @click="isUser1 = false" class=" btn-company "
-                                                                data-bs-target="#exampleModalToggle">Sou
+                                                                @click="isUser1 = false, type = 2" class=" btn-company "
+                                                                data-bs-target="#exampleModalToggle" v-model="type">Sou
                                                                 Creator</button>
                                                         </div>
 
                                                         <div class="form-floating mb-4">
-                                                            <input type="text" class="form-control" placeholder="Nome">
+                                                            <input type="text" class="form-control" placeholder="Nome" v-model="nome">
                                                             <label>Nome</label>
                                                         </div>
 
                                                         <div class="form-floating">
                                                             <input type="email" class="form-control" id="floatingInput"
-                                                                placeholder="name@example.com">
+                                                                placeholder="name@example.com" v-model="email">
                                                             <label for="floatingInput">{{(isUser1) ? "Email da empresa"
                                                                 :
                                                                 "Email"}}</label>
                                                         </div>
 
-                                                        <button class="btn-primary mt-4 simulation-btn"
+                                                        <button @click="sendSimulation()" class="btn-primary mt-4 simulation-btn"
                                                             data-bs-dismiss="modal">Enviar
                                                             simulação</button>
 
