@@ -99,11 +99,11 @@
                             <p class="ms-2">Selecione a plataforma do criador</p>
                             <div class="row g-0 d-flex justify-content-center">
 
-                                <div class="col-6" v-for="rede in redes">
+                                <div class="col-6" v-for="rede in redes" ::key="index">
                                     <div v-if="rede.visible"
                                         class="social-card d-flex justify-content-around select example"
                                         :class="{selected: rede.selected}" @click="rede.selected = !rede.selected">
-                                        <div class="social-cards d-flex align-items-center">
+                                        <div @click="networksSelect(index)" class="social-cards d-flex align-items-center">
                                             <i class="fa-brands" :class="rede.icon"></i>
                                         </div>
                                         <div v-if="rede.selectedTypes.length == 0" class="d-none">
@@ -291,19 +291,19 @@
                                                         </div>
 
                                                         <div class="form-floating mb-4">
-                                                            <input type="text" class="form-control" placeholder="Nome">
+                                                            <input type="text" class="form-control" placeholder="Nome" v-model="nome">
                                                             <label>Nome</label>
                                                         </div>
 
                                                         <div class="form-floating">
                                                             <input type="email" class="form-control" id="floatingInput"
-                                                                placeholder="name@example.com">
+                                                                placeholder="name@example.com" v-model="email">
                                                             <label for="floatingInput">{{(isUser1) ? "Email da empresa"
                                                                 :
                                                                 "Email"}}</label>
                                                         </div>
 
-                                                        <button class="btn-primary mt-4 simulation-btn"
+                                                        <button  @click="sendSimulation()" class="btn-primary mt-4 simulation-btn"
                                                             data-bs-dismiss="modal">Enviar
                                                             simulação</button>
 

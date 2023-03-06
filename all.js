@@ -2,6 +2,12 @@
 const app = Vue.createApp({
   data() {
     return {
+      networks: [],
+      valueEstimated: '',
+      quantity: '',
+      type: '',
+      nome: '',
+      email: '',
       showCalculator: false,
       visible: true,
       showUp: true,
@@ -123,6 +129,8 @@ const app = Vue.createApp({
         }
       }
 
+      this.valueEstimated = value;
+
       return value;
     },
 
@@ -138,6 +146,7 @@ const app = Vue.createApp({
         this.redes[i].visible = visible;
       }
     },
+  
 
     socialName(nome, contents, selected) {
       this.socialSelected = nome;
@@ -157,10 +166,40 @@ const app = Vue.createApp({
       } else {
         return 0;
       }
-    },    
+    },
 
     unselectAll() {
       this.selectedTypes = []
+    },
+
+    networksSelect(index) {
+      this.redes[index].selected = !this.redes[index].selected
+      if (this.redes[index].selected) {
+        this.networks.push(this.redes[index].name);
+      } else {
+        const indice = this.networks.indexOf(this.redes[index].name);
+        if (indice !== -1) {
+          this.networks.splice(indice, 1);
+        }
+      }
+    },
+
+    sendSimulation() {
+      var data = {
+        size: this.descriptions[this.size],
+        posts: this.posts,
+        networks: this.networks,
+        value: [this.valueEstimated * 0.5, this.valueEstimated * 1.5],
+        email: this.email,
+        type: this.type
+      }
+
+      axios({
+        method: 'post',
+        url: 'http://127.0.0.1:8000/api/v1/calculator/send-simulation',
+        data: data
+      });
+
     }
   }
 
