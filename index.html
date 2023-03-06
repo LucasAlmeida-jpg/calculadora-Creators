@@ -103,9 +103,8 @@
                                     <div v-if="rede.visible"
                                         class="social-card d-flex justify-content-around select example"
                                         :class="{selected: rede.selected}" @click="rede.selected = !rede.selected">
-                                        <div class="youtube-card d-flex align-items-center">
+                                        <div class="social-cards d-flex align-items-center">
                                             <i class="fa-brands" :class="rede.icon"></i>
-
                                         </div>
                                         <div v-if="rede.selectedTypes.length == 0" class="d-none">
                                             <p></p>

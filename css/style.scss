@@ -242,6 +242,14 @@ body {
         margin-top: 30px;
         width: auto;
 
+        .social-cards {
+            .fa-brands {
+                background: rgba(117, 83, 226, 0.1);
+                padding: 10px;
+                border-radius: 50%;
+            }
+        }
+
         .offcanvas-header {
             margin-top: -70px;
 
@@ -346,14 +354,6 @@ body {
 
         .notSelected {
             display: none !important;
-        }
-
-        .youtube-card {
-            i {
-                background: rgba(117, 83, 226, 0.1);
-                padding: 10px;
-                border-radius: 50%;
-            }
         }
 
         #select-icon {

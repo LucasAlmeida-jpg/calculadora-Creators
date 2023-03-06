@@ -1,6 +1,5 @@
 
 const app = Vue.createApp({
-  props: [ 'index'],
   data() {
     return {
       showCalculator: false,
@@ -45,7 +44,7 @@ const app = Vue.createApp({
           name: "Podcast", icon: "fa-microphone", selected: false, visible: false, contents: ["Audio",], selectedTypes: []
         },
         {
-          name: "Outros", icon: "fa-paper-plane", selected: false, visible: false, contents: ["Texto", "Imagem",], selectedTypes: []
+          name: "Outros", icon: "fa-regular fa-paper-plane", selected: false, visible: false, contents: ["Texto", "Imagem",], selectedTypes: []
         },
       ],
       selectedRedes: [],

@@ -171,6 +171,11 @@ body .calculator {
   margin-top: 30px;
   width: auto;
 }
+body .calculator .social-cards .fa-brands {
+  background: rgba(117, 83, 226, 0.1);
+  padding: 10px;
+  border-radius: 50%;
+}
 body .calculator .offcanvas-header {
   margin-top: -70px;
 }
@@ -256,11 +261,6 @@ body .calculator .selected {
 }
 body .calculator .notSelected {
   display: none !important;
-}
-body .calculator .youtube-card i {
-  background: rgba(117, 83, 226, 0.1);
-  padding: 10px;
-  border-radius: 50%;
 }
 body .calculator #select-icon {
   font-size: 11px;
