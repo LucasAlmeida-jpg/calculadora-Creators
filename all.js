@@ -6,7 +6,7 @@ const app = Vue.createApp({
       valueEstimated: '',
       quantity: '',
       type: '',
-      nome: '',
+      name: '',
       email: '',
       showCalculator: false,
       visible: true,
@@ -191,12 +191,13 @@ const app = Vue.createApp({
         networks: this.networks,
         value: [this.valueEstimated * 0.5, this.valueEstimated * 1.5],
         email: this.email,
-        type: this.type
+        type: this.type,
+        name: this.name
       }
 
       axios({
         method: 'post',
-        url: 'http://127.0.0.1:8000/api/v1/calculator/send-simulation',
+        url: 'https://creators.llc/api/v1/calculator/send-simulation',
         data: data
       });
 

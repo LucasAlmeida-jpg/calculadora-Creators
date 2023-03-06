@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -281,17 +282,17 @@
                                                         </div>
                                                         <div class="d-flex justify-content-center mb-4 main">
                                                             <button :class="{ background : isUser1 }"
-                                                                @click="isUser1 = true" class="btn-creator "
-                                                                data-bs-target="#exampleModalToggle">Sou
+                                                                @click="isUser1 = true, type = 1" class="btn-creator "
+                                                                data-bs-target="#exampleModalToggle" v-model="type">Sou
                                                                 Empresa</button>
                                                             <button :class="{ background : !isUser1 }"
-                                                                @click="isUser1 = false" class=" btn-company "
-                                                                data-bs-target="#exampleModalToggle">Sou
+                                                                @click="isUser1 = false, type = 2" class=" btn-company "
+                                                                data-bs-target="#exampleModalToggle" v-model="type">Sou
                                                                 Creator</button>
                                                         </div>
 
                                                         <div class="form-floating mb-4">
-                                                            <input type="text" class="form-control" placeholder="Nome" v-model="nome">
+                                                            <input type="text" class="form-control" placeholder="Nome" v-model="name">
                                                             <label>Nome</label>
                                                         </div>
 
