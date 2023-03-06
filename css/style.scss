@@ -240,7 +240,7 @@ body {
         padding: 20px;
         border-radius: 15px;
         margin-top: 30px;
-        max-width: 445px;
+        max-width: auto;
 
         .social-cards {
             .fa-brands {
@@ -322,7 +322,6 @@ body {
                 background: rgba(80, 86, 102, 0.3);
                 color: #FFFFFF;
                 font-weight: 600;
-                // opacity: 0.3;
                 margin: 0 auto !important;
                 
             }

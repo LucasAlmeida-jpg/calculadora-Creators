@@ -169,7 +169,7 @@ body .calculator {
   padding: 20px;
   border-radius: 15px;
   margin-top: 30px;
-  max-width: 445px;
+  max-width: auto;
 }
 body .calculator .social-cards .fa-brands {
   background: rgba(117, 83, 226, 0.1);
