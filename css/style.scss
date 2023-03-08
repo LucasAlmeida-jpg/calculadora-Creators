@@ -97,7 +97,7 @@ body {
 
     .background {
         background: $cor-botao ;
-        color: white;
+        color: white !important;
     }
 
     .btn-primary {
@@ -251,7 +251,9 @@ body {
         }
 
         .offcanvas-header {
-            margin-top: -70px;
+            margin-top: -10px;
+            padding: 0 30px 30px 40px;
+            align-items: center;
 
             img {
                 width: 30px;
@@ -711,7 +713,7 @@ body {
 
         .main {
             .btn-creator {
-                background: white;
+                background-color: white;
                 border: 1px solid #3300FF;
                 color: #3300FF;
                 padding: 10px;
