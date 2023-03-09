@@ -17,7 +17,7 @@ const app = Vue.createApp({
       selectedTypes: [],
       redes: [
         {
-          name: "Youtube", icon: "fa-youtube", selected: false, visible: true, contents: ["Inserção", "Shorts", "Colab", "Impulsionamento", "Live"], selectedTypes: []
+          name: "Youtube", icon: "fa-youtube", selected: false, visible: true, contents: [{name:"Inserção", select: false}, {name:"Shorts", select:false}, {name:"Colab", select: false}, {name:"Impulsionamento", select:false}, {name:"Live", select:false}], selectedTypes: []
         },
         {
           name: "Instagram", icon: "fa-instagram", selected: false, visible: true, contents: ["Carrossel vídeo", "Reels", "Stories", "Stories", "Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Live"], selectedTypes: []
@@ -44,7 +44,7 @@ const app = Vue.createApp({
           name: "Facebook", icon: "fa-facebook", selected: false, visible: false, contents: ["Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Live", "Stories", "Texto",], selectedTypes: []
         },
         {
-          name: "Pinterest", icon: "fa-pinterest", selected: false, visible: false, contents: ["Texto", "Imagem",], selectedTypes: []
+          name: "Pinterest", icon: "fa-pinterest", selected: false, visible: false, contents: [{name:"Texto", select: false}, {name:"Imagem", select: false}], selectedTypes: []
         },
         {
           name: "Podcast", icon: "fa-microphone", selected: false, visible: false, contents: ["Audio",], selectedTypes: []
@@ -156,7 +156,7 @@ const app = Vue.createApp({
 
     confirmSelection(send) {
       const selected = this.typeSelected.filter((index) => this.selectedTypes[index])
-      const index = redes.findIndex((elemento) => elemento.name === send);
+      const index = this.redes.findIndex((elemento) => elemento.name === send);
       this.redes[index].selectedTypes = selected;
     },
 
@@ -172,29 +172,20 @@ const app = Vue.createApp({
       this.selectedTypes = []
     },
 
-    networksSelect(index) {
-      this.redes[index].selected = !this.redes[index].selected
-      if (this.redes[index].selected) {
-        this.networks.push(this.redes[index].name);
-      } else {
-        const indice = this.networks.indexOf(this.redes[index].name);
-        if (indice !== -1) {
-          this.networks.splice(indice, 1);
-        }
-      }
-    },
-
     sendSimulation() {
+      var selectedsNetworks = this.redes.filter(network => network.selected === true).map(network => { 
+        return {name: network.name,contents: network.contents.filter(content => content.select === true).map(content => content.name)}
+      });
+
       var data = {
         size: this.descriptions[this.size],
         posts: this.posts,
-        networks: this.networks,
+        networks: selectedsNetworks,
         value: [this.valueEstimated * 0.5, this.valueEstimated * 1.5],
         email: this.email,
         type: this.type,
         name: this.name
       }
-
       axios({
         method: 'post',
         url: 'http://127.0.0.1:8000/api/v1/calculator/send-simulation',

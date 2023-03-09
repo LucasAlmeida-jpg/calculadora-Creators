@@ -100,11 +100,11 @@
                             <p class="ms-2">Selecione a plataforma do criador</p>
                             <div class="row g-0 d-flex justify-content-center">
 
-                                <div class="col-6" v-for="rede in redes" ::key="index">
+                                <div class="col-6" v-for="rede in redes" :key="index">
                                     <div v-if="rede.visible"
                                         class="social-card d-flex justify-content-around select example"
                                         :class="{selected: rede.selected}" @click="rede.selected = !rede.selected">
-                                        <div @click="networksSelect(index)" class="social-cards d-flex align-items-center">
+                                        <div class="social-cards d-flex align-items-center">
                                             <i class="fa-brands" :class="rede.icon"></i>
                                         </div>
                                         <div v-if="rede.selectedTypes.length == 0" class="d-none">
@@ -185,13 +185,9 @@
                                         <div class="col-md-6">
                                             <div>
                                                 <p>{{ socialSelected }}</p>
-                                                <div class="form-check my-4" v-for="(types, index) in typeSelected"
-                                                    :key="index">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        :id="'flexCheckDefault' + index" v-model="selectedTypes[index]">
-                                                    <label class="form-check-label ms-2"
-                                                        :for="'flexCheckDefault' + index">{{ types }}</label>
-
+                                                <div class="form-check my-4" v-for="(types, index) in typeSelected" :key="index">
+                                                    <input class="form-check-input" type="checkbox" :id="'flexCheckDefault' + index" @click="networkSelect(typeSelected[index])" v-model="selectedTypes[index]">
+                                                    <label class="form-check-label ms-2" :for="'flexCheckDefault' + index">{{ types.name }}</label>
                                                 </div>
                                             </div>
                                         </div>
