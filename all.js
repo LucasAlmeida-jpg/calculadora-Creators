@@ -20,37 +20,37 @@ const app = Vue.createApp({
           name: "Youtube", icon: "fa-youtube", selected: false, visible: true, contents: [{name:"Inserção", select: false}, {name:"Shorts", select:false}, {name:"Colab", select: false}, {name:"Impulsionamento", select:false}, {name:"Live", select:false}], selectedTypes: []
         },
         {
-          name: "Instagram", icon: "fa-instagram", selected: false, visible: true, contents: ["Carrossel vídeo", "Reels", "Stories", "Stories", "Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Live"], selectedTypes: []
+          name: "Instagram", icon: "fa-instagram", selected: false, visible: true, contents: [{name:"Carrossel vídeo", select: false}, {name:"Reels", select: false}, {name:"Stories", select: false}, {name:"Feed foto", select: false}, {name:"Feed vídeo", select: false}, {name:"Colab", select: false}, {name:"Impulsionamento", select: false}, {name:"Live", select:false}], selectedTypes: []
         },
         {
-          name: "TikTok", icon: "fa-tiktok", selected: false, visible: true, contents: ["Vídeo", "Colab", "Live", "Impulsionamento",], selectedTypes: []
+          name: "TikTok", icon: "fa-tiktok", selected: false, visible: true, contents: [{name:"Vídeo", select:false}, {name:"Colab", select:false}, {name:"Live", select:false}, {name:"Impulsionamento", select:false},], selectedTypes: []
         },
         {
-          name: "Twitter", icon: "fa-twitter", selected: false, visible: true, contents: ["Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Texto",], selectedTypes: []
+          name: "Twitter", icon: "fa-twitter", selected: false, visible: true, contents: [{name:"Feed foto", select:false}, {name:"Feed vídeo", select:false}, {name:"Colab", select:false}, {name:"Impulsionamento", select:false}, {name:"Texto", select:false},], selectedTypes: []
         },
         {
-          name: "Newsletter", icon: "fa fa-file-o", selected: false, visible: false, contents: ["Texto", "Imagem",], selectedTypes: []
+          name: "Newsletter", icon: "fa fa-file-o", selected: false, visible: false, contents: [{name:"Texto", select:false}, {name:"Imagem",select:false}], selectedTypes: []
         },
         {
-          name: "Proprio", icon: "fa fa-user-o", selected: false, visible: false, contents: ["Mentoria", "Aula", "Uso de Imagem", "Locução", "Produto",], selectedTypes: []
+          name: "Proprio", icon: "fa fa-user-o", selected: false, visible: false, contents: [{name:"Mentoria",select:false}, {name:"Aula", select:false}, {name:"Uso de Imagem",select:false}, {name:"Locução", select:false}, {name:"Produto", select:false},], selectedTypes: []
         },
         {
-          name: "LinkedIn", icon: "fa-linkedin", selected: false, visible: false, contents: ["Vídeo", "Foto", "Texto", "Colab", "Impulsionamento",], selectedTypes: []
+          name: "LinkedIn", icon: "fa-linkedin", selected: false, visible: false, contents: [{name:"Vídeo", select:false}, {name:"Foto",select:false}, {name:"Texto",select:false}, {name:"Colab",select:false}, {name:"Impulsionamento",select:false}], selectedTypes: []
         },
         {
-          name: "WhatsApp", icon: "fa-whatsapp", selected: false, visible: false, contents: ["Foto", "Vídeo", "Texto", "Banner",], selectedTypes: []
+          name: "WhatsApp", icon: "fa-whatsapp", selected: false, visible: false, contents: [ {name:"Foto", select:false}, {name:"Vídeo",select:false}, {name:"Texto",select:false}, {name:"Banner",select:false},], selectedTypes: []
         },
         {
-          name: "Facebook", icon: "fa-facebook", selected: false, visible: false, contents: ["Feed foto", "Feed vídeo", "Colab", "Impulsionamento", "Live", "Stories", "Texto",], selectedTypes: []
+          name: "Facebook", icon: "fa-facebook", selected: false, visible: false, contents: [{name:"Feed foto", select:false}, "Feed vídeo", "Colab", "Impulsionamento", "Live", "Stories", "Texto",], selectedTypes: []
         },
         {
           name: "Pinterest", icon: "fa-pinterest", selected: false, visible: false, contents: [{name:"Texto", select: false}, {name:"Imagem", select: false}], selectedTypes: []
         },
         {
-          name: "Podcast", icon: "fa-microphone", selected: false, visible: false, contents: ["Audio",], selectedTypes: []
+          name: "Podcast", icon: "fa-microphone", selected: false, visible: false, contents: [{name:"Audio", select:false}], selectedTypes: []
         },
         {
-          name: "Outros", icon: "fa-regular fa-paper-plane", selected: false, visible: false, contents: ["Texto", "Imagem",], selectedTypes: []
+          name: "Outros", icon: "fa-regular fa-paper-plane", selected: false, visible: false, contents: [{name:"Texto", select:false}, {name:"Imagem",select:false}], selectedTypes: []
         },
       ],
       selectedRedes: [],
