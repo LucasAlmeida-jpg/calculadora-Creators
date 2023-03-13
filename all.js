@@ -188,7 +188,7 @@ const app = Vue.createApp({
       }
       axios({
         method: 'post',
-        url: 'http://127.0.0.1:8000/api/v1/calculator/send-simulation',
+        url: 'https://creators.llc/api/v1/calculator/send-simulation',
         data: data
       });
 
