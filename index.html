@@ -98,7 +98,7 @@
                     <div class="col-md-5">
                         <div class="container calculator offcanvas-backdrop.show">
                             <p class="ms-2">Selecione a plataforma do criador</p>
-                            <div class="row g-0 d-flex justify-content-center">
+                            <div class="row g-0 d-flex ">
 
                                 <div class="col-6" v-for="rede in redes" :key="index">
                                     <div v-if="rede.visible"
@@ -107,7 +107,7 @@
                                         <div class="social-cards d-flex align-items-center">
                                             <i class="fa-brands" :class="rede.icon"></i>
                                         </div>
-                                        <div v-if="rede.selectedTypes.length == 0" class="d-none">
+                                        <div v-if="rede.selectedTypes.length <= 0" class="d-none">
                                             <p></p>
                                           </div>
                                           <div v-else class="notification">
@@ -116,7 +116,7 @@
                                         <div>
                                             <p class="mt-3">{{ rede.name }}</p>
                                         </div>
-                                        <div @click="rede.selected = !rede.selected" data-bs-toggle="offcanvas"
+                                        <div data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvas" aria-controls="offcanvas" id="select-icon"><i
                                                 class='fas fa-chevron-down'
                                                 @click="socialName(rede.name, rede.contents, rede.selectedTypes)"></i>
@@ -126,7 +126,7 @@
                                     </div>
                                 </div>
 
-                                <div class="more-channel me-4" @click="showUp = !showUp">
+                                 <div class="more-channel me-5" @click="showUp = !showUp">
                                     <div v-if="showUp" role="button">
                                         <p @click="toggleItens(true)">Mais canais <i
                                                 class='fas fa-chevron-down ms-2'></i></p>
@@ -135,17 +135,17 @@
                                         <p @click="toggleItens(false)">Menos canais <i
                                                 class='fas fa-chevron-up ms-2'></i></p>
                                     </div>
-                                </div>
+                                </div> 
 
                             </div>
 
                             <div class="container" style="margin-top: -20px">
                                 <p class="text-start mt-4 text-calculator">Tamanho do canal</p>
                                 <div class="range-wrap">
-                                    <input id="range" type="range" min="0" max="12" step="1" v-model="size"
+                                    <input id="range" type="range" min="0" max="6" step="1" v-model="this.size"
                                         aria-label="channel size">
-                                    <div class="description" :style="{marginLeft: 4 + (size * 7.66) + '%' }">{{
-                                        descriptions[size] }}</div>
+                                    <div class="description" :style="{marginLeft: 4 + (this.size * 15.44) + '%' }">{{
+                                        descriptions[this.size] }}</div>
                                 </div>
                             </div>
 
@@ -154,12 +154,12 @@
                                 <p class="text-start mt-4">Número de postagens por rede</p>
                                 <div class="validation">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" v-model="posts" maxlength="3"
+                                        <input type="text" class="form-control" v-model="this.posts" maxlength="3"
                                             style="border-radius: 12px; color: grey;" onfocus="this.value='';" />
                                     </div>
-                                    <div v-if="this.posts <= 0" class="less">É necessário digitar um número de posts
+                                    <div v-show="this.posts <= 0 || this.posts > 100" class="less">
+                                        {{ this.posts <= 0 ? 'É necessário digitar um número de posts' : 'Número máximo de posts é de 100' }}
                                     </div>
-                                    <div v-else-if="this.posts > 100" class="less">Número máximo de posts é de 100</div>
                                 </div>
                             </div>
 
@@ -276,14 +276,15 @@
                                                                 email
                                                             </h1>
                                                         </div>
+                                                        <!-- v-model="type" foi retirado o v-model logo abaixo, pois, está sendo usada em um elemento que não é permitido -->
                                                         <div class="d-flex justify-content-center mb-4 main">
                                                             <button :class="{ background : isUser1 }"
                                                                 @click="isUser1 = true, type = 1" class="btn-creator "
-                                                                data-bs-target="#exampleModalToggle" v-model="type">Sou
+                                                                data-bs-target="#exampleModalToggle">Sou
                                                                 Empresa</button>
                                                             <button :class="{ background : !isUser1 }"
                                                                 @click="isUser1 = false, type = 2" class=" btn-company "
-                                                                data-bs-target="#exampleModalToggle" v-model="type">Sou
+                                                                data-bs-target="#exampleModalToggle">Sou
                                                                 Creator</button>
                                                         </div>
 

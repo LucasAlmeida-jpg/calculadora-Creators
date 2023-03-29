@@ -15,127 +15,105 @@ const app = Vue.createApp({
       typeSelected: [],
       socialSelected: [],
       selectedTypes: [],
+      index: 0,
       redes: [
         {
-          name: "Youtube", icon: "fa-youtube", selected: false, visible: true, contents: [{name:"Inserção", select: false}, {name:"Shorts", select:false}, {name:"Colab", select: false}, {name:"Impulsionamento", select:false}, {name:"Live", select:false}], selectedTypes: []
+          name: "Youtube", icon: "fa-youtube", selected: false, visible: true,
+          contents: [{ name: "Shorts", select: false, socialValue: [1000, 4500, 6500, 9500, 12500, 18000, 18000] }], selectedTypes: []
         },
         {
-          name: "Instagram", icon: "fa-instagram", selected: false, visible: true, contents: [{name:"Carrossel vídeo", select: false}, {name:"Reels", select: false}, {name:"Stories", select: false}, {name:"Feed foto", select: false}, {name:"Feed vídeo", select: false}, {name:"Colab", select: false}, {name:"Impulsionamento", select: false}, {name:"Live", select:false}], selectedTypes: []
+          name: "Instagram", icon: "fa-instagram", selected: false, visible: true,
+          contents: [
+            { name: "Feed", select: false, socialValue: [1000, 2500, 5500, 9000, 20000, 30000, 35000] },
+            { name: "Reels", select: false, socialValue: [1500, 5000, 8000, 14000, 25000, 35000, 45000] },
+            { name: "Stories", select: false, socialValue: [1000, 2500, 4000, 7000, 14000, 15000, 25000] },
+            { name: "Feed vídeo", select: false, socialValue: [1000, 2500, 4000, 7000, 14000, 15000, 25000] }
+          ],
+          selectedTypes: []
         },
         {
-          name: "TikTok", icon: "fa-tiktok", selected: false, visible: true, contents: [{name:"Vídeo", select:false}, {name:"Colab", select:false}, {name:"Live", select:false}, {name:"Impulsionamento", select:false},], selectedTypes: []
+          name: "TikTok", icon: "fa-tiktok", selected: false, visible: true,
+          contents: [
+            { name: "Vídeo", select: false, socialValue: [1500, 5000, 10000, 15000, 30000, 35000, 45000] }
+          ], selectedTypes: []
         },
         {
-          name: "Twitter", icon: "fa-twitter", selected: false, visible: true, contents: [{name:"Feed foto", select:false}, {name:"Feed vídeo", select:false}, {name:"Colab", select:false}, {name:"Impulsionamento", select:false}, {name:"Texto", select:false},], selectedTypes: []
+          name: "Twitter", icon: "fa-twitter", selected: false, visible: true,
+          contents: [
+            // { name: "Twitter", select: false },
+            { name: "Feed vídeo", select: false, socialValue: [1000, 2000, 7000, 10000, 15000, 15000, 20000] }
+          ], selectedTypes: []
         },
         {
-          name: "Newsletter", icon: "fa fa-file-o", selected: false, visible: false, contents: [{name:"Texto", select:false}, {name:"Imagem",select:false}], selectedTypes: []
+          name: "LinkedIn", icon: "fa-linkedin", selected: false, visible: false,
+          contents: [
+            { name: "Vídeo", select: false },
+            { name: "Foto", select: false },
+            { name: "Texto", select: false },
+            { name: "Colab", select: false },
+            { name: "Impulsionamento", select: false }], selectedTypes: []
         },
-        {
-          name: "Proprio", icon: "fa fa-user-o", selected: false, visible: false, contents: [{name:"Mentoria",select:false}, {name:"Aula", select:false}, {name:"Uso de Imagem",select:false}, {name:"Locução", select:false}, {name:"Produto", select:false},], selectedTypes: []
-        },
-        {
-          name: "LinkedIn", icon: "fa-linkedin", selected: false, visible: false, contents: [{name:"Vídeo", select:false}, {name:"Foto",select:false}, {name:"Texto",select:false}, {name:"Colab",select:false}, {name:"Impulsionamento",select:false}], selectedTypes: []
-        },
-        {
-          name: "WhatsApp", icon: "fa-whatsapp", selected: false, visible: false, contents: [ {name:"Foto", select:false}, {name:"Vídeo",select:false}, {name:"Texto",select:false}, {name:"Banner",select:false},], selectedTypes: []
-        },
-        {
-          name: "Facebook", icon: "fa-facebook", selected: false, visible: false, contents: [{name:"Feed foto", select:false}, "Feed vídeo", "Colab", "Impulsionamento", "Live", "Stories", "Texto",], selectedTypes: []
-        },
-        {
-          name: "Pinterest", icon: "fa-pinterest", selected: false, visible: false, contents: [{name:"Texto", select: false}, {name:"Imagem", select: false}], selectedTypes: []
-        },
-        {
-          name: "Podcast", icon: "fa-microphone", selected: false, visible: false, contents: [{name:"Audio", select:false}], selectedTypes: []
-        },
-        {
-          name: "Outros", icon: "fa-regular fa-paper-plane", selected: false, visible: false, contents: [{name:"Texto", select:false}, {name:"Imagem",select:false}], selectedTypes: []
-        },
+        // {
+        //   name: "Newsletter", icon: "fa fa-file-o", selected: false, visible: false, contents: [{name:"Texto", select:false}, {name:"Imagem",select:false}], selectedTypes: [],
+        // },
+        // {
+        //   name: "Proprio", icon: "fa fa-user-o", selected: false, visible: false, contents: [{name:"Mentoria",select:false}, {name:"Aula", select:false}, {name:"Uso de Imagem",select:false}, {name:"Locução", select:false}, {name:"Produto", select:false},], selectedTypes: []
+        // },
+        // {
+        //   name: "WhatsApp", icon: "fa-whatsapp", selected: false, visible: false, contents: [ {name:"Foto", select:false}, {name:"Vídeo",select:false}, {name:"Texto",select:false}, {name:"Banner",select:false},], selectedTypes: []
+        // },
+        // {
+        //   name: "Facebook", icon: "fa-facebook", selected: false, visible: false, contents: [{name:"Feed foto", select:false}, "Feed vídeo", "Colab", "Impulsionamento", "Live", "Stories", "Texto",], selectedTypes: []
+        // },
+        // {
+        //   name: "Pinterest", icon: "fa-pinterest", selected: false, visible: false, contents: [{name:"Texto", select: false}, {name:"Imagem", select: false}], selectedTypes: []
+        // },
+        // {
+        //   name: "Podcast", icon: "fa-microphone", selected: false, visible: false, contents: [{name:"Audio", select:false}], selectedTypes: []
+        // },
+        // {
+        //   name: "Outros", icon: "fa-regular fa-paper-plane", selected: false, visible: false, contents: [{name:"Texto", select:false}, {name:"Imagem",select:false}], selectedTypes: []
+        // },
       ],
       selectedRedes: [],
       size: 0,
       posts: 0,
       descriptions: [
-        "1K - 5K",
-        "5K - 10K",
-        "10K - 30K",
-        "30K - 50K",
-        "50K - 80K",
-        "80K - 100K",
-        "100K - 150K",
-        "150K - 350K",
-        "350K - 550K",
-        "550K - 800K",
-        "800K - 1M",
-        "1M - 5M",
-        "5M+",
+        "1K - 10K",
+        "11K - 50K",
+        "51K - 100K",
+        "101K - 500K",
+        "501K - 1M",
+        "1,1M - 10M",
+        "Super - 10M+",
       ],
-      ranges: [
-
-        [
-          1000, 1000, 5000, 9000, 14000, 20000, 25000, 25000, 25000, 25000, 35000, 35000, 35000 // youtube
-        ],
-        [
-          2500, 3500, 4500, 5000, 9000, 10000, 15000, 20000, 23000, 25000, 30000, 40000, 60000 // instagram
-        ],
-        [
-          1000, 3000, 4000, 5000, 7500, 9000, 12000, 15000, 15000, 20000, 30000, 35000, 45000 // Tiktok
-        ],
-        [
-          1000, 1000, 1000, 1000, 2500, 4500, 5500, 7500, 9500, 12500, 12500, 15000, 20000 // Twitter
-        ],
-
-        [
-          1000, 1000, 5000, 9000, 14000, 20000, 25000, 25000, 25000, 25000, 35000, 35000, 35000 // youtube
-        ],
-        [
-          2500, 3500, 4500, 5000, 9000, 10000, 15000, 20000, 23000, 25000, 30000, 40000, 60000 // instagram
-        ],
-        [
-          1000, 3000, 4000, 5000, 7500, 9000, 12000, 15000, 15000, 20000, 30000, 35000, 45000 // Tiktok
-        ],
-        [
-          1000, 1000, 1000, 1000, 2500, 4500, 5500, 7500, 9500, 12500, 12500, 15000, 20000 // Twitter
-        ],
-
-        [
-          1000, 1000, 5000, 9000, 14000, 20000, 25000, 25000, 25000, 25000, 35000, 35000, 35000 // youtube
-        ],
-        [
-          2500, 3500, 4500, 5000, 9000, 10000, 15000, 20000, 23000, 25000, 30000, 40000, 60000 // instagram
-        ],
-        [
-          1000, 3000, 4000, 5000, 7500, 9000, 12000, 15000, 15000, 20000, 30000, 35000, 45000 // Tiktok
-        ],
-        [
-          1000, 1000, 1000, 1000, 2500, 4500, 5500, 7500, 9500, 12500, 12500, 15000, 20000 // Twitter
-        ],
-        // [ 
-        //   1000, 1000, 4000, 5000, 6000, 7000, 9000, 9000, 10000, 10000, 10000, 10000 // LinkedIn
-        // ] 
-      ]
     }
   },
 
   computed: {
-
     estimate() {
+      let size = this.size;
       let value = 0;
-
+      let posts = this.posts;
       for (let i = 0; i < this.redes.length; i++) {
         if (this.redes[i].selected) {
-          value += this.ranges[i][this.size] * this.posts;
+          this.redes[i].contents.forEach(element => {
+            if (element.select) {
+              element.socialValue?.forEach(function (elemento, indice) {
+                console.log(elemento, posts);
+                if (indice == size) {
+                  value += elemento * posts;
+                }
+              });
+            }
+          });
         }
       }
-
       this.valueEstimated = value;
-
       return value;
     },
-
-
   },
+
   methods: {
     toggleCalculator() {
       this.showCalculator = true;
@@ -146,7 +124,6 @@ const app = Vue.createApp({
         this.redes[i].visible = visible;
       }
     },
-  
 
     socialName(nome, contents, selected) {
       this.socialSelected = nome;
@@ -155,9 +132,14 @@ const app = Vue.createApp({
     },
 
     confirmSelection(send) {
-      const selected = this.typeSelected.filter((index) => this.selectedTypes[index])
-      const index = this.redes.findIndex((elemento) => elemento.name === send);
-      this.redes[index].selectedTypes = selected;
+      // const selected = this.typeSelected.filter((index) => this.selectedTypes[index])
+      let rede = this.redes
+      let index = rede.findIndex(obj => obj.name === send);
+      // this.redes[index].selectedTypes = selected;
+      this.selectedTypes.forEach(function (elemento, indice) {
+        rede[index].contents[indice].select = true
+      });
+      this.redes = rede
     },
 
     selectedCountNotification(rede) {
@@ -173,8 +155,8 @@ const app = Vue.createApp({
     },
 
     sendSimulation() {
-      var selectedsNetworks = this.redes.filter(network => network.selected === true).map(network => { 
-        return {name: network.name,contents: network.contents.filter(content => content.select === true).map(content => content.name)}
+      var selectedsNetworks = this.redes.filter(network => network.selected === true).map(network => {
+        return { name: network.name, contents: network.contents.filter(content => content.select === true).map(content => content.name) }
       });
 
       var data = {
