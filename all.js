@@ -114,20 +114,27 @@ const app = Vue.createApp({
   },
 
   methods: {
-    
     toggleCalculator() {
-      if (this.posts <= 0 || this.posts > 100) {
+      const selected = this.redes.find((rede) => rede.selected);
+    
+      if (!selected) {
+        this.warningMessage = 'Selecione uma rede social';
         this.showCalculator = false;
+      } else if (this.posts <= 0 || this.posts > 100) {
         this.warningMessage = this.posts <= 0
           ? 'É necessário digitar um número de posts'
           : 'Número máximo de posts é de 100';
+        this.showCalculator = false;
       } else {
         this.showCalculator = true;
-        this.warningMessage = '';
+        this.warningMessage = ''; 
       }
     },
-  
     
+
+
+
+
     toggleItens(visible) {
       for (let i = 4; i < this.redes.length; i++) {
         this.redes[i].visible = visible;

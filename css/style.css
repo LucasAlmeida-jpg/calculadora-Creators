@@ -381,16 +381,6 @@ body .btn-investment button {
   font-weight: 600;
   height: 50px;
 }
-body .modal-content {
-  background-color: #1C1E25 !important;
-  height: auto;
-}
-body .modal-content h5 {
-  margin-top: 10px;
-  font-size: 22px;
-  text-align: center;
-  border-radius: 12px;
-}
 body .card {
   background: linear-gradient(275.83deg, #9757FF -22.92%, #3300FF 92.78%);
   border-radius: 16px;
