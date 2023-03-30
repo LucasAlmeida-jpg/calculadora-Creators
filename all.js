@@ -11,15 +11,21 @@ const app = Vue.createApp({
       showCalculator: false,
       visible: true,
       showUp: true,
+      selected: false,
       isUser1: true,
       typeSelected: [],
       socialSelected: [],
       selectedTypes: [],
       index: 0,
+      posts: 0,
+      warningMessage: '',
       redes: [
         {
           name: "Youtube", icon: "fa-youtube", selected: false, visible: true,
-          contents: [{ name: "Shorts", select: false, socialValue: [1000, 4500, 6500, 9500, 12500, 18000, 18000] }], selectedTypes: []
+          contents: [
+            { name: "Shorts", select: false, socialValue: [1000, 4500, 6500, 9500, 12500, 18000, 18000] },
+            { name: "Youtube", select: false, socialValue: [1000, 5000, 15000, 25000, 35000, 40000, 50000] }
+          ], selectedTypes: []
         },
         {
           name: "Instagram", icon: "fa-instagram", selected: false, visible: true,
@@ -27,7 +33,6 @@ const app = Vue.createApp({
             { name: "Feed", select: false, socialValue: [1000, 2500, 5500, 9000, 20000, 30000, 35000] },
             { name: "Reels", select: false, socialValue: [1500, 5000, 8000, 14000, 25000, 35000, 45000] },
             { name: "Stories", select: false, socialValue: [1000, 2500, 4000, 7000, 14000, 15000, 25000] },
-            { name: "Feed vídeo", select: false, socialValue: [1000, 2500, 4000, 7000, 14000, 15000, 25000] }
           ],
           selectedTypes: []
         },
@@ -40,18 +45,15 @@ const app = Vue.createApp({
         {
           name: "Twitter", icon: "fa-twitter", selected: false, visible: true,
           contents: [
-            // { name: "Twitter", select: false },
-            { name: "Feed vídeo", select: false, socialValue: [1000, 2000, 7000, 10000, 15000, 15000, 20000] }
+            { name: "Twitter", select: false, socialValue: [1000, 2000, 7000, 10000, 15000, 15000, 20000] }
           ], selectedTypes: []
         },
         {
           name: "LinkedIn", icon: "fa-linkedin", selected: false, visible: false,
           contents: [
-            { name: "Vídeo", select: false },
-            { name: "Foto", select: false },
-            { name: "Texto", select: false },
-            { name: "Colab", select: false },
-            { name: "Impulsionamento", select: false }], selectedTypes: []
+            { name: "Feed", select: false, socialValue: [1000, 5000, 5500, 80000, 11000, 15000, 15000] },
+            { name: "Vídeo", select: false, socialValue: [1000, 4500, 6500, 95000, 12500, 18000, 18000] },
+          ], selectedTypes: []
         },
         // {
         //   name: "Newsletter", icon: "fa fa-file-o", selected: false, visible: false, contents: [{name:"Texto", select:false}, {name:"Imagem",select:false}], selectedTypes: [],
@@ -77,7 +79,7 @@ const app = Vue.createApp({
       ],
       selectedRedes: [],
       size: 0,
-      posts: 0,
+      posts: null,
       descriptions: [
         "1K - 10K",
         "11K - 50K",
@@ -92,33 +94,40 @@ const app = Vue.createApp({
 
   computed: {
     estimate() {
-      let size = this.size;
       let value = 0;
-      let posts = this.posts;
-      for (let i = 0; i < this.redes.length; i++) {
-        if (this.redes[i].selected) {
-          this.redes[i].contents.forEach(element => {
-            if (element.select) {
-              element.socialValue?.forEach(function (elemento, indice) {
-                console.log(elemento, posts);
-                if (indice == size) {
-                  value += elemento * posts;
-                }
-              });
+      const { size, posts, redes } = this;
+
+      for (const rede of redes) {
+        if (rede.selected) {
+          for (const content of rede.contents) {
+            if (content.select && content.socialValue?.[size]) {
+              value += content.socialValue[size] * posts;
             }
-          });
+          }
         }
       }
+
       this.valueEstimated = value;
       return value;
-    },
+    }
+
   },
 
   methods: {
+    
     toggleCalculator() {
-      this.showCalculator = true;
+      if (this.posts <= 0 || this.posts > 100) {
+        this.showCalculator = false;
+        this.warningMessage = this.posts <= 0
+          ? 'É necessário digitar um número de posts'
+          : 'Número máximo de posts é de 100';
+      } else {
+        this.showCalculator = true;
+        this.warningMessage = '';
+      }
     },
-
+  
+    
     toggleItens(visible) {
       for (let i = 4; i < this.redes.length; i++) {
         this.redes[i].visible = visible;
@@ -132,10 +141,8 @@ const app = Vue.createApp({
     },
 
     confirmSelection(send) {
-      // const selected = this.typeSelected.filter((index) => this.selectedTypes[index])
       let rede = this.redes
       let index = rede.findIndex(obj => obj.name === send);
-      // this.redes[index].selectedTypes = selected;
       this.selectedTypes.forEach(function (elemento, indice) {
         rede[index].contents[indice].select = true
       });

@@ -107,16 +107,13 @@
                                         <div class="social-cards d-flex align-items-center">
                                             <i class="fa-brands" :class="rede.icon"></i>
                                         </div>
-                                        <div v-if="rede.selectedTypes.length <= 0" class="d-none">
-                                            <p></p>
-                                          </div>
-                                          <div v-else class="notification">
+                                        <div v-if="rede.selectedTypes.length > 0" class="notification">
                                             <p>{{ selectedCountNotification(rede) }}</p>
-                                          </div>
+                                        </div>
                                         <div>
                                             <p class="mt-3">{{ rede.name }}</p>
                                         </div>
-                                        <div data-bs-toggle="offcanvas"
+                                        <div  @click="rede.selected = !rede.selected" data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvas" aria-controls="offcanvas" id="select-icon"><i
                                                 class='fas fa-chevron-down'
                                                 @click="socialName(rede.name, rede.contents, rede.selectedTypes)"></i>
@@ -153,25 +150,43 @@
 
                                 <p class="text-start mt-4">Número de postagens por rede</p>
                                 <div class="validation">
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" v-model="this.posts" maxlength="3"
-                                            style="border-radius: 12px; color: grey;" onfocus="this.value='';" />
+                                    <div class="input-group mb-3" required>
+                                        <input type="text" class="form-control" v-model="this.posts" maxlength="3" 
+                                            style="border-radius: 12px; color: grey;" onfocus="this.value='';"/>
                                     </div>
-                                    <div v-show="this.posts <= 0 || this.posts > 100" class="less">
-                                        {{ this.posts <= 0 ? 'É necessário digitar um número de posts' : 'Número máximo de posts é de 100' }}
-                                    </div>
+                                    <div v-show="warningMessage" class="less">
+                                        {{ warningMessage }}
+                                      </div>
                                 </div>
                             </div>
 
                             <div class="container">
                                 <div class="row">
                                     <div class="btn-investment-main">
-                                        <a href="#calculator-show" style="color: white; text-decoration: none;"> <button
-                                                type="submit" @click="toggleCalculator()" class="mt-4 py-3 calc-price"
-                                                id="input-form">Calcular preço</button></a>
+                                        <a href="#calculator-show" style="color: white; text-decoration: none;"> <button type="submit" @click="toggleCalculator()" class="mt-4 py-3 calc-price" id="input-form">Calcular preço</button></a>
                                     </div>
                                 </div>
                             </div>
+                    
+                              <!-- Modal -->
+                              <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                      <button type="button" class="btn-close position-absolute end-0 me-4" data-bs-dismiss="modal" aria-label="Close"></button> <br>
+                                    <div  v-if="this.posts == null || this.posts == 0">
+                                        <h5>
+                                            <span>
+                                                <i class="fa-solid fa-triangle-exclamation me-4"></i></span>
+                                                É necessario digitar um numero de posts
+                                        </h5>
+                                    </div>
+
+                               
+                               
+                                  </div>
+                                </div>
+                              </div> -->
+
                             <div class="offcanvas calculator" id="offcanvas" aria-labelledby="offcanvas">
                                 <div class="offcanvas-header d-flex">
                                     <h5 class="offcanvas-title-outside text-start" id="offcanvas">Selecione um ou mais
@@ -191,10 +206,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="offcanvas-footer">
-                                            <button @click="confirmSelection(socialSelected)"
-                                                data-bs-dismiss="offcanvas" aria-label="Close">Confirmar
-                                                Seleção</button>
+                                        <div class="offcanvas-footer" @click="this.rede.selected = this.rede.selected">
+                                            <button @click="confirmSelection(socialSelected)" data-bs-dismiss="offcanvas" aria-label="Close">Confirmar Seleção</button>
                                         </div>
                                         <div class="col-md-6 checkbox-part" role="button">
                                             <p @click="unselectAll(socialSelected)">Limpar Seleção</p>
@@ -228,14 +241,13 @@
                                             </div>
                                             <div class="col-auto">
                                                 <div class="disclaimer">
-                                                    <h5 class="">
+                                                    <h5>
                                                         <span>
                                                             <i class="fa-solid fa-triangle-exclamation"></i></span>
                                                         Essa estimativa considera canais de criadores com engajamento
                                                         entre 2% a 20%.
                                                     </h5>
                                                 </div>
-
                                                 <!--<div class="position">
                                                 <img src="assets/alert-circle.png" alt="">
                                                 <p>Nível de engajamento</p>
@@ -253,10 +265,9 @@
                                 <div class="line"></div>
                                 <div class="button-div internal-btn">
                                     <div class="d-flex">
-                                        <div class="p-2 hide-mobile"><button class="btn btn-primary"> <a
-                                                    style="text-decoration:none; color: white;"
-                                                    href="https://creators.llc/" target="_blank">Cadastre-se e
-                                                    contrate</a></button></div>
+                                        <div class="p-2 hide-mobile"><button class="btn btn-primary"> 
+                                            <a style="text-decoration:none; color: white;" href="https://creators.llc/" target="_blank">Cadastre-se e contrate</a>
+                                        </button></div>
                                         <div class="p-2">
                                             <div class="modal" id="exampleModalToggle">
 
@@ -279,11 +290,11 @@
                                                         <!-- v-model="type" foi retirado o v-model logo abaixo, pois, está sendo usada em um elemento que não é permitido -->
                                                         <div class="d-flex justify-content-center mb-4 main">
                                                             <button :class="{ background : isUser1 }"
-                                                                @click="isUser1 = true, type = 1" class="btn-creator "
+                                                                @click="isUser1 = true, type = 1" class="btn-creator"
                                                                 data-bs-target="#exampleModalToggle">Sou
                                                                 Empresa</button>
                                                             <button :class="{ background : !isUser1 }"
-                                                                @click="isUser1 = false, type = 2" class=" btn-company "
+                                                                @click="isUser1 = false, type = 2" class="btn-company" 
                                                                 data-bs-target="#exampleModalToggle">Sou
                                                                 Creator</button>
                                                         </div>
@@ -508,9 +519,6 @@
     </section>
 
     <script src="all.js"></script>
-    
-    <!-- RD Station -->
-    <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/36764c10-fe6d-4814-8c92-3bafbaf23a93-loader.js" ></script>
 
 </body>
 
