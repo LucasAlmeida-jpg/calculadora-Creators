@@ -655,6 +655,9 @@ body footer ul li i:hover {
   opacity: 0.9;
 }
 @media screen and (min-width: 300px) and (max-width: 900px) {
+  body .card .btn-primary {
+    padding: 10px 14px;
+  }
   body body {
     overflow-x: hidden;
   }
@@ -876,6 +879,19 @@ body .hide {
   }
   body .calculator .calc-price {
     padding: 10px 55px;
+  }
+  body .calculator .notification {
+    margin-right: -117px;
+  }
+  body .calculator .offcanvas-footer {
+    text-align: center;
+  }
+  body .calculator .offcanvas-footer button {
+    padding: 10px 15px !important;
+  }
+  body .calculator .checkbox-part p {
+    position: absolute;
+    right: 100px;
   }
   body .social-media {
     align-items: center !important;

@@ -19,6 +19,7 @@ const app = Vue.createApp({
       index: 0,
       posts: 0,
       warningMessage: '',
+      warningMessage1: '',
       redes: [
         {
           name: "Youtube", icon: "fa-youtube", selected: false, visible: true,
@@ -96,7 +97,6 @@ const app = Vue.createApp({
     estimate() {
       let value = 0;
       const { size, posts, redes } = this;
-
       for (const rede of redes) {
         if (rede.selected) {
           for (const content of rede.contents) {
@@ -115,10 +115,23 @@ const app = Vue.createApp({
 
   methods: {
     toggleCalculator() {
-      const selected = this.redes.find((rede) => rede.selected);
+      let hasSelected = false;
+      let hasSelectedFormat = false;
     
-      if (!selected) {
-        this.warningMessage = 'Selecione uma rede social';
+      this.redes.forEach((rede) => {
+        if (rede.selected) {
+          hasSelected = true;
+          if (rede.contents.some((format) => format.select)) {
+            hasSelectedFormat = true;
+          }
+        }
+      });
+    
+      if (!hasSelected) {
+        this.warningMessage = 'Selecione a rede social';
+        this.showCalculator = false;
+      } else if (!hasSelectedFormat) {
+        this.warningMessage = 'Selecione um formato dentro da rede social';
         this.showCalculator = false;
       } else if (this.posts <= 0 || this.posts > 100) {
         this.warningMessage = this.posts <= 0
@@ -127,14 +140,10 @@ const app = Vue.createApp({
         this.showCalculator = false;
       } else {
         this.showCalculator = true;
-        this.warningMessage = ''; 
+        this.warningMessage = '';
       }
     },
     
-
-
-
-
     toggleItens(visible) {
       for (let i = 4; i < this.redes.length; i++) {
         this.redes[i].visible = visible;
@@ -148,13 +157,14 @@ const app = Vue.createApp({
     },
 
     confirmSelection(send) {
-      let rede = this.redes
-      let index = rede.findIndex(obj => obj.name === send);
-      this.selectedTypes.forEach(function (elemento, indice) {
-        rede[index].contents[indice].select = true
+      const rede = this.redes;
+      const index = rede.findIndex(obj => obj.name === send);
+      this.selectedTypes.forEach((elemento, indice) => {
+        rede[index].contents[indice].select = true;
       });
-      this.redes = rede
+      this.redes = rede;
     },
+    
 
     selectedCountNotification(rede) {
       if (rede && rede.selectedTypes) {
@@ -165,7 +175,13 @@ const app = Vue.createApp({
     },
 
     unselectAll() {
-      this.selectedTypes = []
+      this.redes.forEach((rede) => {
+        rede.contents.forEach((formato) => {
+          formato.select = false;
+        });
+        rede.selectedTypes = [];
+      });
+      this.selectedTypes = [];
     },
 
     sendSimulation() {

@@ -860,6 +860,12 @@ body {
 
     @media screen and (min-width: $small) and (max-width: $medium) {
 
+        .card{
+            .btn-primary {
+                padding: 10px 14px;
+        }
+    }
+
         body {
             overflow-x: hidden;
         }
@@ -1204,13 +1210,33 @@ body {
                 padding: 10px 55px;
             }
 
+            .notification {
+                margin-right: -117px;
+            }
+
+            .offcanvas-footer {
+                text-align: center;
+                button{              
+                    padding: 10px 15px !important;
+                }
+            }
+
+            .checkbox-part {
+                p{
+                    position: absolute;
+                right: 100px;
+                }
+            }
+
         }
+     
 
         .social-media {
             align-items: center !important;
             margin-top: -10px;
         }
 
+      
         footer {
             .powerful {
                 text-align: center;
@@ -1227,6 +1253,8 @@ body {
                 }
             }
         }
+
+
     }
 
 

@@ -107,9 +107,9 @@
                                         <div class="social-cards d-flex align-items-center">
                                             <i class="fa-brands" :class="rede.icon"></i>
                                         </div>
-                                        <div v-if="rede.selectedTypes.length > 0" class="notification">
+                                        <div v-if="selectedCountNotification(rede) > 0" class="notification">
                                             <p>{{ selectedCountNotification(rede) }}</p>
-                                        </div>
+                                        </div>                                          
                                         <div>
                                             <p class="mt-3">{{ rede.name }}</p>
                                         </div>
@@ -157,10 +157,6 @@
                                     <div v-show="warningMessage" class="less">
                                         {{ warningMessage }}
                                       </div>
-
-                                      <div v-show="selected = false" class="less">
-                                        {{this.warningMessage1}}
-                                      </div>
                                 </div>
                             </div>
 
@@ -171,25 +167,6 @@
                                     </div>
                                 </div>
                             </div>
-                    
-                              <!-- Modal -->
-                              <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                  <div class="modal-content">
-                                      <button type="button" class="btn-close position-absolute end-0 me-4" data-bs-dismiss="modal" aria-label="Close"></button> <br>
-                                    <div  v-if="this.posts == null || this.posts == 0">
-                                        <h5>
-                                            <span>
-                                                <i class="fa-solid fa-triangle-exclamation me-4"></i></span>
-                                                É necessario digitar um numero de posts
-                                        </h5>
-                                    </div>
-
-                               
-                               
-                                  </div>
-                                </div>
-                              </div> -->
 
                             <div class="offcanvas calculator" id="offcanvas" aria-labelledby="offcanvas">
                                 <div class="offcanvas-header d-flex">
