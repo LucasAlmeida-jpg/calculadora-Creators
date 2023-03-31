@@ -19,14 +19,14 @@ const app = Vue.createApp({
       index: 0,
       posts: 0,
       warningMessage: '',
-      warningMessage1: '',
       redes: [
         {
           name: "Youtube", icon: "fa-youtube", selected: false, visible: true,
           contents: [
             { name: "Shorts", select: false, socialValue: [1000, 4500, 6500, 9500, 12500, 18000, 18000] },
             { name: "Youtube", select: false, socialValue: [1000, 5000, 15000, 25000, 35000, 40000, 50000] }
-          ], selectedTypes: []
+          ], selectedTypes: [],
+          selectedIdx: null
         },
         {
           name: "Instagram", icon: "fa-instagram", selected: false, visible: true,
@@ -35,26 +35,30 @@ const app = Vue.createApp({
             { name: "Reels", select: false, socialValue: [1500, 5000, 8000, 14000, 25000, 35000, 45000] },
             { name: "Stories", select: false, socialValue: [1000, 2500, 4000, 7000, 14000, 15000, 25000] },
           ],
-          selectedTypes: []
+          selectedTypes: [],
+          selectedIdx: null
         },
         {
           name: "TikTok", icon: "fa-tiktok", selected: false, visible: true,
           contents: [
             { name: "Vídeo", select: false, socialValue: [1500, 5000, 10000, 15000, 30000, 35000, 45000] }
-          ], selectedTypes: []
+          ], selectedTypes: [],
+          selectedIdx: null
         },
         {
           name: "Twitter", icon: "fa-twitter", selected: false, visible: true,
           contents: [
             { name: "Twitter", select: false, socialValue: [1000, 2000, 7000, 10000, 15000, 15000, 20000] }
-          ], selectedTypes: []
+          ], selectedTypes: [],
+          selectedIdx: null
         },
         {
           name: "LinkedIn", icon: "fa-linkedin", selected: false, visible: false,
           contents: [
             { name: "Feed", select: false, socialValue: [1000, 5000, 5500, 80000, 11000, 15000, 15000] },
             { name: "Vídeo", select: false, socialValue: [1000, 4500, 6500, 95000, 12500, 18000, 18000] },
-          ], selectedTypes: []
+          ], selectedTypes: [],
+          selectedIdx: null
         },
         // {
         //   name: "Newsletter", icon: "fa fa-file-o", selected: false, visible: false, contents: [{name:"Texto", select:false}, {name:"Imagem",select:false}], selectedTypes: [],
@@ -157,14 +161,27 @@ const app = Vue.createApp({
     },
 
     confirmSelection(send) {
-      const rede = this.redes;
-      const index = rede.findIndex(obj => obj.name === send);
-      this.selectedTypes.forEach((elemento, indice) => {
-        rede[index].contents[indice].select = true;
+      let rede = this.redes
+      let index = rede.findIndex(obj => obj.name === send);
+      this.selectedTypes.forEach(function (elemento, indice) {
+        rede[index].contents[indice].select = true
       });
+      rede[index].selectedTypes = this.selectedTypes; 
+      rede[index].selectedIdx = index;
       this.redes = rede;
     },
-    
+
+    unselectAll(send) {
+      let rede = this.redes
+      let index = rede.findIndex(obj => obj.name === send);
+      this.selectedTypes.forEach(function (elemento, indice) {
+        rede[index].contents[indice].select = false
+      });
+      rede[index].selectedTypes = []; 
+      rede[index].selectedIdx = index;
+      this.redes = rede;
+      this.selectedTypes = [];
+    },
 
     selectedCountNotification(rede) {
       if (rede && rede.selectedTypes) {
@@ -172,16 +189,6 @@ const app = Vue.createApp({
       } else {
         return 0;
       }
-    },
-
-    unselectAll() {
-      this.redes.forEach((rede) => {
-        rede.contents.forEach((formato) => {
-          formato.select = false;
-        });
-        rede.selectedTypes = [];
-      });
-      this.selectedTypes = [];
     },
 
     sendSimulation() {
