@@ -202,16 +202,19 @@ const app = Vue.createApp({
       }
     },
 
-    selectNetwork(selected) {
-      this.redes.forEach(network => {
-        network.contents.forEach(content => {
-          if (content.name === selected) {
-            content.select = true;
-            network.selected = true;
-          }
-        });
-      });
-    },
+    // selectNetwork(selected) {
+    //   const network = this.redes.find(network => network.name === selected);
+    //   if (network) {
+    //     network.selected != network.selected;
+    //     network.contents.forEach(content => {
+    //       if (content.name === selected) {
+    //         content.select
+    //       }
+    //     });
+    //   }
+    // },
+    
+   
     
     toggleItens(visible) {
       for (let i = 4; i < this.redes.length; i++) {
