@@ -103,7 +103,7 @@
                                 <div class="col-6" v-for="rede in redes" :key="index">
                                     <div v-if="rede.visible"
                                         class="social-card d-flex justify-content-around select example"
-                                        :class="{selected: rede.selected}" @click="rede.selected = !rede.selected">
+                                        :class="{selected: rede.selected && rede.selectedTypes.length > 0}">
                                         <div class="social-cards d-flex align-items-center">
                                             <i class="fa-brands" :class="rede.icon"></i>
                                         </div>
