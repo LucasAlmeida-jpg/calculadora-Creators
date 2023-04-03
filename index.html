@@ -182,7 +182,7 @@
                                             <div>
                                                 <p>{{ socialSelected }}</p>
                                                 <div class="form-check my-4" v-for="(types, index) in typeSelected" :key="index">
-                                                    <input class="form-check-input" type="checkbox" :id="'flexCheckDefault' + index" v-model="selectedTypes[index]">
+                                                    <input class="form-check-input" type="checkbox" :id="'flexCheckDefault' + index" v-model="selectedTypes[index]" @click="selectNetwork(types.name)">
                                                     <label class="form-check-label ms-2" :for="'flexCheckDefault' + index">{{ types.name }}</label>
                                                 </div>
                                             </div>
