@@ -193,15 +193,16 @@ body .calculator .offcanvas-header .offcanvas-title-outside {
 }
 body .calculator .notification {
   text-align: center;
+  right: -5px;
   position: absolute;
-  margin-right: -212px;
   width: 20px;
   height: 20px;
   background-color: #B390FF;
   border-radius: 50%;
   align-items: center;
-  margin-top: -55px;
+  margin-top: -56px;
   padding-top: 1px;
+  z-index: 1;
 }
 body .calculator .notification p {
   font-size: 12px;
@@ -255,6 +256,7 @@ body .calculator .social-card {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 body .calculator .social-card:hover {
   opacity: 0.5;
@@ -879,9 +881,6 @@ body .hide {
   }
   body .calculator .calc-price {
     padding: 10px 55px;
-  }
-  body .calculator .notification {
-    margin-right: -117px;
   }
   body .calculator .offcanvas-footer {
     text-align: center;

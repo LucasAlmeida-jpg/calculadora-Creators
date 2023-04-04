@@ -270,15 +270,16 @@ body {
         }
         .notification{
             text-align: center;
+            right: -5px;
             position: absolute;
-            margin-right: -212px;
             width: 20px;
             height: 20px;
             background-color: #B390FF;
             border-radius: 50%;
             align-items: center;
-            margin-top: -55px;
+            margin-top: -56px;
             padding-top: 1px;
+            z-index: 1;
             p{
                 font-size: 12px;
                 
@@ -344,7 +345,8 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-
+            position: relative;
+            
             &:hover {
                 opacity: 0.5;
             }
@@ -1208,10 +1210,6 @@ body {
 
             .calc-price {
                 padding: 10px 55px;
-            }
-
-            .notification {
-                margin-right: -117px;
             }
 
             .offcanvas-footer {
