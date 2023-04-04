@@ -898,6 +898,11 @@ body {
             }
         }
 
+        .selected {
+            outline: 4px solid #B390FF;
+            border-radius: 12px;
+        }
+        
         .menu {
             backdrop-filter: blur(12.5px);
             position: fixed;

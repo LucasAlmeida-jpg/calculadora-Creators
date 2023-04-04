@@ -683,6 +683,10 @@ body footer ul li i:hover {
   body .modal .modal-content .simulation-btn {
     width: 100%;
   }
+  body .selected {
+    outline: 4px solid #B390FF;
+    border-radius: 12px;
+  }
   body .menu {
     backdrop-filter: blur(12.5px);
     position: fixed;
