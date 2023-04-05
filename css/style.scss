@@ -323,11 +323,14 @@ body {
                 font-size: 18px;
                 border: none;
                 border-radius: 35px;
-                padding: 16px 120px;
+                padding: 16px;
+                width: 80%;
                 background: rgba(80, 86, 102, 0.3);
                 color: #FFFFFF;
                 font-weight: 600;
-                margin: 0 auto !important;
+                display: block;
+                margin: 0 auto;
+                margin-top: 30px;
                 
             }
         }
