@@ -104,8 +104,8 @@
                                     @click="socialName(rede.name, rede.contents, rede.selectedTypes)">
                                     <div v-if="rede.visible"
                                         class="social-card d-flex justify-content-around select example"
-                                        :class="{selected: rede.selected && rede.selectedTypes.length > 0}"
-                                        @click="rede.selected = !rede.selected" data-bs-toggle="offcanvas"
+                                        :class="{selected: isItemSelected(rede) && rede.selectedTypes.length > 0}"
+                                        @click="onClick(rede)" data-bs-toggle="offcanvas"
                                         data-bs-target="#offcanvas" aria-controls="offcanvas">
                                         <div class="social-cards d-flex align-items-center">
                                             <i class="fa-brands" :class="rede.icon"></i>
