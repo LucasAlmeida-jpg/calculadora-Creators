@@ -200,17 +200,21 @@ const app = Vue.createApp({
         this.showCalculator = true
         this.warningMessage = ''
       }
+      setTimeout(() => {
+        this.warningMessage = ''
+      }, 2000);
     },
 
     isItemSelected(rede) {
       return rede.selected && rede.selectedTypes.length > 0;
     },
+
     onClick(rede) {
       if (!this.isItemSelected(rede)) {
         rede.selected = true;
       }
     },
-    
+
     // selectNetwork(selected) {
     //   const network = this.redes.find(network => network.name === selected);
     //   if (network) {
@@ -222,9 +226,8 @@ const app = Vue.createApp({
     //     });
     //   }
     // },
-    
-   
-    
+
+
     toggleItens(visible) {
       for (let i = 4; i < this.redes.length; i++) {
         this.redes[i].visible = visible
