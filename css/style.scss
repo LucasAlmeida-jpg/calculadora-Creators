@@ -797,69 +797,133 @@ body {
     }
 
 
-
-    footer {
+    footer{
+        margin-top: 140px;
         border-top: 1px solid #3E465F;
-        padding: 0px 0px 20px 0px;
-        width: 100%;
-        justify-content: space-around;
-        display: flex;
-        align-items: center;
 
-        .powerful {
-            margin-top: -40px;
+        .row{
+            padding: 60px 0;
+            align-items: baseline;
         }
-
-        .list-terms {
-            color: white;
-            opacity: 0.6;
-            text-decoration: none;
-            text-align: center;
-            margin-top: 40px;
-            margin-bottom: 40px;
-
-            a {
-                text-align: center;
-                font-weight: 600;
-                margin-left: -50px;
-                font-size: 13px;
-                color: #8B90A0;
-            }
+    
+        h3{
+            color: #fff;
+            font-size: 17px;
+            line-height: 1.3em;
+            margin-top: 6px;
+            text-transform: uppercase;
+            ;
         }
-
-        h3 {
-            color: #E3E3E3;
-            position: absolute;
-            font-size: 14px;
-            margin-top: -43px;
+    
+        h4{
+            color: #FFF;
+            font-size: 17px;
+            font-weight: 700;
         }
-
-        a {
-            color: white;
-            text-decoration: none;
-
-            a:hover {
-                text-decoration: underline;
-                color: white;
-            }
+    
+        .logo{
+            max-width: 205px;
         }
-
-        ul {
-            li {
-                i {
-                    font-size: 20px;
-                    margin-left: 1px;
-                    background: rgb(141, 141, 141);
-                    padding: 11px;
-                    border-radius: 50%;
-                    color: white;
-                    cursor: pointer;
-
-                    &:hover {
-                        opacity: .9;
+    
+        ul{
+            list-style:none;
+            padding-left: 0;
+    
+            li{
+                padding-top: 10px;
+                a{
+                    color: #8B90A0;
+                    font-size: 16px;
+                    text-decoration: none;
+                    font-weight: 700;
+    
+                    &:hover{
+                        color: #fff;
+                        font-weight: 700;
                     }
                 }
             }
+        }
+    
+        .list-terms{
+            a{
+                font-size: 13px;
+                line-height: 16px;
+                text-align: right;
+                letter-spacing: 0.5px;
+                color: #8B90A0;
+                margin: 0 40px 0 0;
+            }
+        }
+    
+        .social-media{
+            display: flex;
+            a{
+                img{
+                    padding-right: 5px;
+                }
+            }
+        }
+    
+        //RD form
+        #rdstation-bricks-embeddable-form-bricks-component-1ABMwOA55ETO_N3vLfGmTQ .bricks-form{
+            padding: 0;
+        }
+    
+        #rd-column-lhjemie0 > div{
+            padding: 0;
+            background: transparent;
+        }
+    
+        #conversion-form-formulario-do-blog{
+            display: flex !important;
+            align-items: center;
+            background-color: #272a33;
+            border-radius: 16px;
+            height: 50px;
+            max-width: 250px;
+        }
+    
+        #rd-form-lhjemie1 .bricks-form__input:not(textarea){
+            margin-top: 10px;
+    
+            &:focus{
+                border: 1px solid transparent;
+                box-shadow: 0 0 0 0;
+                border: 0 none;
+                outline: 0;
+    
+            }
+        }
+    
+        #rdstation-bricks-embeddable-form-bricks-component-1ABMwOA55ETO_N3vLfGmTQ .bricks-form__input.error{
+            margin-top: 25px;
+            border: none;
+        }
+    
+        #rd-form-lhjemie1 .bricks-form__submit{
+            width: 50px;
+        }
+    
+        #rd-button-lhjemie4{
+            margin-top: 0;
+            background: transparent;
+            border: 0;
+            font-size: 0;
+    
+            &::before{
+                content: '';
+                background: url("assets/image/right-arrow.png");
+                display: block;
+                width: 15px;
+                height: 15px;
+                background-size: cover;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    
         }
     }
 
@@ -1119,42 +1183,23 @@ body {
 
         }
 
-        .footer {
-
-            img {
-                display: block;
-                margin: 0px auto;
-                margin-bottom: 60px;
-                width: 160px;
-
-            }
-
-            h3 {
-                text-align: center;
-                position: relative;
-                margin-top: -102px;
-                margin-bottom: 60px;
-            }
-
-
-
-            .list-terms {
-
-                a {
-                    text-align: center;
-                    margin: 0px;
-                    font-size: 14px;
-                }
-
-            }
-
-            ul {
-                li {
-                    i {
-                        margin: 0px;
+        footer{
+            margin-top: 100px;
+    
+            .row{
+                .list-terms{
+                    a{
+                        display: block;
+                        margin: 10px auto;
                     }
                 }
+    
+                .social-media {
+                    justify-content: flex-start;
+                    width: 50%;
+                }
             }
+    
         }
 
         .button-hiring {
@@ -1243,20 +1288,15 @@ body {
         }
 
       
-        footer {
-            .powerful {
-                text-align: center;
-                margin-top: -100px;
-                margin-bottom: -29px;
+        footer{
+            margin-top: 70px;
+    
+            .row{
+                padding: 50px 0;
             }
-
-            li {
-                a {
-                    img {
-                        width: 44px !important;
-                        margin-top: -50px !important;
-                    }
-                }
+    
+            .social-media{
+                justify-content: flex-start;
             }
         }
 

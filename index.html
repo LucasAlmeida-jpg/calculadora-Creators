@@ -1,90 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculadora de Creators - Calcule o preço de publicidade baseado
-    nas principais métricas de influência">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap">
-    <meta name="author" content="Creators.llc">
-    <meta property="og:description" content="Calculadora de Creators - Calcule o preço de publicidade baseado
-    nas principais métricas de influência" />
-    <meta property="og:image" content="https://creators.llc/images/share.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="628" />
-    <title>Calculadora Creators</title>
-    <link rel="shortcut icon" href="https://creators.llc/favicon.png">
-    <script src="https://unpkg.com/vue@3"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/e99973526a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Calculadora de Creators - Calcule o preço de publicidade baseado
+        nas principais métricas de influência">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap">
+        <meta name="author" content="Creators.llc">
+        <meta property="og:description" content="Calculadora de Creators - Calcule o preço de publicidade baseado
+        nas principais métricas de influência" />
+        <meta property="og:image" content="https://creators.llc/images/share.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
+        <title>Calculadora Creators</title>
+        <link rel="shortcut icon" href="https://creators.llc/favicon.png">
+        <script src="https://unpkg.com/vue@3"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/e99973526a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Ads: 626645894 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-626645894"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'AW-626645894');
-        gtag('config', 'AW-448730715');
-    </script>
-</head>
+        <!-- Global site tag (gtag.js) - Google Ads: 626645894 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-626645894"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'AW-626645894');
+            gtag('config', 'AW-448730715');
+        </script>
+    </head>
 
-<body>
+    <body>
+        <!-- Google Analytics -->
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-90265209-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WPR6RHG');
+        </script>
 
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-90265209-1', 'auto');
-        ga('send', 'pageview');
-    </script>
+        <div id="calc" class="container mt-4">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg menu">
+                    <div class="container">
+                        <a class="navbar-brand" href="https://creators.llc/" target="_blank">
+                            <img class="d-none d-md-block" src="./assets/logo.svg" alt="creators logo">
+                            <img class="d-md-none d-block" src="./assets/short-logo_creators.svg" alt="creators logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
-    <div id="calc" class="container mt-4">
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg menu">
-                <div class="container">
-                    <a class="navbar-brand" href="https://creators.llc/" target="_blank">
-                        <img class="d-none d-md-block" src="./assets/logo.svg" alt="creators logo">
-                        <img class="d-md-none d-block" src="./assets/short-logo_creators.svg" alt="creators logo">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                        <div class="collapse navbar-collapse" id="navbarMenu">
+                            <ul class="navbar-nav col-xl-4">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://creators.llc/">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://creators.llc/cases" target="_blank">Cases</a>
+                                </li>
+                            </ul>
 
-                    <div class="collapse navbar-collapse" id="navbarMenu">
-                        <ul class="navbar-nav col-xl-4">
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://creators.llc/">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://creators.llc/cases" target="_blank">Cases</a>
-                            </li>
-                        </ul>
-
-                        <div class="btn-area col-xl-5">
-                            <a class="btn" href="https://creators.llc/?newclient=1" target="_blank">Contrate
-                                Creators</a>
-                            <a class="btn" href="https://creators.llc/?newcreator=1" target="_blank">Seja Creators</a>
-                            <a class="btn purple" href="https://creators.llc/?openlogin=true" target="_blank">Login</a>
+                            <div class="btn-area col-xl-5">
+                                <a class="btn" href="https://creators.llc/?newclient=1" target="_blank">Contrate
+                                    Creators</a>
+                                <a class="btn" href="https://creators.llc/?newcreator=1" target="_blank">Seja Creators</a>
+                                <a class="btn purple" href="https://creators.llc/?openlogin=true" target="_blank">Login</a>
+                            </div>
                         </div>
-                    </div>
 
-                </div>
-            </nav>
+                    </div>
+                </nav>
 
 
             <div class="container">
@@ -97,55 +106,55 @@
                     </div>
                     <div class="col-md-5">
                         <div class="container calculator offcanvas-backdrop.show">
-                            <p class="ms-2">Selecione a plataforma e formatos da publicidade</p>
+                            <p class="ms-2">Selecione a plataforma do criador</p>
                             <div class="row g-0 d-flex ">
 
-                                <div class="col-6" v-for="rede in redes" :key="index"
-                                    @click="socialName(rede.name, rede.contents, rede.selectedTypes)">
-                                    <div v-if="rede.visible"
-                                        class="social-card d-flex justify-content-around select example"
-                                        :class="{selected: isItemSelected(rede) && rede.selectedTypes.length > 0}"
-                                        @click="onClick(rede)" data-bs-toggle="offcanvas"
-                                        data-bs-target="#offcanvas" aria-controls="offcanvas">
-                                        <div class="social-cards d-flex align-items-center">
-                                            <i class="fa-brands" :class="rede.icon"></i>
+                                    <div class="col-6" v-for="rede in redes" :key="index"
+                                        @click="socialName(rede.name, rede.contents, rede.selectedTypes)">
+                                        <div v-if="rede.visible"
+                                            class="social-card d-flex justify-content-around select example"
+                                            :class="{selected: isItemSelected(rede) && rede.selectedTypes.length > 0}"
+                                            @click="onClick(rede)" data-bs-toggle="offcanvas"
+                                            data-bs-target="#offcanvas" aria-controls="offcanvas">
+                                            <div class="social-cards d-flex align-items-center">
+                                                <i class="fa-brands" :class="rede.icon"></i>
+                                            </div>
+                                            <div>
+                                                <p class="mt-3">{{ rede.name }}</p>
+                                            </div>
+                                            <div><i class='fas fa-chevron-down'></i></div>
+                                            <div v-if="selectedCountNotification(rede) > 0" class="notification">
+                                                <p>{{ selectedCountNotification(rede) }}</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <p class="mt-3">{{ rede.name }}</p>
+                                    </div>
+
+                                    <div class="more-channel me-5" @click="showUp = !showUp">
+                                        <div v-if="showUp" role="button">
+                                            <p @click="toggleItens(true)">Mais canais <i
+                                                    class='fas fa-chevron-down ms-2'></i></p>
                                         </div>
-                                        <div><i class='fas fa-chevron-down'></i></div>
-                                        <div v-if="selectedCountNotification(rede) > 0" class="notification">
-                                            <p>{{ selectedCountNotification(rede) }}</p>
+                                        <div v-else role="button">
+                                            <p @click="toggleItens(false)">Menos canais <i
+                                                    class='fas fa-chevron-up ms-2'></i></p>
                                         </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="container" style="margin-top: -20px">
+                                    <p class="text-start mt-4 text-calculator">Tamanho do canal</p>
+                                    <div class="range-wrap">
+                                        <input id="range" type="range" min="0" max="6" step="1" v-model="this.size"
+                                            aria-label="channel size">
+                                        <div class="description" :style="{marginLeft: 4 + (this.size * 15.44) + '%' }">{{
+                                            descriptions[this.size] }}</div>
                                     </div>
                                 </div>
 
-                                <div class="more-channel me-5" @click="showUp = !showUp">
-                                    <div v-if="showUp" role="button">
-                                        <p @click="toggleItens(true)">Mais canais <i
-                                                class='fas fa-chevron-down ms-2'></i></p>
-                                    </div>
-                                    <div v-else role="button">
-                                        <p @click="toggleItens(false)">Menos canais <i
-                                                class='fas fa-chevron-up ms-2'></i></p>
-                                    </div>
-                                </div>
+                                <div class="container mt-5">
 
-                            </div>
-
-                            <div class="container" style="margin-top: -20px">
-                                <p class="text-start mt-4 text-calculator">Tamanho do canal</p>
-                                <div class="range-wrap">
-                                    <input id="range" type="range" min="0" max="6" step="1" v-model="this.size"
-                                        aria-label="channel size">
-                                    <div class="description" :style="{marginLeft: 4 + (this.size * 15.44) + '%' }">{{
-                                        descriptions[this.size] }}</div>
-                                </div>
-                            </div>
-
-                            <div class="container mt-5">
-
-                                <p class="text-start mt-4">Número de postagens da publicidade </p>
+                                <p class="text-start mt-4">Número de postagens por rede</p>
                                 <div class="validation">
                                     <div class="input-group mb-3" required>
                                         <input type="text" class="form-control" v-model="this.posts" maxlength="3"
@@ -157,164 +166,46 @@
                                 </div>
                             </div>
 
-                            <div class="container">
-                                <div class="row">
-                                    <div class="btn-investment-main">
-                                        <a href="#calculator-show" style="color: white; text-decoration: none;"> <button
-                                                type="submit" @click="toggleCalculator()" class="mt-4 py-3 calc-price"
-                                                id="input-form">Calcular preço</button></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="offcanvas calculator" id="offcanvas" aria-labelledby="offcanvas">
-                                <div class="offcanvas-header d-flex">
-                                    <h5 class="offcanvas-title-outside text-start" id="offcanvas">Selecione um ou mais
-                                        formatos</h5>
-                                    <div type="button" @click="confirmSelection(socialSelected)" data-bs-dismiss="offcanvas" aria-label="Close">
-                                        <img src="assets/plus.svg" alt="botão de fechar">
-                                    </div>
-                                </div>
-                                <div class="offcanvas-body">
-                                    <div class="row d-flex justify-content-between">
-                                        <div class="col-md-6">
-                                            <div>
-                                                <p>{{ socialSelected }}</p>
-                                                <div class="form-check my-4" v-for="(types, index) in typeSelected"
-                                                    :key="index">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        :id="'flexCheckDefault' + index" v-model="selectedTypes[index]">
-                                                    <label class="form-check-label ms-2"
-                                                        :for="'flexCheckDefault' + index">{{ types.name }}</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="offcanvas-footer" @click="this.rede.selected = true">
-                                            <button @click="confirmSelection(socialSelected)"
-                                                data-bs-dismiss="offcanvas" aria-label="Close">Confirmar
-                                                Seleção</button>
-                                        </div>
-                                        <div class="col-md-6 checkbox-part" role="button">
-                                            <p @click="unselectAll(socialSelected)">Limpar Seleção</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="btn-investment-main">
+                                            <a href="#calculator-show" style="color: white; text-decoration: none;"> <button
+                                                    type="submit" @click="toggleCalculator()" class="mt-4 py-3 calc-price"
+                                                    id="input-form">Calcular preço</button></a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <section>
-                <!--colocar calculador abaixo-->
-                <div class="container  calcule calculadora" id="calculator-show" v-if="showCalculator">
-                    <!--colocar a class  aqui -->
-                    <div class="little-gap">
-                        <div class="row">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="internal">
-                                        <div class="row justify-content-between">
-                                            <div class="col align-right">
-                                                <img src="./assets/promotion.svg" alt="" aria-hidden="true">
-                                                <p>Investimento estimado</p>
-                                                <h5>
-                                                    {{ (estimate * 0.5).toLocaleString('pt-BR', { style: 'currency',
-                                                    currency: 'BRL', }) }} a
-                                                    {{ (estimate * 1.5).toLocaleString('pt-BR', { style: 'currency',
-                                                    currency: 'BRL', }) }}
-                                                </h5>
-                                            </div>
-                                            <div class="col-auto">
-                                                <div class="disclaimer">
-                                                    <h5>
-                                                        <span>
-                                                            <i class="fa-solid fa-triangle-exclamation"></i></span>
-                                                        Essa estimativa considera canais de criadores com engajamento
-                                                        entre 2% a 20%.
-                                                    </h5>
-                                                </div>
-                                                <!--<div class="position">
-                                                <img src="assets/alert-circle.png" alt="">
-                                                <p>Nível de engajamento</p>
-                                            </div>
-                                            <div class="range-wrap">
-                                                <div class="range-value" id="range"></div>
-                                                <input id="range" type="range" min="50" max="100" value="50" step="1">
-                                            </div>-->
-                                            </div>
 
-
+                                <div class="offcanvas calculator" id="offcanvas" aria-labelledby="offcanvas">
+                                    <div class="offcanvas-header d-flex">
+                                        <h5 class="offcanvas-title-outside text-start" id="offcanvas">Selecione um ou mais
+                                            formatos</h5>
+                                        <div type="button" @click="confirmSelection(socialSelected)" data-bs-dismiss="offcanvas" aria-label="Close">
+                                            <img src="assets/plus.svg" alt="botão de fechar">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="line"></div>
-                                <div class="button-div internal-btn">
-                                    <div class="d-flex">
-                                        <div class="p-2 hide-mobile"><button class="btn btn-primary">
-                                                <a style="text-decoration:none; color: white;"
-                                                    href="https://creators.llc/" target="_blank">Cadastre-se e
-                                                    contrate</a>
-                                            </button></div>
-                                        <div class="p-2">
-                                            <div class="modal" id="exampleModalToggle">
-
-                                                <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            <h5 class="modal-title " id="exampleModalToggleLabel">
-                                                                <img src="./assets/c.svg" alt="">
-                                                            </h5>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-
-                                                        <div class="modal-body">
-                                                            <h1>
-                                                                Preencha as informações e receba sua simulação em seu
-                                                                email
-                                                            </h1>
-                                                        </div>
-                                                        <!-- v-model="type" foi retirado o v-model logo abaixo, pois, está sendo usada em um elemento que não é permitido -->
-                                                        <div class="d-flex justify-content-center mb-4 main">
-                                                            <button :class="{ background : isUser1 }"
-                                                                @click="isUser1 = true, type = 1" class="btn-creator"
-                                                                data-bs-target="#exampleModalToggle">Sou
-                                                                Empresa</button>
-                                                            <button :class="{ background : !isUser1 }"
-                                                                @click="isUser1 = false, type = 2" class="btn-company"
-                                                                data-bs-target="#exampleModalToggle">Sou
-                                                                Creator</button>
-                                                        </div>
-
-                                                        <div class="form-floating mb-4">
-                                                            <input type="text" class="form-control" placeholder="Nome"
-                                                                v-model="name">
-                                                            <label>Nome</label>
-                                                        </div>
-
-                                                        <div class="form-floating">
-                                                            <input type="email" class="form-control" id="floatingInput"
-                                                                placeholder="name@example.com" v-model="email">
-                                                            <label for="floatingInput">{{(isUser1) ? "Email da empresa"
-                                                                :
-                                                                "Email"}}</label>
-                                                        </div>
-
-                                                        <button @click="sendSimulation()"
-                                                            class="btn-primary mt-4 simulation-btn"
-                                                            data-bs-dismiss="modal">Enviar
-                                                            simulação</button>
-
+                                    <div class="offcanvas-body">
+                                        <div class="row d-flex justify-content-between">
+                                            <div class="col-md-6">
+                                                <div>
+                                                    <p>{{ socialSelected }}</p>
+                                                    <div class="form-check my-4" v-for="(types, index) in typeSelected"
+                                                        :key="index">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            :id="'flexCheckDefault' + index" v-model="selectedTypes[index]">
+                                                        <label class="form-check-label ms-2"
+                                                            :for="'flexCheckDefault' + index">{{ types.name }}</label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a class="btn btn-primary " data-bs-toggle="modal"
-                                                href="#exampleModalToggle" role="button">Receba por email</a>
-                                        </div>
-                                        <div class="ms-auto p-2 ">
-                                            <a style="color: white; text-decoration: none;" href="#recalcule"> <button
-                                                    class="btn btn-primary">
-                                                    Recalcule</button></a>
+                                            <div class="offcanvas-footer" @click="this.rede.selected = true">
+                                                <button @click="confirmSelection(socialSelected)"
+                                                    data-bs-dismiss="offcanvas" aria-label="Close">Confirmar
+                                                    Seleção</button>
+                                            </div>
+                                            <div class="col-md-6 checkbox-part" role="button">
+                                                <p @click="unselectAll(socialSelected)">Limpar Seleção</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -322,193 +213,363 @@
                         </div>
                     </div>
                 </div>
-        </div>
-        </section>
-        <section>
+                <section>
+                    <!--colocar calculador abaixo-->
+                    <div class="container  calcule calculadora" id="calculator-show" v-if="showCalculator">
+                        <!--colocar a class  aqui -->
+                        <div class="little-gap">
+                            <div class="row">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="internal">
+                                            <div class="row justify-content-between">
+                                                <div class="col align-right">
+                                                    <img src="./assets/promotion.svg" alt="" aria-hidden="true">
+                                                    <p>Investimento estimado</p>
+                                                    <h5>
+                                                        {{ (estimate * 0.5).toLocaleString('pt-BR', { style: 'currency',
+                                                        currency: 'BRL', }) }} a
+                                                        {{ (estimate * 1.5).toLocaleString('pt-BR', { style: 'currency',
+                                                        currency: 'BRL', }) }}
+                                                    </h5>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="disclaimer">
+                                                        <h5>
+                                                            <span>
+                                                                <i class="fa-solid fa-triangle-exclamation"></i></span>
+                                                            Essa estimativa considera canais de criadores com engajamento
+                                                            entre 2% a 20%.
+                                                        </h5>
+                                                    </div>
+                                                    <!--<div class="position">
+                                                    <img src="assets/alert-circle.png" alt="">
+                                                    <p>Nível de engajamento</p>
+                                                </div>
+                                                <div class="range-wrap">
+                                                    <div class="range-value" id="range"></div>
+                                                    <input id="range" type="range" min="50" max="100" value="50" step="1">
+                                                </div>-->
+                                                </div>
 
-        </section>
-        <section>
-            <div class="container">
-                <div class="card-information">
-                    <div class="row">
-                        <div class="col-md-6 order-md-2 info-img ">
-                            <img class="rellax" src="./assets/woman.jpg" alt="" aria-hidden="true">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="line"></div>
+                                    <div class="button-div internal-btn">
+                                        <div class="d-flex">
+                                            <div class="p-2 hide-mobile"><button class="btn btn-primary">
+                                                    <a style="text-decoration:none; color: white;"
+                                                        href="https://creators.llc/" target="_blank">Cadastre-se e
+                                                        contrate</a>
+                                                </button></div>
+                                            <div class="p-2">
+                                                <div class="modal" id="exampleModalToggle">
+
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <h5 class="modal-title " id="exampleModalToggleLabel">
+                                                                    <img src="./assets/c.svg" alt="">
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+
+                                                            <div class="modal-body">
+                                                                <h1>
+                                                                    Preencha as informações e receba sua simulação em seu
+                                                                    email
+                                                                </h1>
+                                                            </div>
+                                                            <!-- v-model="type" foi retirado o v-model logo abaixo, pois, está sendo usada em um elemento que não é permitido -->
+                                                            <div class="d-flex justify-content-center mb-4 main">
+                                                                <button :class="{ background : isUser1 }"
+                                                                    @click="isUser1 = true, type = 1" class="btn-creator"
+                                                                    data-bs-target="#exampleModalToggle">Sou
+                                                                    Empresa</button>
+                                                                <button :class="{ background : !isUser1 }"
+                                                                    @click="isUser1 = false, type = 2" class="btn-company"
+                                                                    data-bs-target="#exampleModalToggle">Sou
+                                                                    Creator</button>
+                                                            </div>
+
+                                                            <div class="form-floating mb-4">
+                                                                <input type="text" class="form-control" placeholder="Nome"
+                                                                    v-model="name">
+                                                                <label>Nome</label>
+                                                            </div>
+
+                                                            <div class="form-floating">
+                                                                <input type="email" class="form-control" id="floatingInput"
+                                                                    placeholder="name@example.com" v-model="email">
+                                                                <label for="floatingInput">{{(isUser1) ? "Email da empresa"
+                                                                    :
+                                                                    "Email"}}</label>
+                                                            </div>
+
+                                                            <button @click="sendSimulation()"
+                                                                class="btn-primary mt-4 simulation-btn"
+                                                                data-bs-dismiss="modal">Enviar
+                                                                simulação</button>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="btn btn-primary " data-bs-toggle="modal"
+                                                    href="#exampleModalToggle" role="button">Receba por email</a>
+                                            </div>
+                                            <div class="ms-auto p-2 ">
+                                                <a style="color: white; text-decoration: none;" href="#recalcule"> <button
+                                                        class="btn btn-primary">
+                                                        Recalcule</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="card-body">
-                                <!-- <h5 class="card-title">Quer o criador de  conteúdo certo para <br> sua empresa?</h5> -->
-                                <h3>Quer receber mais <br> trabalhos de parceria com o seu perfil de criador de
-                                    conteúdo?
-                                </h3>
-                                <p class="card-text mt-3">Cadastre-se na nossa comunidade de criadores
-                                </p>
-                                <div class="btn-investment">
-                                    <button class="py-2">
+                    </div>
+            </div>
+            </section>
+            <section>
 
-                                        <a style="text-decoration:none; color: white;" class="button-be-creators px-5"
-                                            href="https://creators.llc/" target="_blank">Seja Creators</a>
-                                    </button>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="card-information">
+                        <div class="row">
+                            <div class="col-md-6 order-md-2 info-img ">
+                                <img class="rellax" src="./assets/woman.jpg" alt="" aria-hidden="true">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title">Quer o criador de  conteúdo certo para <br> sua empresa?</h5> -->
+                                    <h3>Quer receber mais <br> trabalhos de parceria com o seu perfil de criador de
+                                        conteúdo?
+                                    </h3>
+                                    <p class="card-text mt-3">Cadastre-se na nossa comunidade de criadores
+                                    </p>
+                                    <div class="btn-investment">
+                                        <button class="py-2">
+
+                                            <a style="text-decoration:none; color: white;" class="button-be-creators px-5"
+                                                href="https://creators.llc/" target="_blank">Seja Creators</a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-information ">
+                        <div class="row">
+                            <div class="col-md-6 info-img">
+                                <img class="rellax mb-5" src="./assets/man1.jpg" alt="" aria-hidden="true">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h3 class="card-title mt-5">Quer contratar criadores de conteúdo?
+                                    </h3>
+                                    <p class="card-text mt-3">Seja um parceiro da Creators e cadastre sua empresa
+                                    </p>
+                                    <div class="btn-investment mb-5">
+                                        <button class="py-2">
+                                            <a style="text-decoration:none; color: white;" class="px-4"
+                                                href="https://creators.llc/" target="_blank">Cadastre-se sua
+                                                empresa</a></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
+            <div class="container questionary ">
+                <h1 class="col-md-8 offset-md-2 my-4">Com dúvidas?
+                    A gente responde</h1>
 
-                <div class="card-information ">
-                    <div class="row">
-                        <div class="col-md-6 info-img">
-                            <img class="rellax mb-5" src="./assets/man1.jpg" alt="" aria-hidden="true">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card-body">
-                                <h3 class="card-title mt-5">Quer contratar criadores de conteúdo?
-                                </h3>
-                                <p class="card-text mt-3">Seja um parceiro da Creators e cadastre sua empresa
+                <div class="accordion   accordion-flush col-md-8 offset-md-2 my-4" id="accordionFlushExample">
+                    <div class="accordion-item  my-4">
+                        <h2 class="accordion-header " id="flush-headingOne">
+                            <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                O que esta calculadora usa como base para
+                                devolver os resultados?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse " aria-labelledby="flush-headingOne"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>Alcance da postagem, impressões de postagens, número de seguidores; <br>
+                                    Taxa de engajamento do influenciador versus nossa taxa de engajamento de referência;<br>
+                                    O preço estimado de postagens patrocinadas; <br>
+                                    Essas estimativas são baseadas em dados de campanhas, postagens e colaborações com os
+                                    influenciadores na plataforma CREATORS LLC. Como as métricas individuais de um
+                                    influenciador podem
+                                    se desviar da média, a calculadora deve ser usada apenas como um guia.
                                 </p>
-                                <div class="btn-investment mb-5">
-                                    <button class="py-2">
-                                        <a style="text-decoration:none; color: white;" class="px-4"
-                                            href="https://creators.llc/" target="_blank">Cadastre-se sua
-                                            empresa</a></button>
-                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item my-4">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Eu sou uma marca, posso usar como estimativa
+                                de verba para investimento?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>Sim! pode ser usada por qualquer pessoa que trabalhe com influenciadores.
+                                    Os dados
+                                    desta calculadora de preços são baseados em postagens patrocinadas para fornecer uma
+                                    estimativa de
+                                    quanto você deve pagar a um criador por postagem.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item ">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                Como a Creators funciona?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>Conectamos marcas admiradas com criadores de conteúdo a partir dos objetivos de cada
+                                    campanha e
+                                    perfil dos criadores. Para clientes, basta publicar um briefing na plataforma que
+                                    entregamos
+                                    estratégia, mapeamento dos melhores criadores, gerenciamento de conteúdo e relatório de
+                                    resultados.
+                                    Para criadores, basta criar um perfil na plataforma, deixar o mais completo possível e
+                                    aguardar
+                                    nosso sistema de matchmaking para receber convites de jobs. Crie sua conta <a
+                                        href="https://creators.llc/" target="_blank">clicando aqui.</a>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <div class="container questionary ">
-            <h1 class="col-md-8 offset-md-2 my-4">Com dúvidas?
-                A gente responde</h1>
-
-            <div class="accordion   accordion-flush col-md-8 offset-md-2 my-4" id="accordionFlushExample">
-                <div class="accordion-item  my-4">
-                    <h2 class="accordion-header " id="flush-headingOne">
-                        <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            O que esta calculadora usa como base para
-                            devolver os resultados?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse " aria-labelledby="flush-headingOne"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <p>Alcance da postagem, impressões de postagens, número de seguidores; <br>
-                                Taxa de engajamento do influenciador versus nossa taxa de engajamento de referência;<br>
-                                O preço estimado de postagens patrocinadas; <br>
-                                Essas estimativas são baseadas em dados de campanhas, postagens e colaborações com os
-                                influenciadores na plataforma CREATORS LLC. Como as métricas individuais de um
-                                influenciador podem
-                                se desviar da média, a calculadora deve ser usada apenas como um guia.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item my-4">
-                    <h2 class="accordion-header" id="flush-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Eu sou uma marca, posso usar como estimativa
-                            de verba para investimento?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <p>Sim! pode ser usada por qualquer pessoa que trabalhe com influenciadores.
-                                Os dados
-                                desta calculadora de preços são baseados em postagens patrocinadas para fornecer uma
-                                estimativa de
-                                quanto você deve pagar a um criador por postagem.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item ">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseThree" aria-expanded="false"
-                            aria-controls="flush-collapseThree">
-                            Como a Creators funciona?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse"
-                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <p>Conectamos marcas admiradas com criadores de conteúdo a partir dos objetivos de cada
-                                campanha e
-                                perfil dos criadores. Para clientes, basta publicar um briefing na plataforma que
-                                entregamos
-                                estratégia, mapeamento dos melhores criadores, gerenciamento de conteúdo e relatório de
-                                resultados.
-                                Para criadores, basta criar um perfil na plataforma, deixar o mais completo possível e
-                                aguardar
-                                nosso sistema de matchmaking para receber convites de jobs. Crie sua conta <a
-                                    href="https://creators.llc/" target="_blank">clicando aqui.</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
 
-    <section>
         <footer>
             <div class="container">
-                <div class="row footer">
-                    <div class="col-md-6">
-                        <a href="https://creators.llc/" target="_blank"><img src="./assets/logo.svg" alt=""
-                                aria-hidden="true" class="py-5">
-                            <p class="powerful">POWERFUL INFLUENCE <br>
-                                MARKETING PLATFORM</p>
+                <div class="row justify-content-between footer">
+                    <div class="col-xl-3 col-12">
+                        <a href="https://creators.llc/" target="_blank">
+                            <img class="logo pt-md-3" src="./assets/logo.svg" alt="CREATORS logo">
                         </a>
-                        <div class="list-terms">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <a href="https://creators.llc/termos" target="_blank">Termos de uso e política
-                                            de privacidade</a>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <a href="mailto:hello@creators.llc">hello@creators.llc</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <h3>POWERFUL INFLUENCE<br>
+                            MARKETING PLATFORM
+                        </h3>
+    
+                        
+                        <div class="mt-4 social-media">
+                            <a href="https://www.instagram.com/creators.llc/" target="_blank">
+                                <img src="./assets/instagram.svg" alt="Instagram logo">
+                            </a>
+                            <a href="https://www.linkedin.com/company/creators-llc/" target="_blank">
+                                <img src="./assets/linkedin.svg" alt="Linkedin logo">
+                            </a>
+                            <a href="https://www.facebook.com/creators.llc/" target="_blank">
+                                <img src="./assets/facebook.svg" alt="Facebook logo">
+                            </a>
+                            <a href="https://www.tiktok.com/@creators.llc" target="_blank">
+                                <img src="./assets/tiktok.svg" alt="TikTok logo">
+                            </a>
+                            <a href="https://www.youtube.com/@creatorsllc" target="_blank">
+                                <img src="./assets/youtube.svg" alt="youtube logo">
+                            </a>
                         </div>
                     </div>
-
-                    <div class="social-media col-lg-6 d-flex align-items-end d-flex flex-column pt-5 ">
-                        <ul class="d-block p-0 ps-2">
-                            <li class="d-inline-block me-2">
-                                <a href="https://www.instagram.com/creators.llc/" target="_blank"><img
-                                        src="assets/instagram.svg" alt="instagram logo"></a>
+    
+                    <div class="col-xl-3 col-md-4 mt-4 mt-md-5">
+                        <h4>Sobre nós</h4>
+                        <ul>
+                            <li>
+                                <a href="https://blog.creators.llc/" target="_blank">Blog</a>
                             </li>
-                            <li class="d-inline-block me-2">
-                                <a href="https://www.linkedin.com/company/creators-llc/" target="_blank"><img
-                                        src="assets/linkedin.svg" alt="linkedin logo"></a>
+                            <li>
+                                <a href="https://creators.llc/central-de-ajuda/" target="_blank">Central de ajuda</a>
                             </li>
-                            <li class="d-inline-block me-2">
-                                <a href="https://www.facebook.com/creators.llc/" target="_blank"><img
-                                        src="assets/facebook.svg" alt="logo facebook"></a>
+                            <li>
+                                <a href="mailto:hello@creators.llc">Contato</a>
                             </li>
-                            <li class="d-inline-block me-2">
-                                <a href="https://www.tiktok.com/@creators.llc" target="_blank"><img
-                                        src="assets/tiktok.svg" alt="logo facebook"></a>
+                            <li>
+                                <a>Time</a>
                             </li>
-                            <li class="d-inline-block me-2">
-                                <a href="https://www.youtube.com/@creatorsllc" target="_blank"><img
-                                        src="assets/youtube.svg" alt="logo facebook"></a>
+                            <li>
+                                <a href="https://creators.llc/ternos" target="_blank">Termos & Privacidade</a>
                             </li>
                         </ul>
                     </div>
+    
+                    <div class="col-xl-3 col-md-4 mt-4 mt-md-5">
+                        <h4>Para clientes</h4>
+                        <ul>
+                            <li>
+                                <a href="https://creators.llc/agendar-demo/" target="_blank">Solicite uma Demo</a>
+                            </li>
+                            <li>
+                                <a href="https://creators.llc/cases/" target="_blank">Conheça nossos Cases</a>
+                            </li>
+                            <li>
+                                <a href="https://creators.llc/?newclient=1" target="_blank">Crie uma conta</a>
+                            </li>
+                        </ul>
+                        <h4>Para criadores</h4>
+                        <ul>
+                            <li>
+                                <a href="https://creators.llc/calcula/" target="_blank">Creators Calcula</a>
+                            </li>
+                            <li>
+                                <a href="https://creators.llc/?newcreator=1" target="_blank">Inscreva-se para fazer parte</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-xl-3 col-md-4 mt-4 mt-md-5">
+                        <h4>Produtos CREATORS</h4>
+                        <ul>
+                            <li>
+                                <a href="https://creators.llc/academy/" target="_blank">Academy</a>
+                            </li>
+                            <li>
+                                <a>Assets</a>
+                            </li>
+                            <li>
+                                <a href="https://creators.llc/pay/" target="_blank">Pay</a>
+                            </li>
+                            <li>
+                                <a>Search</a>
+                            </li>
+                            <li>
+                                <a href="https://creators.llc/squads/" target="_blank">Squads</a>
+                            </li>
+                        </ul>
+                        <h4>Creators News - Assine!</h4>
+                        <div role="main" id="formulario-do-blog-cdbe88a30e2ab5cea92a"></div>
+                        <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+                        <script type="text/javascript"> new RDStationForms('formulario-do-blog-cdbe88a30e2ab5cea92a', 'UA-90265209-1').createForm();</script>
+                    </div>
+                </div>
+            </div>
         </footer>
-    </section>
 
-    <script src="all.js"></script>
+        <script src="all.js"></script>
 
-</body>
+    </body>
 
 </html>
